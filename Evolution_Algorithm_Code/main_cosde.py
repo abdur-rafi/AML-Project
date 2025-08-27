@@ -86,12 +86,12 @@ def main():
     else:
         #models_path = pop_info.get_path(args.pop_init)
         models_path = [
-            r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
-            r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
-            r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
-            r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
-            r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
-            r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
+            r"/kaggle/working/AML-Project/exp_debug_0.pt",
+            r"/kaggle/working/AML-Project/exp_debug_0.pt",
+            r"/kaggle/working/AML-Project/exp_debug_0.pt",
+            r"/kaggle/working/AML-Project/exp_debug_0.pt",
+            r"/kaggle/working/AML-Project/exp_debug_0.pt",
+            r"/kaggle/working/AML-Project/exp_debug_0.pt",
         ]
 
     # ---------- Methods of choosing parent-------------#

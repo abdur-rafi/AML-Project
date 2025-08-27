@@ -1,30 +1,52 @@
 # -----Test
 
 
-CUDA_VISIBLE_DEVICES=3 \
-python -m torch.distributed.launch --nproc_per_node=1 --master_port='24683' \
-    main_cosde.py --batch_size 128 \
+
+python main_cosde.py --batch_size 128 \
         --val_batch_size 192 \
         --slice_len 0 \
         --de_slice_len 0 \
-        --de_epochs 100 \
+        --de_epochs 5 \
         --de_batch_size 512 \
-        --popsize 8 \
+        --popsize 6 \
         --model 'sew_34' \
         --amp \
         --num-gpu 1 \
-        --data '/home/runhua/data' \
         --num_classes 100 \
         --trig_perc 0.01 \
         --f_init 1e-9 \
         --cr_init 1e-9 \
         --cr_clip 0.001 \
         --f_clip 0.001 \
-        --pop_init '/home/runhua/1215/spe/utils/data/1215_above_77.txt' \
-        --exp_name cr_cos_f_cos_1e-9_1215_above_77.txt \
-        --output /home/runhua/1215/spe/output \
-        --log_dir '/home/runhua/1215/spe/output/cr_cos_f_cos_1e-9_1215_above_77.txt' \
-        &> /home/runhua/1215/spe/log_out/cr_cos_f_cos_1e-9_1215_above_77.txt &
+        # &> /kaggle/working/AML-Project/log.txt &
+        # --test_ood \
+        # --ood_path '/home/guodong/runhua/ood_dataset' \
+# -----Test
+
+# CUDA_VISIBLE_DEVICES=3 \
+# python -m torch.distributed.launch --nproc_per_node=1 --master_port='24683' \
+#     main_cosde.py --batch_size 128 \
+#         --val_batch_size 192 \
+#         --slice_len 0 \
+#         --de_slice_len 0 \
+#         --de_epochs 100 \
+#         --de_batch_size 512 \
+#         --popsize 8 \
+#         --model 'sew_34' \
+#         --amp \
+#         --num-gpu 1 \
+#         --data '/home/runhua/data' \
+#         --num_classes 100 \
+#         --trig_perc 0.01 \
+#         --f_init 1e-9 \
+#         --cr_init 1e-9 \
+#         --cr_clip 0.001 \
+#         --f_clip 0.001 \
+#         --pop_init '/home/runhua/1215/spe/utils/data/1215_above_77.txt' \
+#         --exp_name cr_cos_f_cos_1e-9_1215_above_77.txt \
+#         --output /home/runhua/1215/spe/output \
+#         --log_dir '/home/runhua/1215/spe/output/cr_cos_f_cos_1e-9_1215_above_77.txt' \
+#         &> /home/runhua/1215/spe/log_out/cr_cos_f_cos_1e-9_1215_above_77.txt &
         # --test_ood \
         # --ood_path '/home/guodong/runhua/ood_dataset' \
 # -----Test
