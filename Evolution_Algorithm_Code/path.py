@@ -1,0 +1,8 @@
+models_path = [
+    r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
+    r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
+    r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
+    r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
+    r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
+    r"E:/AML/CADE4SNN-main/finetune_hyperparameter/checkpoints/train/20250825-211457-exp_debug/exp_debug_0.pt",
+]
