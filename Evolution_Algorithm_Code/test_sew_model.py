@@ -18,94 +18,6 @@ from utils.data.cifar_loader import create_loader_cifar
 from utils.tools.utility import AverageMeter, accuracy
 
 
-def validate_checkpoint_file(file_path):
-    """
-    Validate if a file is a valid PyTorch checkpoint.
-    
-    Args:
-        file_path (str): Path to the checkpoint file
-        
-    Returns:
-        tuple: (is_valid, error_message)
-    """
-    if not os.path.exists(file_path):
-        return False, f"File does not exist: {file_path}"
-    
-    file_size = os.path.getsize(file_path)
-    if file_size == 0:
-        return False, f"File is empty: {file_path}"
-    
-    if file_size < 1024:  # Less than 1KB is suspicious for a model checkpoint
-        return False, f"File is too small ({file_size} bytes) to be a valid checkpoint"
-    
-    # Check file extension
-    valid_extensions = ['.pt', '.pth', '.tar', '.ckpt']
-    if not any(file_path.lower().endswith(ext) for ext in valid_extensions):
-        print(f"Warning: File doesn't have a standard PyTorch extension: {file_path}")
-    
-    # Try to read first few bytes to check if it's a valid zip/tar file
-    try:
-        with open(file_path, 'rb') as f:
-            header = f.read(4)
-            # PyTorch files are typically ZIP files, so check for ZIP signature
-            if header[:2] == b'PK':  # ZIP file signature
-                return True, "Valid ZIP-based checkpoint file"
-            elif header == b'}\x93\x8b\x00':  # Some PyTorch files start with this
-                return True, "Valid PyTorch checkpoint file"
-            else:
-                return False, f"File doesn't appear to be a valid PyTorch checkpoint (header: {header})"
-    except Exception as e:
-        return False, f"Cannot read file: {str(e)}"
-
-
-def try_alternative_loading_methods(file_path):
-    """
-    Try alternative methods to load a potentially corrupted checkpoint.
-    
-    Args:
-        file_path (str): Path to the checkpoint file
-        
-    Returns:
-        dict or None: Loaded checkpoint if successful, None otherwise
-    """
-    print("Trying alternative loading methods...")
-    
-    # Method 1: Try loading with weights_only=True (PyTorch 1.13+)
-    try:
-        print("Trying weights_only=True...")
-        checkpoint = torch.load(file_path, map_location='cpu', weights_only=True)
-        print("Success with weights_only=True")
-        return checkpoint
-    except Exception as e:
-        print(f"Failed with weights_only=True: {str(e)}")
-    
-    # Method 2: Try loading with pickle protocol
-    try:
-        print("Trying with pickle_module...")
-        import pickle
-        checkpoint = torch.load(file_path, map_location='cpu', pickle_module=pickle)
-        print("Success with pickle_module")
-        return checkpoint
-    except Exception as e:
-        print(f"Failed with pickle_module: {str(e)}")
-    
-    # Method 3: Try loading as a raw file and inspect
-    try:
-        print("Inspecting file content...")
-        with open(file_path, 'rb') as f:
-            content = f.read(1000)  # Read first 1000 bytes
-            print(f"File starts with: {content[:50]}")
-            
-            # Check if it's a text file (sometimes state dicts are saved as text)
-            if content.isascii():
-                print("File appears to be ASCII text, not a binary PyTorch file")
-                return None
-    except Exception as e:
-        print(f"Cannot inspect file: {str(e)}")
-    
-    return None
-
-
 def create_sew_model(num_classes=100, T=4):
     """
     Create a SEW ResNet34 model.
@@ -135,94 +47,25 @@ def load_model_from_state_dict(model, state_dict_path):
     if not os.path.exists(state_dict_path):
         raise FileNotFoundError(f"State dictionary file not found: {state_dict_path}")
     
-    # Check file size and basic validity
-    file_size = os.path.getsize(state_dict_path)
-    if file_size == 0:
-        raise ValueError(f"State dictionary file is empty: {state_dict_path}")
-    
     print(f"Loading model parameters from: {state_dict_path}")
-    print(f"File size: {file_size / (1024*1024):.2f} MB")
     
-    try:
-        # Try to load the state dictionary with better error handling
-        checkpoint = torch.load(state_dict_path, map_location='cpu')
-    except Exception as e:
-        print(f"Error loading checkpoint file: {str(e)}")
-        print(f"File size: {file_size} bytes")
-        
-        # Check if file is readable
-        try:
-            with open(state_dict_path, 'rb') as f:
-                first_bytes = f.read(100)
-                print(f"First 100 bytes: {first_bytes}")
-        except Exception as read_error:
-            print(f"Cannot read file: {read_error}")
-        
-        # Try alternative loading methods
-        checkpoint = try_alternative_loading_methods(state_dict_path)
-        
-        if checkpoint is None:
-            # Provide helpful suggestions
-            print("\nPossible solutions:")
-            print("1. Check if the file was completely downloaded/transferred")
-            print("2. Verify the file is a valid PyTorch checkpoint (.pt, .pth, .tar)")
-            print("3. Try re-downloading or re-copying the file")
-            print("4. Check if the file path is correct")
-            print("5. Ensure the file is not corrupted")
-            
-            raise ValueError(f"Failed to load checkpoint from {state_dict_path}: {str(e)}")
+    # Load the state dictionary
+    checkpoint = torch.load(state_dict_path, map_location='cpu')
     
     # Handle different checkpoint formats
     if isinstance(checkpoint, dict):
         if 'state_dict' in checkpoint:
             state_dict = checkpoint['state_dict']
-            print("Found 'state_dict' key in checkpoint")
         elif 'model' in checkpoint:
             state_dict = checkpoint['model']
-            print("Found 'model' key in checkpoint")
-        elif 'model_state_dict' in checkpoint:
-            state_dict = checkpoint['model_state_dict']
-            print("Found 'model_state_dict' key in checkpoint")
         else:
-            # Assume the entire dict is the state dict
             state_dict = checkpoint
-            print("Using entire checkpoint as state dict")
-            
-        # Print additional checkpoint info if available
-        if 'epoch' in checkpoint:
-            print(f"Checkpoint epoch: {checkpoint['epoch']}")
-        if 'best_acc1' in checkpoint:
-            print(f"Checkpoint best accuracy: {checkpoint['best_acc1']:.4f}%")
-        if 'arch' in checkpoint:
-            print(f"Checkpoint architecture: {checkpoint['arch']}")
     else:
         state_dict = checkpoint
-        print("Checkpoint is direct state dict")
     
-    # Validate state dict
-    if not isinstance(state_dict, dict):
-        raise ValueError(f"Expected state_dict to be a dictionary, got {type(state_dict)}")
-    
-    if len(state_dict) == 0:
-        raise ValueError("State dictionary is empty")
-    
-    print(f"State dict contains {len(state_dict)} parameter tensors")
-    
-    # Try to load the state dictionary into the model
-    try:
-        missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=False)
-        
-        if missing_keys:
-            print(f"Warning: Missing keys in state dict: {missing_keys[:5]}...")  # Show first 5
-        if unexpected_keys:
-            print(f"Warning: Unexpected keys in state dict: {unexpected_keys[:5]}...")  # Show first 5
-            
-        print("Model parameters loaded successfully!")
-        
-    except Exception as e:
-        print(f"Error loading state dict into model: {str(e)}")
-        print("This might be due to model architecture mismatch")
-        raise ValueError(f"Failed to load state dict into model: {str(e)}")
+    # Load the state dictionary into the model
+    model.load_state_dict(state_dict)
+    print("Model parameters loaded successfully!")
     
     return model
 
@@ -305,9 +148,7 @@ def evaluate_test_accuracy(model, test_loader, device='cuda'):
         try:
             from torch.cuda.amp import autocast
             amp_autocast = autocast
-            print("Using mixed precision (AMP)")
         except ImportError:
-            print("Mixed precision not available, using regular precision")
             amp_autocast = suppress
     
     print(f"Starting evaluation on {len(test_loader)} batches...")
@@ -385,46 +226,8 @@ def main():
                         help='Number of classes (default: 100 for CIFAR-100)')
     parser.add_argument('--T', type=int, default=4,
                         help='Number of time steps for the SNN')
-    parser.add_argument('--check_file_only', action='store_true',
-                        help='Only validate the checkpoint file without running evaluation')
     
     args = parser.parse_args()
-    
-    # If only checking file, do that and exit
-    if args.check_file_only:
-        print("Checkpoint File Validation")
-        print("="*30)
-        is_valid, message = validate_checkpoint_file(args.state_dict_path)
-        print(f"Result: {message}")
-        
-        if is_valid:
-            try:
-                print("\nTrying to load checkpoint...")
-                checkpoint = torch.load(args.state_dict_path, map_location='cpu')
-                print("✓ Checkpoint loaded successfully!")
-                
-                if isinstance(checkpoint, dict):
-                    print(f"✓ Checkpoint is a dictionary with {len(checkpoint)} keys")
-                    print(f"Keys: {list(checkpoint.keys())}")
-                    
-                    for key in ['state_dict', 'model', 'model_state_dict']:
-                        if key in checkpoint:
-                            state_dict = checkpoint[key]
-                            print(f"✓ Found '{key}' with {len(state_dict)} parameters")
-                            break
-                    else:
-                        print("✓ Using entire checkpoint as state dict")
-                        state_dict = checkpoint
-                        print(f"✓ State dict has {len(state_dict)} parameters")
-                else:
-                    print("✓ Checkpoint is direct state dict")
-                    print(f"✓ Has {len(checkpoint)} parameters")
-                    
-            except Exception as e:
-                print(f"✗ Failed to load checkpoint: {str(e)}")
-                try_alternative_loading_methods(args.state_dict_path)
-        
-        return 0 if is_valid else 1
     
     print("SEW ResNet34 CIFAR-100 Test Evaluation")
     print("="*50)
@@ -437,20 +240,6 @@ def main():
     print("="*50)
     
     try:
-        # Step 0: Validate the checkpoint file
-        print("\n0. Validating checkpoint file...")
-        is_valid, validation_message = validate_checkpoint_file(args.state_dict_path)
-        print(f"Validation result: {validation_message}")
-        
-        if not is_valid:
-            print("ERROR: Invalid checkpoint file!")
-            print("\nTroubleshooting steps:")
-            print("1. Verify the file path is correct")
-            print("2. Check if the file was completely downloaded")
-            print("3. Ensure the file is a valid PyTorch checkpoint (.pt, .pth, .tar)")
-            print("4. Try re-downloading or re-copying the file")
-            return 1
-        
         # Step 1: Create the SEW ResNet34 model
         print("\n1. Creating SEW ResNet34 model...")
         model = create_sew_model(num_classes=args.num_classes, T=args.T)
