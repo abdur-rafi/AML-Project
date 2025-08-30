@@ -100,17 +100,17 @@ def main():
             model.load_state_dict(greedy_model_dict)
             greedy_metrics = val.validate(model, loader_eval, args, amp_autocast=amp_autocast)
             ood_metrics=test_ood(greedy_model_dict,args,model, population, args.popsize, amp_autocast=amp_autocast)
-        acc1, acc5, val_loss = [torch.zeros(args.popsize).tolist() for _ in range(3)]
+        acc1, acc5, val_loss, f1 = [torch.zeros(args.popsize).tolist() for _ in range(4)]
         for i in range(args.popsize): 
             solution = population[i]
             model_weights_dict = model_vector_to_dict(model=model, weights_vector=solution)
             model.load_state_dict(model_weights_dict)
             temp = val.validate(model, loader_eval, args, amp_autocast=amp_autocast)
-            acc1[i], acc5[i], val_loss[i] = temp['top1'], temp['top5'], temp['loss']      
+            acc1[i], acc5[i], val_loss[i], f1[i] = temp['top1'], temp['top5'], temp['loss'], temp['f1']      
         en_metrics = val.validate_ensemble(model, population, args.popsize, loader_eval, args, amp_autocast=amp_autocast)
         # import pdb; pdb.set_trace()
         # print(score, acc1, acc5, val_loss, en_metrics, models_path)
-        pop_info.write_path_with_acc(score, acc1, acc5, val_loss, en_metrics, models_path, args.pop_init)
+        pop_info.write_path_with_acc(score, acc1, acc5, val_loss, en_metrics, models_path, args.pop_init, f1=f1)
 
     # print(score, acc1, acc5, val_loss, en_metrics, models_path)
     if args.local_rank == 0:
@@ -118,7 +118,7 @@ def main():
         if args.test_ood:
             update_summary('greedy_val:', greedy_metrics, os.path.join(output_dir, 'summary.csv'), write_header=True)
             update_summary('greedy_and_ensemble_ood:', ood_metrics, os.path.join(output_dir, 'summary.csv'), write_header=True)
-    rowd = OrderedDict([('score', score), ('top1', acc1), ('top5', acc5), ('val_loss', val_loss)])
+    rowd = OrderedDict([('score', score), ('top1', acc1), ('top5', acc5), ('val_loss', val_loss), ('f1', f1)])
     # print(score:)[tensor(1.1641, device='cuda:0', dtype=torch.float16), ,,,]
     if args.local_rank == 0:
         bestidx = score.index(max(score))
@@ -242,6 +242,8 @@ def main():
                     model_path = os.path.join(output_dir, f'val_best_{args.model}.pt')
                     print('Saving best val model to', model_path)
                     torch.save(model.state_dict(), model_path)
+                    print("Saving best val solution to", os.path.join(output_dir, f'val_best_{args.model}_solution.pt'))
+                    torch.save(solution, os.path.join(output_dir, f'val_best_{args.model}_solution.pt'))
 
         if args.distributed: 
             torch.cuda.synchronize()

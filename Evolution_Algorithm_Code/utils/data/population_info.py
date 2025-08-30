@@ -35,7 +35,7 @@ def get_path(path):
             model_path_list.append(line.strip())
     return model_path_list
 
-def write_path_with_acc(score, acc1, acc5, val_loss, en_metrics, models_path, pop_init):
+def write_path_with_acc(score, acc1, acc5, val_loss, en_metrics, models_path, pop_init, f1 = None):
     #path = pop_init.split('.')[0]+'_score.txt'
     #file = open(path, "w")
     os.makedirs("./cade_results", exist_ok=True)
@@ -44,7 +44,7 @@ def write_path_with_acc(score, acc1, acc5, val_loss, en_metrics, models_path, po
 
     for i in range(len(score)):
         line = 'score:' + str(score[i].item()) + ', acc1:' + str(acc1[i]) + ', acc5:' + str(acc5[i]) +  \
-                                 ', val_loss:' + str(val_loss[i]) + ', ' + models_path[i] + '\n'
+                ', f1' + str(f1[i]) + ', val_loss:' + str(val_loss[i]) + ', ' + models_path[i] + '\n'
         file.writelines(line)
 
     file.writelines("ensemble_top1: " + str(en_metrics['ensemble_top1']) + '\n')

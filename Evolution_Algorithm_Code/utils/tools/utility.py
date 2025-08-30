@@ -167,3 +167,71 @@ def accuracy(output, target, topk=(1,)):
     pred = pred.t()
     correct = pred.eq(target.reshape(1, -1).expand_as(pred))
     return [correct[:min(k, maxk)].reshape(-1).float().sum(0) * 100. / batch_size for k in topk]
+
+def f1_score(output, target, average='macro', num_classes=None):
+    """Computes the F1 score for multi-class classification
+    
+    Args:
+        output: Model predictions (logits) with shape [batch_size, num_classes]
+        target: Ground truth labels with shape [batch_size]
+        average: 'macro' for macro-averaged F1, 'micro' for micro-averaged F1, 'weighted' for weighted F1
+        num_classes: Number of classes (if None, inferred from output)
+    
+    Returns:
+        F1 score as a tensor (0-100 scale)
+    """
+    if num_classes is None:
+        num_classes = output.size(1)
+    
+    batch_size = target.size(0)
+    _, pred = output.topk(1, 1, True, True)
+    pred = pred.squeeze(1)  # Remove the extra dimension
+    
+    # Convert to one-hot encoding for easier computation
+    pred_one_hot = torch.zeros(batch_size, num_classes, device=output.device)
+    target_one_hot = torch.zeros(batch_size, num_classes, device=output.device)
+    
+    pred_one_hot.scatter_(1, pred.unsqueeze(1), 1)
+    target_one_hot.scatter_(1, target.unsqueeze(1), 1)
+    
+    if average == 'micro':
+        # Micro-averaged F1: aggregate the contributions of all classes
+        tp = (pred_one_hot * target_one_hot).sum()
+        fp = (pred_one_hot * (1 - target_one_hot)).sum()
+        fn = ((1 - pred_one_hot) * target_one_hot).sum()
+        
+        precision = tp / (tp + fp + 1e-8)
+        recall = tp / (tp + fn + 1e-8)
+        f1 = 2 * precision * recall / (precision + recall + 1e-8)
+        
+    elif average == 'weighted':
+        # Weighted F1: weight by class frequency
+        class_counts = target_one_hot.sum(0)
+        total_samples = class_counts.sum()
+        
+        tp = (pred_one_hot * target_one_hot).sum(0)
+        fp = (pred_one_hot * (1 - target_one_hot)).sum(0)
+        fn = ((1 - pred_one_hot) * target_one_hot).sum(0)
+        
+        precision = tp / (tp + fp + 1e-8)
+        recall = tp / (tp + fn + 1e-8)
+        class_f1 = 2 * precision * recall / (precision + recall + 1e-8)
+        
+        # Weight by class frequency
+        weights = class_counts / total_samples
+        f1 = (class_f1 * weights).sum()
+        
+    else:  # default to macro
+        # Macro-averaged F1: average F1 across all classes
+        tp = (pred_one_hot * target_one_hot).sum(0)
+        fp = (pred_one_hot * (1 - target_one_hot)).sum(0)
+        fn = ((1 - pred_one_hot) * target_one_hot).sum(0)
+        
+        precision = tp / (tp + fp + 1e-8)
+        recall = tp / (tp + fn + 1e-8)
+        class_f1 = 2 * precision * recall / (precision + recall + 1e-8)
+        
+        # Average across classes
+        f1 = class_f1.mean()
+    
+    return f1 * 100.  # Convert to 0-100 scale to match accuracy function

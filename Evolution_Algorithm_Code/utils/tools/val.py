@@ -14,6 +14,7 @@ def validate(model, loader, args, amp_autocast=suppress, log_suffix=''):
     losses_m = AverageMeter()
     top1_m = AverageMeter()
     top5_m = AverageMeter()
+    top1_f_score_m = AverageMeter()
     loss_fn = nn.CrossEntropyLoss().cuda()
     model.eval()
     end = time.time()
@@ -29,6 +30,7 @@ def validate(model, loader, args, amp_autocast=suppress, log_suffix=''):
                 output,_ = model(input)
             loss = loss_fn(output, target)
             acc1, acc5 = accuracy(output, target, topk=(1, 5))
+            f1 = f1_score(output, target, average='macro', num_classes=args.num_classes)
 
             if args.distributed:
                 reduced_loss = reduce_tensor(loss.data, args.world_size)
@@ -41,6 +43,7 @@ def validate(model, loader, args, amp_autocast=suppress, log_suffix=''):
             losses_m.update(reduced_loss.item(), input.size(0))
             top1_m.update(acc1.item(), output.size(0))
             top5_m.update(acc5.item(), output.size(0))
+            top1_f_score_m.update(f1.item(), output.size(0))
             batch_time_m.update(time.time() - end)
             end = time.time()
             if args.local_rank == 0 and (last_batch or batch_idx % args.log_interval == 0):
@@ -50,13 +53,18 @@ def validate(model, loader, args, amp_autocast=suppress, log_suffix=''):
                     'Time: {batch_time.val:.3f} ({batch_time.avg:.3f})  '
                     'DataTime: {data_time.val:.3f} ({data_time.avg:.3f})  '
                     'Loss: {loss.val:>7.4f} ({loss.avg:>6.4f})  '
+                    'F1: {top1f.val:>7.4f} ({top1f.avg:>7.4f})  '
                     'Acc@1: {top1.val:>7.4f} ({top1.avg:>7.4f})  '
                     'Acc@5: {top5.val:>7.4f} ({top5.avg:>7.4f})'.format(
                         log_name, batch_idx, last_idx, batch_time=batch_time_m, data_time=data_time_m,
-                        loss=losses_m, top1=top1_m, top5=top5_m))
+                        loss=losses_m, top1=top1_m, top5=top5_m, top1f=top1_f_score_m))
     metrics = OrderedDict([('loss', round(losses_m.avg, 4)), 
-                           ('top1', round(top1_m.avg,3)), ('top5', round(top5_m.avg,3))])
-    if args.local_rank == 0: _logger.info('metrics_top1: {}'.format(metrics['top1']))
+                           ('top1', round(top1_m.avg,3)), ('top5', round(top5_m.avg,3))
+                           , ('f1', round(top1_f_score_m.avg,3))])
+    # if args.local_rank == 0: _logger.info('metrics_top1: {}'.format(metrics['top1']))
+    if args.local_rank == 0:
+        _logger.info('metrics: {}'.format(metrics))
+        _logger.info('metrics_f1: {}'.format(metrics['f1']))
     return metrics
 
 
