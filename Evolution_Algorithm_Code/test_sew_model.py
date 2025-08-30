@@ -88,10 +88,11 @@ def setup_cifar100_loader(data_path, batch_size=128, num_workers=4):
     os.makedirs(data_path, exist_ok=True)
     
     # Create a simple args object for the loader function
+    # Note: create_loader_cifar expects args.data, not args.data_dir
     class Args:
         def __init__(self):
             self.dataset = 'cifar100'
-            self.data_dir = data_path
+            self.data = data_path  # This is the key fix - should be 'data' not 'data_dir'
             self.batch_size = batch_size
             self.validation_batch_size = batch_size
             self.workers = num_workers
