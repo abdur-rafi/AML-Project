@@ -1,10 +1,3 @@
-import sys, os
-# Add the project root: E:/AML/CADE4SNN-main
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-sys.path.insert(0, project_root)
-
-
-
 import os
 import time
 import shutil
@@ -51,31 +44,14 @@ def main():
     random_seed(args.seed, args.rank)
     
     # dataloader setting;    
-   # _, loader_eval, loader_de = obtain_loader(args)
-    # dataloader setting (force CIFAR-10 instead of ImageNet)
-    from finetune_hyperparameter.utils.data.cifar_loader_1 import create_loader_cifar_10
-
-    loader_train, loader_eval = create_loader_cifar_10(args)
-    loader_de = loader_eval
-
+    _, loader_eval, loader_de = obtain_loader(args)
     
     # model setting;
-    #model = create_model(args.model, pretrained=False, drop_rate=0.)
-    # model = SEW.resnet34(num_classes=100, g="add", down='max', T=4)
-    #n_parameters = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    #if args.local_rank == 0:
-     #   _logger.info(f"Creating model...{args.model},\n number of params: {n_parameters}")
-    #model.cuda()
-    #model = model.to(memory_format=torch.channels_last)
-
-    from utils.snn_model import SEW
-    # Build SEW-ResNet18 for CIFAR-10 (matches your exp_debug_0.pt)
-    model = SEW.resnet18(num_classes=100, g="add", down='max', T=4)
-
+    # model = create_model(args.model, pretrained=False, drop_rate=0.)
+    model = SEW.resnet34(num_classes=100, g="add", down='max', T=4)
     n_parameters = sum(p.numel() for p in model.parameters() if p.requires_grad)
     if args.local_rank == 0:
-        _logger.info(f"Creating model...sew_18,\n number of params: {n_parameters}")
-
+        _logger.info(f"Creating model...{args.model},\n number of params: {n_parameters}")
     model.cuda()
     model = model.to(memory_format=torch.channels_last)
 
@@ -84,17 +60,8 @@ def main():
         load_score = True
         score, acc1, acc5, val_loss, en_metrics, models_path = pop_info.get_path_with_acc(args.pop_init)
     else:
-        #models_path = pop_info.get_path(args.pop_init)
-        models_path = [
-            r"/kaggle/working/AML-Project/exp_debug_0.pt",
-            r"/kaggle/working/AML-Project/exp_debug_0.pt",
-            r"/kaggle/working/AML-Project/exp_debug_0.pt",
-            r"/kaggle/working/AML-Project/exp_debug_0.pt",
-            r"/kaggle/working/AML-Project/exp_debug_0.pt",
-            r"/kaggle/working/AML-Project/exp_debug_0.pt",
-        ]
-
-    # ---------- Methods of choosing parent-------------#
+        models_path = pop_info.get_path(args.pop_init)
+     # ---------- Methods of choosing parent-------------# 
     # optionally resume from a checkpoint
     population = []
     for resume_path in models_path:

@@ -5,3 +5,4 @@ checkpoints
 logs
 *.pth
 *.pt
+kaggle_cell_outputs
