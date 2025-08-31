@@ -274,3 +274,55 @@ def log_multi_objective_progress(generation, gen_stats, output_dir):
         f.write(f"{generation},{gen_stats['pareto_front_size']},{gen_stats['best_accuracy']:.4f},"
                 f"{gen_stats['best_f1']:.4f},{gen_stats['mean_accuracy']:.4f},"
                 f"{gen_stats['mean_f1']:.4f},{gen_stats['hypervolume']:.6f}\n")
+
+
+def evaluate_validation_objectives(population, model, loader_eval, args):
+    """
+    Evaluate validation objectives for the population.
+    
+    Args:
+        population: List of individuals (tensors)
+        model: Neural network model
+        loader_eval: Validation data loader
+        args: Arguments containing configuration
+        
+    Returns:
+        List of objective tuples for each individual (validation accuracy, validation F1)
+    """
+    from ..tools import validate as val
+    from ..tools.utility import model_vector_to_dict
+    
+    objectives = []
+    
+    for individual in population:
+        # Apply individual to model
+        model_weights_dict = model_vector_to_dict(model=model, weights_vector=individual)
+        model.load_state_dict(model_weights_dict)
+        
+        # Validate on validation data
+        with torch.no_grad():
+            val_metrics = val.validate(model, loader_eval, args, amp_autocast=None)
+            
+        # Extract accuracy and F1 score
+        accuracy = val_metrics.get('top1', 0.0)
+        f1_score = val_metrics.get('f1', 0.0)
+        
+        objectives.append((accuracy, f1_score))
+    
+    return objectives
+
+
+def apply_individual_to_model(model, individual):
+    """
+    Apply an individual (parameter vector) to the model.
+    
+    Args:
+        model: Neural network model
+        individual: Parameter tensor to apply to model
+    """
+    # This function is now replaced by the direct use of model_vector_to_dict
+    # which is the standard approach used throughout the codebase
+    from ..tools.utility import model_vector_to_dict
+    
+    model_weights_dict = model_vector_to_dict(model=model, weights_vector=individual)
+    model.load_state_dict(model_weights_dict)

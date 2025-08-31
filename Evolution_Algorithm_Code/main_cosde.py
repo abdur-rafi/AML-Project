@@ -26,7 +26,8 @@ from utils.tools.de_multi_objective import (
     calculate_generation_stats, save_pareto_front, log_multi_objective_progress
 )
 from utils.tools.multi_objective import (
-    print_pareto_front_summary, select_diverse_solutions, get_pareto_front_indices
+    print_pareto_front_summary, print_pareto_front_summary_validation, 
+    select_diverse_solutions, get_pareto_front_indices
 )
 from utils.tools.spe import model_dict_to_vector, model_vector_to_dict
 # from utils.tools.plot_utils import plot_loss, plot_paras
@@ -169,6 +170,8 @@ def main():
         print("Multi-objective optimization enabled: optimizing both accuracy and F1 score")
         population_objectives = initialize_population_objectives(population, model, loader_de, args)
         print_pareto_front_summary(population_objectives, generation=0)
+        print("\n--- VALIDATION OBJECTIVES ---")
+        print_pareto_front_summary_validation(population, model, loader_eval, args, generation=0)
         
         # Create multi-objective results directory
         multi_obj_dir = os.path.join(output_dir, 'multi_objective')
@@ -190,6 +193,8 @@ def main():
             
             if args.local_rank == 0:
                 print_pareto_front_summary(population_objectives, generation=epoch)
+                print("\n--- VALIDATION OBJECTIVES ---")
+                print_pareto_front_summary_validation(population, model, loader_eval, args, generation=epoch)
                 log_multi_objective_progress(epoch, gen_stats, multi_obj_dir)
                 
                 # Save Pareto front every 10 generations
@@ -397,6 +402,8 @@ def main():
         pareto_obj = [population_objectives[i] for i in pareto_indices]
         
         print_pareto_front_summary(population_objectives, generation="Final")
+        print("\n--- FINAL VALIDATION OBJECTIVES ---")
+        print_pareto_front_summary_validation(population, model, loader_eval, args, generation="Final")
         
         # Save final Pareto front
         save_pareto_front(pareto_pop, pareto_obj, "final", multi_obj_dir)

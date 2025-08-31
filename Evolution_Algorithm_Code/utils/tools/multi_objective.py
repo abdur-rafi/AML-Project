@@ -315,3 +315,51 @@ def print_pareto_front_summary(objectives: List[Tuple[float, float]], generation
     )
     for i, (_, (acc, f1)) in enumerate(diverse_solutions):
         print(f"    {i+1}. Accuracy: {acc:.3f}, F1: {f1:.3f}")
+
+
+def print_pareto_front_summary_validation(population, model, loader_eval, args, generation: int = None):
+    """
+    Print summary statistics for the current Pareto front using validation data.
+    
+    Args:
+        population: List of individuals (population)
+        model: Neural network model
+        loader_eval: Validation data loader
+        args: Arguments containing configuration
+        generation: Current generation number (optional)
+    """
+    # Evaluate validation objectives
+    from .de_multi_objective import evaluate_validation_objectives
+    
+    objectives = evaluate_validation_objectives(population, model, loader_eval, args)
+    
+    if not objectives:
+        print("No objectives to summarize")
+        return
+    
+    pareto_indices = get_pareto_front_indices(objectives)
+    pareto_objectives = [objectives[i] for i in pareto_indices]
+    
+    if not pareto_objectives:
+        print("No Pareto optimal solutions found")
+        return
+    
+    accuracies = [obj[0] for obj in pareto_objectives]
+    f1_scores = [obj[1] for obj in pareto_objectives]
+    
+    gen_prefix = f"Generation {generation}: " if generation is not None else ""
+    
+    print(f"\n{gen_prefix}Pareto Front Summary (VALIDATION):")
+    print(f"  Number of Pareto optimal solutions: {len(pareto_objectives)}")
+    print(f"  Validation Accuracy range: [{min(accuracies):.3f}, {max(accuracies):.3f}]")
+    print(f"  Validation F1 score range: [{min(f1_scores):.3f}, {max(f1_scores):.3f}]")
+    print(f"  Hypervolume: {calculate_hypervolume(pareto_objectives):.6f}")
+    print(f"  Spacing metric: {calculate_spacing_metric(pareto_objectives):.6f}")
+    
+    # Print top 3 solutions
+    print("  Top solutions (by crowding distance):")
+    diverse_solutions = select_diverse_solutions(
+        list(range(len(pareto_objectives))), pareto_objectives, min(3, len(pareto_objectives))
+    )
+    for i, (_, (acc, f1)) in enumerate(diverse_solutions):
+        print(f"    {i+1}. Validation Accuracy: {acc:.3f}, Validation F1: {f1:.3f}")
