@@ -21,6 +21,13 @@ from utils.tools.utility import *
 from utils.tools.option_de import args, args_text, amp_autocast, obtain_loader
 from utils.tools import spe
 from utils.tools.de import de
+from utils.tools.de_multi_objective import (
+    de_multi_objective, initialize_population_objectives, 
+    calculate_generation_stats, save_pareto_front, log_multi_objective_progress
+)
+from utils.tools.multi_objective import (
+    print_pareto_front_summary, select_diverse_solutions, get_pareto_front_indices
+)
 from utils.tools.spe import model_dict_to_vector, model_vector_to_dict
 # from utils.tools.plot_utils import plot_loss, plot_paras
 # from torch.utils.tensorboard import SummaryWriter
@@ -156,12 +163,44 @@ def main():
     f_cr_threshold = 0
     max_acc_train=0
     max_acc_val=0
+    
+    # Initialize multi-objective variables if enabled
+    if args.multi_objective:
+        print("Multi-objective optimization enabled: optimizing both accuracy and F1 score")
+        population_objectives = initialize_population_objectives(population, model, loader_de, args)
+        print_pareto_front_summary(population_objectives, generation=0)
+        
+        # Create multi-objective results directory
+        multi_obj_dir = os.path.join(output_dir, 'multi_objective')
+        if args.local_rank == 0:
+            os.makedirs(multi_obj_dir, exist_ok=True)
+    
     for epoch in range(1, args.de_epochs):
         epoch_time = AverageMeter()
         end = time.time()
-        # evolve_out = spe.evolve(score_func, epoch, population, score, paras1, paras2, model, loader_de, args)
         print("cr f",cr,f)
-        population,update_label,score = de(popsize, f, cr, population,model,loader_de,args)
+        
+        if args.multi_objective:
+            # Multi-objective evolution
+            population, population_objectives, update_label, gen_stats = de_multi_objective(
+                popsize, f, cr, population, population_objectives, model, loader_de, args
+            )
+            # Update score list for compatibility with existing code (use accuracy as primary metric)
+            score = [obj[0] for obj in population_objectives]
+            
+            if args.local_rank == 0:
+                print_pareto_front_summary(population_objectives, generation=epoch)
+                log_multi_objective_progress(epoch, gen_stats, multi_obj_dir)
+                
+                # Save Pareto front every 10 generations
+                if epoch % 10 == 0:
+                    pareto_indices = get_pareto_front_indices(population_objectives)
+                    pareto_pop = [population[i] for i in pareto_indices]
+                    pareto_obj = [population_objectives[i] for i in pareto_indices]
+                    save_pareto_front(pareto_pop, pareto_obj, epoch, multi_obj_dir)
+        else:
+            # Single-objective evolution (original)
+            population,update_label,score = de(popsize, f, cr, population,model,loader_de,args)
         # # -------- cr f change stratgy 1
         # if update_label.count(1) > 0:
         #     f_cr_threshold == 3
@@ -229,21 +268,59 @@ def main():
             torch.distributed.broadcast(pop_tensor, src=0)
 
         population = list(pop_tensor)
-        for i in range(popsize): #!!!
-            if update_label[i] == 1:
-                solution = population[i]
-                model_weights_dict = model_vector_to_dict(model=model, weights_vector=solution)
-                model.load_state_dict(model_weights_dict)
-                temp = val.validate(model, loader_eval, args, amp_autocast=amp_autocast)
-                acc1[i], acc5[i], val_loss[i] = temp['top1'], temp['top5'], temp['loss'] 
-                if acc1[i]>max_acc_val:
-                    max_acc_val = acc1[i]
-                    print("Best in train_set update and val acc = ",max_acc_val)
-                    model_path = os.path.join(output_dir, f'val_best_{args.model}.pt')
-                    print('Saving best val model to', model_path)
-                    torch.save(model.state_dict(), model_path)
-                    print("Saving best val solution to", os.path.join(output_dir, f'val_best_{args.model}_solution.pt'))
-                    torch.save(solution, os.path.join(output_dir, f'val_best_{args.model}_solution.pt'))
+        
+        # Validation handling for both single and multi-objective cases
+        if args.multi_objective:
+            # Multi-objective validation: validate updated individuals and update their objectives
+            for i in range(popsize):
+                if update_label[i] == 1:
+                    solution = population[i]
+                    model_weights_dict = model_vector_to_dict(model=model, weights_vector=solution)
+                    model.load_state_dict(model_weights_dict)
+                    temp = val.validate(model, loader_eval, args, amp_autocast=amp_autocast)
+                    acc1[i], acc5[i], val_loss[i] = temp['top1'], temp['top5'], temp['loss']
+                    
+                    # Update population objectives with validation results
+                    population_objectives[i] = (acc1[i], temp['f1'])
+            
+            # For multi-objective, save Pareto optimal solutions instead of single best
+            if args.local_rank == 0:
+                pareto_indices = get_pareto_front_indices(population_objectives)
+                if pareto_indices:
+                    # Save the solution with highest accuracy from Pareto front
+                    pareto_accs = [population_objectives[i][0] for i in pareto_indices]
+                    best_acc_idx = pareto_indices[pareto_accs.index(max(pareto_accs))]
+                    
+                    if population_objectives[best_acc_idx][0] > max_acc_val:
+                        max_acc_val = population_objectives[best_acc_idx][0]
+                        print(f"Best Pareto solution update - Acc: {max_acc_val:.3f}, F1: {population_objectives[best_acc_idx][1]:.3f}")
+                        
+                        solution = population[best_acc_idx]
+                        model_weights_dict = model_vector_to_dict(model=model, weights_vector=solution)
+                        model.load_state_dict(model_weights_dict)
+                        
+                        model_path = os.path.join(output_dir, f'val_best_{args.model}.pt')
+                        print('Saving best Pareto model to', model_path)
+                        torch.save(model.state_dict(), model_path)
+                        print("Saving best Pareto solution to", os.path.join(output_dir, f'val_best_{args.model}_solution.pt'))
+                        torch.save(solution, os.path.join(output_dir, f'val_best_{args.model}_solution.pt'))
+        else:
+            # Single-objective validation (original behavior)
+            for i in range(popsize):
+                if update_label[i] == 1:
+                    solution = population[i]
+                    model_weights_dict = model_vector_to_dict(model=model, weights_vector=solution)
+                    model.load_state_dict(model_weights_dict)
+                    temp = val.validate(model, loader_eval, args, amp_autocast=amp_autocast)
+                    acc1[i], acc5[i], val_loss[i] = temp['top1'], temp['top5'], temp['loss'] 
+                    if acc1[i]>max_acc_val:
+                        max_acc_val = acc1[i]
+                        print("Best in train_set update and val acc = ",max_acc_val)
+                        model_path = os.path.join(output_dir, f'val_best_{args.model}.pt')
+                        print('Saving best val model to', model_path)
+                        torch.save(model.state_dict(), model_path)
+                        print("Saving best val solution to", os.path.join(output_dir, f'val_best_{args.model}_solution.pt'))
+                        torch.save(solution, os.path.join(output_dir, f'val_best_{args.model}_solution.pt'))
 
         if args.distributed: 
             torch.cuda.synchronize()
@@ -251,14 +328,40 @@ def main():
         end = time.time()
 
         if args.local_rank == 0:
-            _logger.info('score: {}'.format(rowd['score']))
+            if args.multi_objective:
+                # Multi-objective logging
+                pareto_indices = get_pareto_front_indices(population_objectives)
+                if pareto_indices:
+                    pareto_accs = [population_objectives[i][0] for i in pareto_indices]
+                    pareto_f1s = [population_objectives[i][1] for i in pareto_indices]
+                    best_acc_idx = pareto_indices[pareto_accs.index(max(pareto_accs))]
+                    best_f1_idx = pareto_indices[pareto_f1s.index(max(pareto_f1s))]
+                    
+                    _logger.info(f'Pareto Front Size: {len(pareto_indices)}, '
+                               f'Best Acc: {population_objectives[best_acc_idx][0]:.4f} (F1: {population_objectives[best_acc_idx][1]:.4f}), '
+                               f'Best F1: {population_objectives[best_f1_idx][1]:.4f} (Acc: {population_objectives[best_f1_idx][0]:.4f})')
+                    
+                    # Use best accuracy solution for compatibility with existing logging
+                    bestidx = best_acc_idx
+                else:
+                    bestidx = score.index(max(score))
+                
+                # Update rowd to include F1 scores for multi-objective
+                f1_scores = [obj[1] for obj in population_objectives]
+                rowd = OrderedDict([('best_idx', bestidx), ('score', score), ('top1', acc1), ('top5', acc5), 
+                                  ('val_loss', val_loss), ('f1_scores', f1_scores)])
+            else:
+                # Single-objective logging (original)
+                _logger.info('score: {}'.format(rowd['score']))
+                bestidx = score.index(max(score))
+                rowd = OrderedDict([('best_idx', bestidx), ('score', score), ('top1', acc1), ('top5', acc5), ('val_loss', val_loss)])
+            
             _logger.info('DE:{} Acc@1: {top1:>7.4f} Acc@5: {top5:>7.4f} \
                          Epoch_time: {epoch_time.val:.3f}s'.format(
                             epoch,
-                            top1 = rowd['top1'][bestidx],
-                            top5 = rowd['top5'][bestidx],
+                            top1 = rowd['top1'][bestidx] if len(rowd['top1']) > bestidx else 0.0,
+                            top5 = rowd['top5'][bestidx] if len(rowd['top5']) > bestidx else 0.0,
                             epoch_time=epoch_time))
-            rowd = OrderedDict([('best_idx',bestidx),('score', score), ('top1', acc1), ('top5', acc5), ('val_loss', val_loss)])
         
             update_summary(epoch, rowd, os.path.join(output_dir, 'summary.csv'), write_header=True)
             bestidx_tensor = torch.tensor(bestidx).cuda()
@@ -282,6 +385,39 @@ def main():
 
             # plot_loss(output_dir, popsize, wandb)
 
+    # Final multi-objective results summary
+    if args.multi_objective and args.local_rank == 0:
+        print("\n" + "="*80)
+        print("FINAL MULTI-OBJECTIVE OPTIMIZATION RESULTS")
+        print("="*80)
+        
+        # Get final Pareto front
+        pareto_indices = get_pareto_front_indices(population_objectives)
+        pareto_pop = [population[i] for i in pareto_indices]
+        pareto_obj = [population_objectives[i] for i in pareto_indices]
+        
+        print_pareto_front_summary(population_objectives, generation="Final")
+        
+        # Save final Pareto front
+        save_pareto_front(pareto_pop, pareto_obj, "final", multi_obj_dir)
+        
+        # Select diverse solutions and save them
+        diverse_solutions = select_diverse_solutions(pareto_pop, pareto_obj, min(5, len(pareto_obj)))
+        
+        print(f"\nSaving {len(diverse_solutions)} diverse Pareto optimal solutions:")
+        for i, (solution, (acc, f1)) in enumerate(diverse_solutions):
+            model_weights_dict = model_vector_to_dict(model=model, weights_vector=solution)
+            model.load_state_dict(model_weights_dict)
+            
+            save_path = os.path.join(multi_obj_dir, f'pareto_solution_{i+1}_acc_{acc:.3f}_f1_{f1:.3f}.pt')
+            torch.save(model.state_dict(), save_path)
+            
+            solution_path = os.path.join(multi_obj_dir, f'pareto_solution_{i+1}_vector.pt')
+            torch.save(solution, solution_path)
+            
+            print(f"  Solution {i+1}: Accuracy={acc:.4f}, F1={f1:.4f} -> {save_path}")
+        
+        print("="*80)
 
     wandb.finish()
     return
@@ -324,6 +460,63 @@ def score_func(model, population, loader_de, args):
 
     score = [i.cpu()/slice_len for i in acc1_all]#!!!
     return score
+
+def score_func_multi_objective(model, population, loader_de, args):
+    """
+    Multi-objective score function that computes both accuracy and F1 score.
+    Returns a list of tuples where each tuple contains (accuracy, f1_score) for each individual.
+    
+    This function is used for:
+    1. Initial population evaluation in multi-objective mode
+    2. Batch evaluation of the entire population when needed
+    
+    Note: During DE evolution, score_func_de_multi_objective is used for pairwise comparisons.
+    """
+    popsize = len(population)
+    batch_time_m = AverageMeter()
+    data_time_m = AverageMeter()
+    acc1_all = torch.zeros(popsize).tolist()
+    f1_all = torch.zeros(popsize).tolist()
+    end = time.time()
+    model.eval()
+    torch.set_grad_enabled(False)
+    slice_len = args.de_slice_len or len(loader_de)
+    
+    for batch_idx, (input, target) in enumerate(islice(loader_de, slice_len)):
+        data_time_m.update(time.time() - end)
+        for i in range(0, popsize):
+            solution = population[i]
+            model_weights_dict = model_vector_to_dict(model=model, weights_vector=solution)
+            model.load_state_dict(model_weights_dict)
+            input, target = input.cuda(), target.cuda()
+            input = input.contiguous(memory_format=torch.channels_last)
+            with amp_autocast():
+                output, _ = model(input)
+            
+            functional.reset_net(model)
+            
+            # Compute accuracy
+            acc1, _ = accuracy(output, target, topk=(1, 5))
+            if args.distributed:
+                acc1 = reduce_tensor(acc1, args.world_size)
+            acc1_all[i] += acc1
+            
+            # Compute F1 score
+            f1 = f1_score(output, target, average='macro', num_classes=args.num_classes)
+            if args.distributed:
+                f1 = reduce_tensor(f1, args.world_size)
+            f1_all[i] += f1
+            
+        batch_time_m.update(time.time() - end)
+        end = time.time()
+
+    if args.local_rank == 0:
+        print('data_time: {time1.val:.3f} ({time1.avg:.3f})  '
+            'batch_time: {time2.val:.3f} ({time2.avg:.3f})  '.format(time1=data_time_m, time2=batch_time_m)) 
+
+    # Return list of tuples (accuracy, f1_score) for each individual
+    scores = [(acc1_all[i].cpu() / slice_len, f1_all[i].cpu() / slice_len) for i in range(popsize)]
+    return scores
 
 if __name__ == '__main__':
     main()

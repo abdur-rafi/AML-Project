@@ -106,6 +106,11 @@ parser.add_argument('--test_ood', action='store_true', default=False,
                     help='process test on ood')
 parser.add_argument('--ood_path', default='/home/guodong/runhua/ood_dataset',
                     help='path to ood dataset')
+parser.add_argument('--multi_objective', action='store_true', default=False,
+                    help='Enable multi-objective optimization (accuracy + F1 score)')
+parser.add_argument('--f1_average', default='macro', type=str, 
+                    choices=['macro', 'micro', 'weighted'],
+                    help='F1 score averaging method for multi-objective optimization')
 # parser.add_argument('--skip-init-validate', action='store_true', default=False,
 #                     help='skip the initial pop validation')
 # parser.add_argument('--skip-pop-validate', action='store_true', default=False,
