@@ -57,16 +57,16 @@ def fast_non_dominated_sort(objectives: List[Tuple[float, float]]) -> List[List[
     
     # Generate subsequent fronts
     current_front = 0
-    while len(fronts[current_front]) > 0:
+    while current_front < len(fronts) and len(fronts[current_front]) > 0:
         next_front = []
         for i in fronts[current_front]:
             for j in dominated_solutions[i]:
                 domination_count[j] -= 1
                 if domination_count[j] == 0:
                     next_front.append(j)
-        current_front += 1
         if next_front:
             fronts.append(next_front)
+        current_front += 1
     
     # Remove empty fronts
     fronts = [front for front in fronts if front]
