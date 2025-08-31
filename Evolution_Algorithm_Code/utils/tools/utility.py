@@ -36,14 +36,21 @@ def update_summary(epoch, rowd_in, filename, write_header=True, log_wandb=False)
     rowd = OrderedDict(epoch=epoch)
     for key, value in rowd_in.items():
         if isinstance(value, list):
-            if len(value) > 0 and isinstance(value[0], torch.Tensor):
+            if len(value) > 0:
+                # Handle mixed types in the list more robustly
                 list_temp = []
                 for element in value:
-                    list_temp.append(round(element.item()))
+                    if isinstance(element, torch.Tensor):
+                        list_temp.append(round(element.item()))
+                    elif isinstance(element, (int, float)):
+                        list_temp.append(round(float(element)))
+                    else:
+                        # For any other type, try to convert to float
+                        try:
+                            list_temp.append(round(float(element)))
+                        except (ValueError, TypeError):
+                            list_temp.append(element)
                 rowd_in[key] = list_temp
-            elif len(value) > 0 and isinstance(value[0], (int, float)):
-                # Handle case where values are already floats/ints
-                rowd_in[key] = [round(float(element)) for element in value]
     rowd.update(rowd_in)
     if log_wandb:
         wandb.log(rowd)
