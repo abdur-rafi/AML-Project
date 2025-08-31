@@ -18,6 +18,9 @@ from utils.tools.multi_objective import (
 )
 from spikingjelly.clock_driven import functional
 from typing import List, Tuple, Dict
+import os
+import pickle
+from . import val
 
 
 def score_func_de_multi_objective(model, indi1, indi2, loader_de, args):
@@ -208,7 +211,7 @@ def initialize_population_objectives(population, model, loader_de, args):
     Returns:
         List of objective tuples for each individual
     """
-    # Import the score function from main_cosde
+    # Import inside function to avoid circular import (main_cosde imports this module)
     from main_cosde import score_func_multi_objective
     
     # Use the efficient batch evaluation function
@@ -227,9 +230,6 @@ def save_pareto_front(pareto_population, pareto_objectives, generation, output_d
         generation: Current generation number
         output_dir: Output directory path
     """
-    import os
-    import pickle
-    
     pareto_data = {
         'generation': generation,
         'population': [ind.cpu().numpy() for ind in pareto_population],
@@ -262,8 +262,6 @@ def log_multi_objective_progress(generation, gen_stats, output_dir):
         gen_stats: Generation statistics dictionary
         output_dir: Output directory path
     """
-    import os
-    
     log_file = os.path.join(output_dir, 'multi_objective_log.txt')
     mode = 'a' if os.path.exists(log_file) else 'w'
     
@@ -289,9 +287,6 @@ def evaluate_validation_objectives(population, model, loader_eval, args):
     Returns:
         List of objective tuples for each individual (validation accuracy, validation F1)
     """
-    from ..tools import validate as val
-    from ..tools.utility import model_vector_to_dict
-    
     objectives = []
     
     for individual in population:
@@ -320,9 +315,5 @@ def apply_individual_to_model(model, individual):
         model: Neural network model
         individual: Parameter tensor to apply to model
     """
-    # This function is now replaced by the direct use of model_vector_to_dict
-    # which is the standard approach used throughout the codebase
-    from ..tools.utility import model_vector_to_dict
-    
     model_weights_dict = model_vector_to_dict(model=model, weights_vector=individual)
     model.load_state_dict(model_weights_dict)
