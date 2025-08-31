@@ -171,7 +171,7 @@ def main():
         population_objectives = initialize_population_objectives(population, model, loader_de, args)
         print_pareto_front_summary(population_objectives, generation=0)
         print("\n--- VALIDATION OBJECTIVES ---")
-        print_pareto_front_summary_validation(population, model, loader_eval, args, generation=0)
+        print_pareto_front_summary_validation(population, model, loader_eval, args, amp_autocast, generation=0)
         
         # Create multi-objective results directory
         multi_obj_dir = os.path.join(output_dir, 'multi_objective')
@@ -194,7 +194,7 @@ def main():
             if args.local_rank == 0:
                 print_pareto_front_summary(population_objectives, generation=epoch)
                 print("\n--- VALIDATION OBJECTIVES ---")
-                print_pareto_front_summary_validation(population, model, loader_eval, args, generation=epoch)
+                print_pareto_front_summary_validation(population, model, loader_eval, args, amp_autocast, generation=epoch)
                 log_multi_objective_progress(epoch, gen_stats, multi_obj_dir)
                 
                 # Save Pareto front every 10 generations
@@ -403,7 +403,7 @@ def main():
         
         print_pareto_front_summary(population_objectives, generation="Final")
         print("\n--- FINAL VALIDATION OBJECTIVES ---")
-        print_pareto_front_summary_validation(population, model, loader_eval, args, generation="Final")
+        print_pareto_front_summary_validation(population, model, loader_eval, args, amp_autocast, generation="Final")
         
         # Save final Pareto front
         save_pareto_front(pareto_pop, pareto_obj, "final", multi_obj_dir)

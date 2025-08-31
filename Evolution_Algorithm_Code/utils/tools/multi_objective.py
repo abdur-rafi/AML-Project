@@ -317,7 +317,7 @@ def print_pareto_front_summary(objectives: List[Tuple[float, float]], generation
         print(f"    {i+1}. Accuracy: {acc:.3f}, F1: {f1:.3f}")
 
 
-def print_pareto_front_summary_validation(population, model, loader_eval, args, generation: int = None):
+def print_pareto_front_summary_validation(population, model, loader_eval, args, amp_autocast, generation: int = None):
     """
     Print summary statistics for the current Pareto front using validation data.
     
@@ -326,12 +326,13 @@ def print_pareto_front_summary_validation(population, model, loader_eval, args, 
         model: Neural network model
         loader_eval: Validation data loader
         args: Arguments containing configuration
+        amp_autocast: Automatic mixed precision context manager
         generation: Current generation number (optional)
     """
     # Evaluate validation objectives
     from .de_multi_objective import evaluate_validation_objectives
     
-    objectives = evaluate_validation_objectives(population, model, loader_eval, args)
+    objectives = evaluate_validation_objectives(population, model, loader_eval, args, amp_autocast)
     
     if not objectives:
         print("No objectives to summarize")

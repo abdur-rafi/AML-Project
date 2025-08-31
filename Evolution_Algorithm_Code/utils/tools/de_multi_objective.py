@@ -274,7 +274,7 @@ def log_multi_objective_progress(generation, gen_stats, output_dir):
                 f"{gen_stats['mean_f1']:.4f},{gen_stats['hypervolume']:.6f}\n")
 
 
-def evaluate_validation_objectives(population, model, loader_eval, args):
+def evaluate_validation_objectives(population, model, loader_eval, args, amp_autocast):
     """
     Evaluate validation objectives for the population.
     
@@ -283,6 +283,7 @@ def evaluate_validation_objectives(population, model, loader_eval, args):
         model: Neural network model
         loader_eval: Validation data loader
         args: Arguments containing configuration
+        amp_autocast: Automatic mixed precision context manager
         
     Returns:
         List of objective tuples for each individual (validation accuracy, validation F1)
@@ -296,7 +297,7 @@ def evaluate_validation_objectives(population, model, loader_eval, args):
         
         # Validate on validation data
         with torch.no_grad():
-            val_metrics = val.validate(model, loader_eval, args, amp_autocast=None)
+            val_metrics = val.validate(model, loader_eval, args, amp_autocast=amp_autocast)
             
         # Extract accuracy and F1 score
         accuracy = val_metrics.get('top1', 0.0)
