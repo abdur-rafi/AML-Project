@@ -1,0 +1,1484 @@
+2025-08-29 23:35:59.513278: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1756510559.682525      96 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1756510559.734653      96 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/convmixer.py:88: UserWarning: Overwriting convmixer_1536_20 in registry with utils.models.convmixer.convmixer_1536_20. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/convmixer.py:94: UserWarning: Overwriting convmixer_768_32 in registry with utils.models.convmixer.convmixer_768_32. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/convmixer.py:100: UserWarning: Overwriting convmixer_1024_20_ks9_p14 in registry with utils.models.convmixer.convmixer_1024_20_ks9_p14. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/usr/local/lib/python3.11/dist-packages/timm/models/helpers.py:7: FutureWarning: Importing from timm.models.helpers is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/usr/local/lib/python3.11/dist-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/tnt.py:258: UserWarning: Overwriting tnt_s_patch16_224 in registry with utils.models.tnt.tnt_s_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/tnt.py:267: UserWarning: Overwriting tnt_b_patch16_224 in registry with utils.models.tnt.tnt_b_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/utility.py:102: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self._scaler = torch.cuda.amp.GradScaler()
+Creating model...sew_18,
+ number of params: 17490852
+/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_20.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_20.pt'
+/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_2_40.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_2_40.pt'
+/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_3_30.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_3_30.pt'
+/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_40.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_40.pt'
+/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_4_30.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_4_30.pt'
+/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-3_30.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/pretrain_cifar_100_using_resuming_cifar_10_lr_1-3_30.pt'
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/main_cosde.py:338: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+data_time: 0.020 (0.021)  batch_time: 0.513 (0.526)  
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/val.py:28: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+Test: [   0/99]  Time: 0.125 (0.125)  DataTime: 0.022 (0.022)  Loss:  6.6680 (6.6680)  Acc@1:  0.0000 ( 0.0000)  Acc@5:  7.0000 ( 7.0000)
+Test: [  50/99]  Time: 0.107 (0.107)  DataTime: 0.022 (0.021)  Loss:  7.0703 (6.7961)  Acc@1:  0.0000 ( 1.2157)  Acc@5:  5.0000 ( 7.1373)
+Test: [  99/99]  Time: 0.106 (0.107)  DataTime: 0.020 (0.021)  Loss:  6.8125 (6.7987)  Acc@1:  1.0000 ( 1.1500)  Acc@5:  6.0000 ( 6.9600)
+metrics_top1: 1.15
+Test: [   0/99]  Time: 0.107 (0.107)  DataTime: 0.021 (0.021)  Loss:  4.9883 (4.9883)  Acc@1:  2.0000 ( 2.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.108 (0.106)  DataTime: 0.023 (0.021)  Loss:  5.1523 (5.0784)  Acc@1:  8.0000 ( 5.4314)  Acc@5: 15.0000 (14.4118)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.0508 (5.0752)  Acc@1:  5.0000 ( 5.4200)  Acc@5: 15.0000 (14.4400)
+metrics_top1: 5.42
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.1875 (5.1875)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.4102 (5.3441)  Acc@1:  4.0000 ( 6.0588)  Acc@5: 11.0000 (15.0196)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.3438 (5.3391)  Acc@1:  5.0000 ( 6.2000)  Acc@5: 15.0000 (15.2100)
+metrics_top1: 6.2
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.7500 (5.7500)  Acc@1:  2.0000 ( 2.0000)  Acc@5: 10.0000 (10.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.9531 (5.8236)  Acc@1:  2.0000 ( 3.1569)  Acc@5:  6.0000 (10.4510)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.9023 (5.8277)  Acc@1:  1.0000 ( 3.1500)  Acc@5:  8.0000 (10.4400)
+metrics_top1: 3.15
+Test: [   0/99]  Time: 0.107 (0.107)  DataTime: 0.021 (0.021)  Loss:  4.9648 (4.9648)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.0703 (5.0861)  Acc@1:  7.0000 ( 7.2745)  Acc@5: 14.0000 (15.3137)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.0742 (5.0831)  Acc@1:  7.0000 ( 7.3900)  Acc@5: 14.0000 (15.7000)
+metrics_top1: 7.39
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  4.9453 (4.9453)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 20.0000 (20.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.1992 (5.1058)  Acc@1:  4.0000 ( 5.6471)  Acc@5:  8.0000 (14.4706)
+Test: [  99/99]  Time: 0.107 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.2969 (5.1077)  Acc@1:  3.0000 ( 5.9200)  Acc@5:  9.0000 (14.9000)
+metrics_top1: 5.92
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/val.py:104: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/val.py:135: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+Test: [   0/99]  Time: 0.647 (0.647)  DataTime: 0.031 (0.031)  Loss:  4.5977 (4.8711)  Acc@1:  4.0000 ( 4.0000)  Acc@5: 18.0000 (18.0000)
+Test: [  50/99]  Time: 0.625 (0.625)  DataTime: 0.021 (0.021)  Loss:  4.6016 (4.9318)  Acc@1:  5.0000 ( 6.2549)  Acc@5: 13.0000 (15.6863)
+Test: [  99/99]  Time: 0.627 (0.625)  DataTime: 0.023 (0.021)  Loss:  4.6016 (4.9311)  Acc@1:  6.0000 ( 6.4700)  Acc@5: 13.0000 (15.8700)
+ensemble_metrics_top1: 6.47
+epoch:0, best_score: 7.3900, best_idx:4,                      score: [tensor(1.1500), tensor(5.4200), tensor(6.2000), tensor(3.1500), tensor(7.3900), tensor(5.9200)]
+score [tensor(1.1500), tensor(5.4200), tensor(6.2000), tensor(3.1500), tensor(7.3900), tensor(5.9200)]
+cr f 1e-09 1e-09
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/de.py:31: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+data_time: 0.021 (0.021)  batch_time: 0.173 (0.171)  
+data_time: 0.020 (0.021)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.171 (0.170)  
+[tensor(1.1500), tensor(5.4200), tensor(6.2000), tensor(3.1500), tensor(7.2600), tensor(5.9500)]
+[0, 0, 0, 0, 0, 1]
+epoch:0, best_score: 7.3900, best_idx:4,                      score: [tensor(1.1500), tensor(5.4200), tensor(6.2000), tensor(3.1500), tensor(7.3900), tensor(5.9500)]
+Best in train_set update and train acc =  tensor(7.3900)
+Saving model to ./output/train/20250829-233621-de_run_2/train_best_sew_34.pt
+Test: [   0/99]  Time: 0.107 (0.107)  DataTime: 0.021 (0.021)  Loss:  4.9453 (4.9453)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 21.0000 (21.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.2031 (5.1058)  Acc@1:  4.0000 ( 5.6667)  Acc@5:  8.0000 (14.4314)
+Test: [  99/99]  Time: 0.107 (0.106)  DataTime: 0.022 (0.021)  Loss:  5.2969 (5.1077)  Acc@1:  3.0000 ( 5.9500)  Acc@5:  9.0000 (14.9200)
+metrics_top1: 5.95
+Best in train_set update and val acc =  5.95
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+score: [1, 5, 6, 3, 7, 6]
+DE:1 Acc@1:  7.3900 Acc@5: 15.7000                          Epoch_time: 115.189s
+cr f 3.004922551448232e-08 5.083897246155615e-07
+data_time: 0.022 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.171 (0.170)  
+[tensor(1.1500), tensor(5.4200), tensor(6.2000), tensor(3.1500), tensor(7.3900), tensor(5.9500)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.3900, best_idx:4,                      score: [tensor(1.1500), tensor(5.4200), tensor(6.2000), tensor(3.1500), tensor(7.3900), tensor(5.9500)]
+score: [1, 5, 6, 3, 7, 6]
+DE:2 Acc@1:  7.3900 Acc@5: 15.7000                          Epoch_time: 104.299s
+cr f 6.112719792082528e-07 8.547965458538409e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.170 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.171 (0.170)  
+[tensor(1.1500), tensor(5.4200), tensor(6.2100), tensor(3.1500), tensor(7.4100), tensor(5.9500)]
+[0, 0, 1, 0, 1, 0]
+epoch:0, best_score: 7.4100, best_idx:4,                      score: [tensor(1.1500), tensor(5.4200), tensor(6.2100), tensor(3.1500), tensor(7.4100), tensor(5.9500)]
+Best in train_set update and train acc =  tensor(7.4100)
+Saving model to ./output/train/20250829-233621-de_run_2/train_best_sew_34.pt
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.1836 (5.1836)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.107 (0.107)  DataTime: 0.021 (0.021)  Loss:  5.4102 (5.3441)  Acc@1:  4.0000 ( 6.0588)  Acc@5: 11.0000 (15.0196)
+Test: [  99/99]  Time: 0.106 (0.107)  DataTime: 0.021 (0.021)  Loss:  5.3398 (5.3389)  Acc@1:  5.0000 ( 6.2100)  Acc@5: 15.0000 (15.2200)
+metrics_top1: 6.21
+Best in train_set update and val acc =  6.21
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+Test: [   0/99]  Time: 0.110 (0.110)  DataTime: 0.025 (0.025)  Loss:  4.9648 (4.9648)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.0703 (5.0862)  Acc@1:  7.0000 ( 7.2941)  Acc@5: 14.0000 (15.3137)
+Test: [  99/99]  Time: 0.107 (0.106)  DataTime: 0.022 (0.021)  Loss:  5.0742 (5.0834)  Acc@1:  7.0000 ( 7.4100)  Acc@5: 14.0000 (15.6900)
+metrics_top1: 7.41
+Best in train_set update and val acc =  7.41
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+score: [1, 5, 6, 3, 7, 6]
+DE:3 Acc@1:  7.4100 Acc@5: 15.6900                          Epoch_time: 126.075s
+cr f 8.81418407849875e-07 8.702636280554923e-07
+data_time: 0.021 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.023 (0.021)  batch_time: 0.170 (0.170)  
+data_time: 0.029 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.022 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.022 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.171 (0.170)  
+[tensor(1.1700), tensor(5.4000), tensor(6.2100), tensor(3.1700), tensor(7.4400), tensor(5.9500)]
+[1, 0, 0, 1, 1, 0]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1700), tensor(5.4200), tensor(6.2100), tensor(3.1700), tensor(7.4400), tensor(5.9500)]
+Best in train_set update and train acc =  tensor(7.4400)
+Saving model to ./output/train/20250829-233621-de_run_2/train_best_sew_34.pt
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  6.6719 (6.6719)  Acc@1:  0.0000 ( 0.0000)  Acc@5:  7.0000 ( 7.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.021)  Loss:  7.0703 (6.7942)  Acc@1:  0.0000 ( 1.3137)  Acc@5:  6.0000 ( 7.3725)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  6.8047 (6.7986)  Acc@1:  1.0000 ( 1.1700)  Acc@5:  6.0000 ( 7.1000)
+metrics_top1: 1.17
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.7539 (5.7539)  Acc@1:  2.0000 ( 2.0000)  Acc@5: 10.0000 (10.0000)
+Test: [  50/99]  Time: 0.107 (0.106)  DataTime: 0.022 (0.021)  Loss:  5.9648 (5.8251)  Acc@1:  2.0000 ( 3.2745)  Acc@5:  6.0000 (10.3137)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.8867 (5.8286)  Acc@1:  1.0000 ( 3.1700)  Acc@5:  9.0000 (10.3200)
+metrics_top1: 3.17
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9609 (4.9609)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.0703 (5.0865)  Acc@1:  7.0000 ( 7.3725)  Acc@5: 14.0000 (15.3333)
+Test: [  99/99]  Time: 0.109 (0.107)  DataTime: 0.024 (0.022)  Loss:  5.0742 (5.0835)  Acc@1:  7.0000 ( 7.4400)  Acc@5: 14.0000 (15.6800)
+metrics_top1: 7.44
+Best in train_set update and val acc =  7.44
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+score: [1, 5, 6, 3, 7, 6]
+DE:4 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 136.573s
+cr f 6.658070302048094e-07 1.0149810973965293e-06
+data_time: 0.021 (0.022)  batch_time: 0.172 (0.170)  
+data_time: 0.022 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.022 (0.022)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+[tensor(1.1300), tensor(5.5200), tensor(6.2200), tensor(3.1900), tensor(7.3200), tensor(5.9500)]
+[0, 1, 1, 1, 0, 0]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1700), tensor(5.5200), tensor(6.2200), tensor(3.1900), tensor(7.4400), tensor(5.9500)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9922 (4.9922)  Acc@1:  2.0000 ( 2.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.106 (0.107)  DataTime: 0.021 (0.021)  Loss:  5.1523 (5.0778)  Acc@1:  8.0000 ( 5.4902)  Acc@5: 16.0000 (14.5686)
+Test: [  99/99]  Time: 0.106 (0.107)  DataTime: 0.021 (0.021)  Loss:  5.0625 (5.0745)  Acc@1:  6.0000 ( 5.5200)  Acc@5: 15.0000 (14.5500)
+metrics_top1: 5.52
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.1836 (5.1836)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.107 (0.107)  DataTime: 0.021 (0.022)  Loss:  5.4102 (5.3439)  Acc@1:  4.0000 ( 6.0784)  Acc@5: 11.0000 (15.0392)
+Test: [  99/99]  Time: 0.108 (0.107)  DataTime: 0.023 (0.022)  Loss:  5.3398 (5.3388)  Acc@1:  5.0000 ( 6.2200)  Acc@5: 15.0000 (15.2300)
+metrics_top1: 6.22
+Test: [   0/99]  Time: 0.107 (0.107)  DataTime: 0.021 (0.021)  Loss:  5.7539 (5.7539)  Acc@1:  3.0000 ( 3.0000)  Acc@5: 10.0000 (10.0000)
+Test: [  50/99]  Time: 0.107 (0.107)  DataTime: 0.022 (0.022)  Loss:  5.9609 (5.8236)  Acc@1:  2.0000 ( 3.2353)  Acc@5:  6.0000 (10.4118)
+Test: [  99/99]  Time: 0.107 (0.107)  DataTime: 0.022 (0.021)  Loss:  5.8789 (5.8292)  Acc@1:  2.0000 ( 3.1900)  Acc@5: 10.0000 (10.4200)
+metrics_top1: 3.19
+score: [1, 5, 6, 3, 7, 6]
+DE:5 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 136.393s
+cr f 3.0463745984216664e-07 4.984151742454236e-07
+data_time: 0.020 (0.021)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.022 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.170 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.171 (0.170)  
+[tensor(1.1700), tensor(5.5200), tensor(6.2200), tensor(3.1900), tensor(7.4400), tensor(5.9500)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1700), tensor(5.5200), tensor(6.2200), tensor(3.1900), tensor(7.4400), tensor(5.9500)]
+score: [1, 6, 6, 3, 7, 6]
+DE:6 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 104.300s
+cr f 4.376799083879406e-07 1.1990641961371552e-07
+data_time: 0.022 (0.021)  batch_time: 0.174 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.183 (0.171)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.022 (0.021)  batch_time: 0.170 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+[tensor(1.1600), tensor(5.5100), tensor(6.2300), tensor(3.1900), tensor(7.4200), tensor(5.9600)]
+[0, 0, 1, 0, 0, 1]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1700), tensor(5.5200), tensor(6.2300), tensor(3.1900), tensor(7.4400), tensor(5.9600)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.1836 (5.1836)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.4102 (5.3439)  Acc@1:  4.0000 ( 6.0784)  Acc@5: 11.0000 (15.0196)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.3398 (5.3388)  Acc@1:  5.0000 ( 6.2300)  Acc@5: 15.0000 (15.2200)
+metrics_top1: 6.23
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  4.9453 (4.9453)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 21.0000 (21.0000)
+Test: [  50/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.2031 (5.1058)  Acc@1:  4.0000 ( 5.6667)  Acc@5:  8.0000 (14.4510)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2969 (5.1076)  Acc@1:  3.0000 ( 5.9600)  Acc@5:  9.0000 (14.9300)
+metrics_top1: 5.96
+score: [1, 6, 6, 3, 7, 6]
+DE:7 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 125.349s
+cr f 5.827802308348518e-07 8.368064747581435e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1700), tensor(5.5500), tensor(6.2000), tensor(3.1900), tensor(7.4400), tensor(5.9600)]
+[0, 1, 0, 0, 0, 0]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1700), tensor(5.5500), tensor(6.2300), tensor(3.1900), tensor(7.4400), tensor(5.9600)]
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  4.9961 (4.9961)  Acc@1:  2.0000 ( 2.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.1602 (5.0786)  Acc@1:  8.0000 ( 5.4510)  Acc@5: 15.0000 (14.5098)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.0586 (5.0750)  Acc@1:  6.0000 ( 5.5500)  Acc@5: 15.0000 (14.5500)
+metrics_top1: 5.55
+score: [1, 6, 6, 3, 7, 6]
+DE:8 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 114.858s
+cr f 3.3802673216449975e-07 3.366088693374346e-07
+data_time: 0.021 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.170 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1700), tensor(5.5300), tensor(6.2300), tensor(3.1900), tensor(7.4400), tensor(5.9800)]
+[0, 0, 0, 0, 0, 1]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1700), tensor(5.5500), tensor(6.2300), tensor(3.1900), tensor(7.4400), tensor(5.9800)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9453 (4.9453)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 21.0000 (21.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.2031 (5.1057)  Acc@1:  4.0000 ( 5.7059)  Acc@5:  8.0000 (14.4706)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.2969 (5.1077)  Acc@1:  3.0000 ( 5.9800)  Acc@5:  9.0000 (14.9400)
+metrics_top1: 5.98
+score: [1, 6, 6, 3, 7, 6]
+DE:9 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 114.870s
+cr f 1.1158314274870183e-06 4.330817951923786e-07
+data_time: 0.023 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.181 (0.170)  
+data_time: 0.022 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1800), tensor(5.5800), tensor(6.2300), tensor(3.1900), tensor(7.4300), tensor(5.9800)]
+[1, 1, 0, 0, 0, 0]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1800), tensor(5.5800), tensor(6.2300), tensor(3.1900), tensor(7.4400), tensor(5.9800)]
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  6.6719 (6.6719)  Acc@1:  0.0000 ( 0.0000)  Acc@5:  7.0000 ( 7.0000)
+Test: [  50/99]  Time: 0.107 (0.106)  DataTime: 0.021 (0.021)  Loss:  7.0703 (6.7943)  Acc@1:  0.0000 ( 1.3137)  Acc@5:  6.0000 ( 7.3922)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  6.8047 (6.7986)  Acc@1:  1.0000 ( 1.1800)  Acc@5:  6.0000 ( 7.1100)
+metrics_top1: 1.18
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  4.9922 (4.9922)  Acc@1:  2.0000 ( 2.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.1484 (5.0777)  Acc@1:  8.0000 ( 5.6863)  Acc@5: 13.0000 (14.4118)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.0547 (5.0721)  Acc@1:  4.0000 ( 5.5800)  Acc@5: 17.0000 (14.4900)
+metrics_top1: 5.58
+score: [1, 6, 6, 3, 7, 6]
+DE:10 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 125.465s
+cr f 1.0070759276508123e-06 1.0528147557904414e-06
+data_time: 0.020 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+[tensor(1.1700), tensor(5.6300), tensor(6.2500), tensor(3.1800), tensor(7.3200), tensor(6.)]
+[0, 1, 1, 0, 0, 1]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1800), tensor(5.6300), tensor(6.2500), tensor(3.1900), tensor(7.4400), tensor(6.)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9883 (4.9883)  Acc@1:  2.0000 ( 2.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.1523 (5.0773)  Acc@1:  7.0000 ( 5.6275)  Acc@5: 13.0000 (14.5294)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.0508 (5.0715)  Acc@1:  4.0000 ( 5.6300)  Acc@5: 17.0000 (14.5300)
+metrics_top1: 5.63
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2188 (5.2188)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 17.0000 (17.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.4180 (5.3456)  Acc@1:  4.0000 ( 5.9608)  Acc@5: 12.0000 (15.0196)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.3242 (5.3411)  Acc@1:  7.0000 ( 6.2500)  Acc@5: 15.0000 (15.2000)
+metrics_top1: 6.25
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  4.9414 (4.9414)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 21.0000 (21.0000)
+Test: [  50/99]  Time: 0.110 (0.106)  DataTime: 0.025 (0.021)  Loss:  5.2031 (5.1059)  Acc@1:  4.0000 ( 5.7059)  Acc@5:  8.0000 (14.5490)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.2969 (5.1078)  Acc@1:  3.0000 ( 6.0000)  Acc@5:  9.0000 (14.9700)
+metrics_top1: 6.0
+score: [1, 6, 6, 3, 7, 6]
+DE:11 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 136.011s
+cr f 1.0400736114803067e-06 5.877918736327615e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1800), tensor(5.5900), tensor(6.2600), tensor(3.2200), tensor(7.4400), tensor(6.)]
+[0, 0, 1, 1, 0, 0]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1800), tensor(5.6300), tensor(6.2600), tensor(3.2200), tensor(7.4400), tensor(6.)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2188 (5.2188)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 17.0000 (17.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.4180 (5.3454)  Acc@1:  4.0000 ( 5.9804)  Acc@5: 12.0000 (15.0196)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.019 (0.021)  Loss:  5.3242 (5.3409)  Acc@1:  7.0000 ( 6.2600)  Acc@5: 15.0000 (15.2100)
+metrics_top1: 6.26
+Test: [   0/99]  Time: 0.108 (0.108)  DataTime: 0.023 (0.023)  Loss:  5.7578 (5.7578)  Acc@1:  3.0000 ( 3.0000)  Acc@5: 10.0000 (10.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.020)  Loss:  5.9570 (5.8232)  Acc@1:  2.0000 ( 3.2745)  Acc@5:  6.0000 (10.3529)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.8828 (5.8287)  Acc@1:  2.0000 ( 3.2200)  Acc@5: 10.0000 (10.3800)
+metrics_top1: 3.22
+score: [1, 6, 6, 3, 7, 6]
+DE:12 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 125.425s
+cr f 1.0683890221369784e-06 6.505888807883132e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1000), tensor(5.6000), tensor(6.2500), tensor(3.2300), tensor(7.4300), tensor(5.8800)]
+[0, 0, 0, 1, 0, 0]
+epoch:0, best_score: 7.4400, best_idx:4,                      score: [tensor(1.1800), tensor(5.6300), tensor(6.2600), tensor(3.2300), tensor(7.4400), tensor(6.)]
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.7578 (5.7578)  Acc@1:  3.0000 ( 3.0000)  Acc@5: 10.0000 (10.0000)
+Test: [  50/99]  Time: 0.107 (0.106)  DataTime: 0.022 (0.021)  Loss:  5.9531 (5.8230)  Acc@1:  2.0000 ( 3.2941)  Acc@5:  6.0000 (10.3333)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.8828 (5.8288)  Acc@1:  2.0000 ( 3.2300)  Acc@5: 10.0000 (10.3700)
+metrics_top1: 3.23
+score: [1, 6, 6, 3, 7, 6]
+DE:13 Acc@1:  7.4400 Acc@5: 15.6800                          Epoch_time: 114.888s
+cr f 1.0237984982710045e-06 5.054498220383635e-07
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1800), tensor(5.6100), tensor(6.3100), tensor(3.2300), tensor(7.4000), tensor(6.0100)]
+[0, 0, 1, 0, 0, 0]
+epoch:0, best_score: 7.4500, best_idx:4,                      score: [tensor(1.1800), tensor(5.6300), tensor(6.3100), tensor(3.2300), tensor(7.4500), tensor(6.0100)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2148 (5.2148)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 17.0000 (17.0000)
+Test: [  50/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.3945 (5.3430)  Acc@1:  6.0000 ( 6.1373)  Acc@5: 13.0000 (15.0392)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.3359 (5.3395)  Acc@1:  6.0000 ( 6.3100)  Acc@5: 16.0000 (15.2500)
+metrics_top1: 6.31
+score: [1, 6, 6, 3, 7, 6]
+DE:15 Acc@1:  7.4500 Acc@5: 15.6600                          Epoch_time: 114.791s
+cr f 8.326095583500646e-07 8.934382425355711e-07
+data_time: 0.020 (0.020)  batch_time: 0.182 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.022 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.173 (0.170)  
+[tensor(1.1700), tensor(5.6200), tensor(6.2300), tensor(3.2300), tensor(7.4600), tensor(5.9900)]
+[0, 0, 0, 0, 1, 0]
+epoch:0, best_score: 7.4600, best_idx:4,                      score: [tensor(1.1800), tensor(5.6300), tensor(6.3100), tensor(3.2300), tensor(7.4600), tensor(6.0100)]
+Best in train_set update and train acc =  tensor(7.4600)
+Saving model to ./output/train/20250829-233621-de_run_2/train_best_sew_34.pt
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.019)  Loss:  4.9609 (4.9609)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.0742 (5.0861)  Acc@1:  7.0000 ( 7.3333)  Acc@5: 14.0000 (15.2745)
+Test: [  99/99]  Time: 0.107 (0.106)  DataTime: 0.022 (0.020)  Loss:  5.0781 (5.0832)  Acc@1:  8.0000 ( 7.4600)  Acc@5: 14.0000 (15.6500)
+metrics_top1: 7.46
+Best in train_set update and val acc =  7.46
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+score: [1, 6, 6, 3, 7, 6]
+DE:16 Acc@1:  7.4600 Acc@5: 15.6500                          Epoch_time: 115.113s
+cr f 8.525248206644302e-07 8.842427810072394e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1800), tensor(5.6300), tensor(6.2900), tensor(3.2300), tensor(7.4700), tensor(5.9700)]
+[0, 0, 0, 0, 1, 0]
+epoch:0, best_score: 7.4700, best_idx:4,                      score: [tensor(1.1800), tensor(5.6300), tensor(6.3100), tensor(3.2300), tensor(7.4700), tensor(6.0100)]
+Best in train_set update and train acc =  tensor(7.4700)
+Saving model to ./output/train/20250829-233621-de_run_2/train_best_sew_34.pt
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.019)  Loss:  4.9609 (4.9609)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.107 (0.105)  DataTime: 0.021 (0.020)  Loss:  5.0742 (5.0861)  Acc@1:  7.0000 ( 7.3529)  Acc@5: 14.0000 (15.2745)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.0781 (5.0833)  Acc@1:  8.0000 ( 7.4700)  Acc@5: 14.0000 (15.6500)
+metrics_top1: 7.47
+Best in train_set update and val acc =  7.47
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+score: [1, 6, 6, 3, 7, 6]
+DE:17 Acc@1:  7.4700 Acc@5: 15.6500                          Epoch_time: 115.170s
+cr f 4.918229824856834e-07 5.002072825026583e-07
+data_time: 0.021 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1700), tensor(5.5000), tensor(6.3000), tensor(3.2200), tensor(7.4600), tensor(6.0100)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.4700, best_idx:4,                      score: [tensor(1.1800), tensor(5.6300), tensor(6.3100), tensor(3.2300), tensor(7.4700), tensor(6.0100)]
+score: [1, 6, 6, 3, 7, 6]
+DE:18 Acc@1:  7.4700 Acc@5: 15.6500                          Epoch_time: 104.273s
+cr f 1.193709088509012e-06 4.269031281110992e-07
+data_time: 0.020 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1400), tensor(5.6600), tensor(6.3100), tensor(3.2600), tensor(7.4800), tensor(6.0100)]
+[0, 1, 0, 1, 1, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1800), tensor(5.6600), tensor(6.3100), tensor(3.2600), tensor(7.4800), tensor(6.0100)]
+Best in train_set update and train acc =  tensor(7.4800)
+Saving model to ./output/train/20250829-233621-de_run_2/train_best_sew_34.pt
+Test: [   0/99]  Time: 0.107 (0.107)  DataTime: 0.022 (0.022)  Loss:  4.9805 (4.9805)  Acc@1:  4.0000 ( 4.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.1367 (5.0751)  Acc@1:  8.0000 ( 5.7647)  Acc@5: 13.0000 (14.3922)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.0430 (5.0701)  Acc@1:  4.0000 ( 5.6600)  Acc@5: 16.0000 (14.3800)
+metrics_top1: 5.66
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.7578 (5.7578)  Acc@1:  3.0000 ( 3.0000)  Acc@5: 11.0000 (11.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.9531 (5.8234)  Acc@1:  2.0000 ( 3.2745)  Acc@5:  6.0000 (10.2941)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.8906 (5.8286)  Acc@1:  2.0000 ( 3.2600)  Acc@5: 10.0000 (10.3500)
+metrics_top1: 3.26
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9609 (4.9609)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.019 (0.021)  Loss:  5.0742 (5.0862)  Acc@1:  7.0000 ( 7.3333)  Acc@5: 14.0000 (15.2549)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.0742 (5.0831)  Acc@1:  8.0000 ( 7.4800)  Acc@5: 14.0000 (15.6300)
+metrics_top1: 7.48
+Best in train_set update and val acc =  7.48
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+score: [1, 6, 6, 3, 7, 6]
+DE:19 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 136.259s
+cr f 1.3944646041940748e-06 8.265965454958702e-07
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1700), tensor(5.6600), tensor(6.3500), tensor(3.2300), tensor(7.4800), tensor(6.0800)]
+[0, 0, 1, 0, 0, 1]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1800), tensor(5.6600), tensor(6.3500), tensor(3.2600), tensor(7.4800), tensor(6.0800)]
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.2148 (5.2148)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 17.0000 (17.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.3984 (5.3434)  Acc@1:  6.0000 ( 6.1373)  Acc@5: 13.0000 (15.0980)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.3320 (5.3396)  Acc@1:  7.0000 ( 6.3500)  Acc@5: 16.0000 (15.2800)
+metrics_top1: 6.35
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.019)  Loss:  4.9414 (4.9414)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.2031 (5.1061)  Acc@1:  4.0000 ( 5.8431)  Acc@5:  8.0000 (14.5098)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.2969 (5.1077)  Acc@1:  3.0000 ( 6.0800)  Acc@5:  9.0000 (15.0200)
+metrics_top1: 6.08
+score: [1, 6, 6, 3, 7, 6]
+DE:20 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 125.385s
+cr f 1.3646999643469042e-06 1.3029329037982018e-06
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.170 (0.170)  
+[tensor(1.1900), tensor(5.5400), tensor(6.3200), tensor(3.2800), tensor(7.4500), tensor(6.0700)]
+[1, 0, 0, 1, 0, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6600), tensor(6.3500), tensor(3.2800), tensor(7.4800), tensor(6.0800)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.019)  Loss:  6.6719 (6.6719)  Acc@1:  0.0000 ( 0.0000)  Acc@5:  7.0000 ( 7.0000)
+Test: [  50/99]  Time: 0.107 (0.105)  DataTime: 0.021 (0.020)  Loss:  7.0703 (6.7940)  Acc@1:  0.0000 ( 1.3333)  Acc@5:  6.0000 ( 7.3922)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  6.8008 (6.7984)  Acc@1:  1.0000 ( 1.1900)  Acc@5:  6.0000 ( 7.1100)
+metrics_top1: 1.19
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.7500 (5.7500)  Acc@1:  3.0000 ( 3.0000)  Acc@5: 12.0000 (12.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.9570 (5.8238)  Acc@1:  2.0000 ( 3.2353)  Acc@5:  6.0000 (10.2941)
+Test: [  99/99]  Time: 0.106 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.8828 (5.8284)  Acc@1:  2.0000 ( 3.2800)  Acc@5: 10.0000 (10.3800)
+metrics_top1: 3.28
+score: [1, 6, 6, 3, 7, 6]
+DE:21 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 125.319s
+cr f 6.100416522242156e-07 8.190147762780393e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1900), tensor(5.6700), tensor(6.3600), tensor(3.2800), tensor(7.3200), tensor(6.0700)]
+[0, 1, 1, 0, 0, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6700), tensor(6.3600), tensor(3.2800), tensor(7.4800), tensor(6.0800)]
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  4.9805 (4.9805)  Acc@1:  4.0000 ( 4.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.107 (0.105)  DataTime: 0.022 (0.020)  Loss:  5.1367 (5.0748)  Acc@1:  8.0000 ( 5.7843)  Acc@5: 13.0000 (14.3922)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.0430 (5.0702)  Acc@1:  4.0000 ( 5.6700)  Acc@5: 16.0000 (14.3900)
+metrics_top1: 5.67
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.2148 (5.2148)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 17.0000 (17.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.3984 (5.3433)  Acc@1:  6.0000 ( 6.1569)  Acc@5: 13.0000 (15.0980)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.3320 (5.3396)  Acc@1:  7.0000 ( 6.3600)  Acc@5: 16.0000 (15.2800)
+metrics_top1: 6.36
+score: [1, 6, 6, 3, 7, 6]
+DE:22 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 125.322s
+cr f 8.930026521683915e-07 1.3074555308796467e-06
+data_time: 0.021 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1900), tensor(5.6000), tensor(6.3100), tensor(3.2800), tensor(7.4800), tensor(6.0800)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6700), tensor(6.3600), tensor(3.2800), tensor(7.4800), tensor(6.0800)]
+score: [1, 6, 6, 3, 7, 6]
+DE:23 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 104.254s
+cr f 1.3371404679969608e-06 1.4652732234728537e-06
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.173 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.170 (0.170)  
+[tensor(1.1200), tensor(5.6700), tensor(6.4700), tensor(3.2800), tensor(7.4400), tensor(6.0800)]
+[0, 0, 1, 0, 0, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6700), tensor(6.4700), tensor(3.2800), tensor(7.4800), tensor(6.0800)]
+Test: [   0/99]  Time: 0.107 (0.107)  DataTime: 0.022 (0.022)  Loss:  5.2188 (5.2188)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.4219 (5.3477)  Acc@1:  4.0000 ( 6.2353)  Acc@5: 12.0000 (14.8431)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.020)  Loss:  5.3398 (5.3397)  Acc@1:  5.0000 ( 6.4700)  Acc@5: 14.0000 (15.0300)
+metrics_top1: 6.47
+score: [1, 6, 6, 3, 7, 6]
+DE:24 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 114.831s
+cr f 1.085312250530131e-06 9.424807918423444e-07
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.022 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1600), tensor(5.4100), tensor(6.5300), tensor(3.2500), tensor(7.2000), tensor(6.1000)]
+[0, 0, 1, 0, 0, 1]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6700), tensor(6.5300), tensor(3.2800), tensor(7.4800), tensor(6.1000)]
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.2148 (5.2148)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.019)  Loss:  5.4180 (5.3474)  Acc@1:  4.0000 ( 6.3333)  Acc@5: 12.0000 (14.8039)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.3398 (5.3397)  Acc@1:  5.0000 ( 6.5300)  Acc@5: 14.0000 (15.0100)
+metrics_top1: 6.53
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  4.9414 (4.9414)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2031 (5.1059)  Acc@1:  4.0000 ( 5.8824)  Acc@5:  8.0000 (14.4902)
+Test: [  99/99]  Time: 0.106 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2969 (5.1076)  Acc@1:  3.0000 ( 6.1000)  Acc@5:  9.0000 (15.0300)
+metrics_top1: 6.1
+score: [1, 6, 6, 3, 7, 6]
+DE:25 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 125.259s
+cr f 8.398569827498892e-07 1.4984067061480517e-06
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.025 (0.020)  batch_time: 0.166 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+[tensor(1.1800), tensor(5.6700), tensor(6.5200), tensor(3.2600), tensor(7.4500), tensor(6.0600)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6700), tensor(6.5300), tensor(3.2800), tensor(7.4800), tensor(6.1000)]
+score: [1, 6, 7, 3, 7, 6]
+DE:26 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 104.214s
+cr f 1.5315740009368735e-06 9.468905502954107e-07
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.027 (0.020)  batch_time: 0.158 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1400), tensor(5.6300), tensor(6.4000), tensor(3.1900), tensor(7.0700), tensor(5.9600)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6700), tensor(6.5300), tensor(3.2800), tensor(7.4800), tensor(6.1000)]
+score: [1, 6, 7, 3, 7, 6]
+DE:27 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 104.261s
+cr f 1.2121077205652777e-06 1.6231214479490953e-06
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1900), tensor(5.5700), tensor(6.5300), tensor(3.2500), tensor(7.3500), tensor(6.1000)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6700), tensor(6.5300), tensor(3.2800), tensor(7.4800), tensor(6.1000)]
+score: [1, 6, 7, 3, 7, 6]
+DE:28 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 104.270s
+cr f 1.4883545960068432e-06 1.0261289517685487e-06
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.173 (0.170)  
+[tensor(1.1600), tensor(5.6400), tensor(6.5300), tensor(3.2800), tensor(7.4800), tensor(6.1000)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6700), tensor(6.5300), tensor(3.2800), tensor(7.4800), tensor(6.1000)]
+score: [1, 6, 7, 3, 7, 6]
+DE:29 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 104.257s
+cr f 1.1242133398609376e-06 1.7676982159175891e-06
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1800), tensor(5.5300), tensor(6.3800), tensor(3.3100), tensor(7.4800), tensor(6.1000)]
+[0, 0, 0, 1, 0, 0]
+epoch:0, best_score: 7.4800, best_idx:4,                      score: [tensor(1.1900), tensor(5.6700), tensor(6.5300), tensor(3.3100), tensor(7.4800), tensor(6.1000)]
+Test: [   0/99]  Time: 0.107 (0.107)  DataTime: 0.021 (0.021)  Loss:  5.7578 (5.7578)  Acc@1:  3.0000 ( 3.0000)  Acc@5: 11.0000 (11.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.019 (0.021)  Loss:  5.9570 (5.8217)  Acc@1:  2.0000 ( 3.3333)  Acc@5:  6.0000 (10.3529)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.8906 (5.8266)  Acc@1:  2.0000 ( 3.3100)  Acc@5: 10.0000 (10.3600)
+metrics_top1: 3.31
+score: [1, 6, 7, 3, 7, 6]
+DE:30 Acc@1:  7.4800 Acc@5: 15.6300                          Epoch_time: 114.843s
+cr f 1.388289343105652e-06 1.8344410927440847e-06
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.023 (0.021)  batch_time: 0.168 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.171 (0.170)  
+[tensor(1.2000), tensor(5.6100), tensor(6.5500), tensor(3.3100), tensor(7.4600), tensor(6.0500)]
+[0, 0, 1, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2000), tensor(5.6700), tensor(6.5500), tensor(3.3100), tensor(7.5000), tensor(6.1200)]
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.2148 (5.2148)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.019 (0.020)  Loss:  5.4180 (5.3473)  Acc@1:  4.0000 ( 6.3333)  Acc@5: 12.0000 (14.8039)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.020)  Loss:  5.3398 (5.3398)  Acc@1:  5.0000 ( 6.5500)  Acc@5: 14.0000 (15.0100)
+metrics_top1: 6.55
+score: [1, 6, 7, 3, 8, 6]
+DE:32 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.812s
+cr f 1.3701729381420717e-06 1.8524132538847212e-06
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+[tensor(1.0400), tensor(5.7000), tensor(6.5600), tensor(3.3100), tensor(7.3300), tensor(6.0600)]
+[0, 1, 1, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2000), tensor(5.7000), tensor(6.5600), tensor(3.3100), tensor(7.5000), tensor(6.1200)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9922 (4.9922)  Acc@1:  4.0000 ( 4.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.1406 (5.0752)  Acc@1:  8.0000 ( 5.8431)  Acc@5: 13.0000 (14.5294)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.020)  Loss:  5.0469 (5.0702)  Acc@1:  4.0000 ( 5.7000)  Acc@5: 17.0000 (14.5000)
+metrics_top1: 5.7
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2148 (5.2148)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.4102 (5.3468)  Acc@1:  4.0000 ( 6.3529)  Acc@5: 12.0000 (14.7647)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.3477 (5.3395)  Acc@1:  6.0000 ( 6.5600)  Acc@5: 14.0000 (14.9900)
+metrics_top1: 6.56
+score: [1, 6, 7, 3, 8, 6]
+DE:33 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 125.366s
+cr f 1.5540089153003123e-06 1.6173175636119161e-06
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1000), tensor(5.6900), tensor(6.1400), tensor(3.2700), tensor(7.5000), tensor(6.1200)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2000), tensor(5.7000), tensor(6.5600), tensor(3.3100), tensor(7.5000), tensor(6.1200)]
+score: [1, 6, 7, 3, 8, 6]
+DE:34 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.240s
+cr f 1.3083836092886665e-06 1.3796476367566123e-06
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.2000), tensor(5.6800), tensor(6.5400), tensor(3.3300), tensor(7.2500), tensor(6.1200)]
+[0, 0, 0, 1, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2000), tensor(5.7000), tensor(6.5600), tensor(3.3300), tensor(7.5000), tensor(6.1200)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.7539 (5.7539)  Acc@1:  3.0000 ( 3.0000)  Acc@5: 11.0000 (11.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.9492 (5.8222)  Acc@1:  2.0000 ( 3.2941)  Acc@5:  7.0000 (10.4902)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.8789 (5.8259)  Acc@1:  2.0000 ( 3.3300)  Acc@5: 10.0000 (10.4100)
+metrics_top1: 3.33
+score: [1, 6, 7, 3, 8, 6]
+DE:35 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.836s
+cr f 1.6304981084644356e-06 1.5322576215230314e-06
+data_time: 0.021 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1900), tensor(5.6400), tensor(6.4100), tensor(3.3300), tensor(7.4300), tensor(6.1300)]
+[0, 0, 0, 0, 0, 1]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2000), tensor(5.7000), tensor(6.5600), tensor(3.3300), tensor(7.5000), tensor(6.1300)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9414 (4.9414)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2070 (5.1057)  Acc@1:  4.0000 ( 5.8627)  Acc@5:  8.0000 (14.4902)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.3008 (5.1076)  Acc@1:  3.0000 ( 6.1300)  Acc@5:  9.0000 (15.0300)
+metrics_top1: 6.13
+score: [1, 6, 7, 3, 8, 6]
+DE:36 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.808s
+cr f 1.4646419988913677e-06 1.6959073193295192e-06
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.169 (0.170)  
+[tensor(1.2100), tensor(5.7100), tensor(6.4600), tensor(3.3300), tensor(7.4000), tensor(6.1300)]
+[1, 1, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2100), tensor(5.7100), tensor(6.5600), tensor(3.3300), tensor(7.5000), tensor(6.1300)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  6.6719 (6.6719)  Acc@1:  0.0000 ( 0.0000)  Acc@5:  7.0000 ( 7.0000)
+Test: [  50/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  7.0703 (6.7942)  Acc@1:  0.0000 ( 1.3725)  Acc@5:  6.0000 ( 7.3725)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.021)  Loss:  6.7969 (6.7985)  Acc@1:  1.0000 ( 1.2100)  Acc@5:  6.0000 ( 7.0700)
+metrics_top1: 1.21
+Test: [   0/99]  Time: 0.107 (0.107)  DataTime: 0.021 (0.021)  Loss:  4.9922 (4.9922)  Acc@1:  4.0000 ( 4.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.1406 (5.0765)  Acc@1:  8.0000 ( 5.8235)  Acc@5: 13.0000 (14.5294)
+Test: [  99/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  5.0469 (5.0717)  Acc@1:  4.0000 ( 5.7100)  Acc@5: 17.0000 (14.5300)
+metrics_top1: 5.71
+score: [1, 6, 7, 3, 8, 6]
+DE:37 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 125.469s
+cr f 1.5370368595225611e-06 1.982833607734012e-06
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.171 (0.170)  
+[tensor(1.1900), tensor(5.6800), tensor(6.5500), tensor(3.3400), tensor(7.5000), tensor(6.1100)]
+[0, 0, 0, 1, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2100), tensor(5.7100), tensor(6.5600), tensor(3.3400), tensor(7.5000), tensor(6.1300)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.7578 (5.7578)  Acc@1:  3.0000 ( 3.0000)  Acc@5: 11.0000 (11.0000)
+Test: [  50/99]  Time: 0.108 (0.106)  DataTime: 0.023 (0.021)  Loss:  5.9492 (5.8231)  Acc@1:  2.0000 ( 3.3137)  Acc@5:  7.0000 (10.4706)
+Test: [  99/99]  Time: 0.105 (0.106)  DataTime: 0.020 (0.021)  Loss:  5.8828 (5.8268)  Acc@1:  2.0000 ( 3.3400)  Acc@5: 10.0000 (10.4200)
+metrics_top1: 3.34
+score: [1, 6, 7, 3, 8, 6]
+DE:38 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.872s
+cr f 1.2908005429291507e-06 1.8266460610910121e-06
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1700), tensor(5.7500), tensor(6.5500), tensor(3.3900), tensor(7.4400), tensor(6.1400)]
+[0, 1, 0, 1, 0, 1]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2100), tensor(5.7500), tensor(6.5600), tensor(3.3900), tensor(7.5000), tensor(6.1400)]
+Test: [   0/99]  Time: 0.107 (0.107)  DataTime: 0.022 (0.022)  Loss:  4.9961 (4.9961)  Acc@1:  4.0000 ( 4.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.106 (0.105)  DataTime: 0.021 (0.020)  Loss:  5.1406 (5.0769)  Acc@1:  8.0000 ( 5.8431)  Acc@5: 13.0000 (14.6078)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.0430 (5.0717)  Acc@1:  4.0000 ( 5.7500)  Acc@5: 16.0000 (14.5600)
+metrics_top1: 5.75
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.7773 (5.7773)  Acc@1:  3.0000 ( 3.0000)  Acc@5:  8.0000 ( 8.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.9219 (5.8256)  Acc@1:  3.0000 ( 3.4314)  Acc@5:  8.0000 (10.5490)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.8633 (5.8307)  Acc@1:  2.0000 ( 3.3900)  Acc@5: 10.0000 (10.3600)
+metrics_top1: 3.39
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  4.9414 (4.9414)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2070 (5.1056)  Acc@1:  4.0000 ( 5.8627)  Acc@5:  8.0000 (14.4902)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2969 (5.1075)  Acc@1:  3.0000 ( 6.1400)  Acc@5:  9.0000 (15.0300)
+metrics_top1: 6.14
+score: [1, 6, 7, 3, 8, 6]
+DE:40 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 135.832s
+cr f 1.6067113335917196e-06 1.7646790018808679e-06
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.175 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.2000), tensor(5.7500), tensor(6.5600), tensor(3.3800), tensor(7.5000), tensor(6.1200)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2100), tensor(5.7500), tensor(6.5600), tensor(3.3900), tensor(7.5000), tensor(6.1400)]
+score: [1, 6, 7, 3, 8, 6]
+DE:41 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.242s
+cr f 1.2390855206967152e-06 1.0805664862012149e-06
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.027 (0.020)  batch_time: 0.164 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.2000), tensor(5.6800), tensor(6.3700), tensor(3.2800), tensor(7.4600), tensor(6.0700)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2100), tensor(5.7500), tensor(6.5600), tensor(3.3900), tensor(7.5000), tensor(6.1400)]
+score: [1, 6, 7, 3, 8, 6]
+DE:42 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.242s
+cr f 1.7979521007284236e-06 1.5840501257433237e-06
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1600), tensor(5.5300), tensor(6.1600), tensor(3.4400), tensor(7.4500), tensor(6.1500)]
+[0, 0, 0, 1, 0, 1]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2100), tensor(5.7500), tensor(6.5600), tensor(3.4400), tensor(7.5000), tensor(6.1500)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.7695 (5.7695)  Acc@1:  3.0000 ( 3.0000)  Acc@5:  8.0000 ( 8.0000)
+Test: [  50/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  5.9219 (5.8251)  Acc@1:  3.0000 ( 3.4902)  Acc@5:  8.0000 (10.5098)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.8711 (5.8300)  Acc@1:  2.0000 ( 3.4400)  Acc@5: 10.0000 (10.3600)
+metrics_top1: 3.44
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  4.9414 (4.9414)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2070 (5.1057)  Acc@1:  4.0000 ( 5.8824)  Acc@5:  8.0000 (14.5098)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.3008 (5.1077)  Acc@1:  3.0000 ( 6.1500)  Acc@5:  9.0000 (15.0500)
+metrics_top1: 6.15
+score: [1, 6, 7, 3, 8, 6]
+DE:43 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 125.343s
+cr f 1.3893047858822823e-06 1.2909858745928615e-06
+data_time: 0.021 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1100), tensor(5.7300), tensor(6.3000), tensor(3.3800), tensor(7.3100), tensor(6.1400)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2100), tensor(5.7500), tensor(6.5600), tensor(3.4400), tensor(7.5000), tensor(6.1500)]
+score: [1, 6, 7, 3, 8, 6]
+DE:44 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.233s
+cr f 1.6274107098336817e-06 1.4465830523178112e-06
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1800), tensor(5.7500), tensor(6.4300), tensor(3.3800), tensor(7.4900), tensor(6.0400)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2100), tensor(5.7500), tensor(6.5600), tensor(3.4400), tensor(7.5000), tensor(6.1500)]
+score: [1, 6, 7, 3, 8, 6]
+DE:45 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.167s
+cr f 1.3630296290482306e-06 1.624898779943825e-06
+data_time: 0.019 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.021 (0.022)  batch_time: 0.176 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.2300), tensor(5.7400), tensor(6.4400), tensor(3.4500), tensor(7.5000), tensor(6.0600)]
+[1, 0, 0, 1, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1500)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  6.6680 (6.6680)  Acc@1:  0.0000 ( 0.0000)  Acc@5:  7.0000 ( 7.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.019)  Loss:  7.0664 (6.7952)  Acc@1:  0.0000 ( 1.3725)  Acc@5:  6.0000 ( 7.3529)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  6.8047 (6.7990)  Acc@1:  1.0000 ( 1.2300)  Acc@5:  6.0000 ( 7.0900)
+metrics_top1: 1.23
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.7695 (5.7695)  Acc@1:  3.0000 ( 3.0000)  Acc@5:  8.0000 ( 8.0000)
+Test: [  50/99]  Time: 0.106 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.9219 (5.8247)  Acc@1:  3.0000 ( 3.4902)  Acc@5:  8.0000 (10.5490)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.8711 (5.8296)  Acc@1:  2.0000 ( 3.4500)  Acc@5: 10.0000 (10.3800)
+metrics_top1: 3.45
+score: [1, 6, 7, 3, 8, 6]
+DE:46 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 125.276s
+cr f 1.7022444697336079e-06 1.3079753386246132e-06
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.022)  batch_time: 0.172 (0.170)  
+data_time: 0.022 (0.021)  batch_time: 0.172 (0.170)  
+data_time: 0.024 (0.021)  batch_time: 0.170 (0.170)  
+[tensor(1.2200), tensor(5.6200), tensor(6.5300), tensor(3.4400), tensor(7.3000), tensor(6.1500)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1500)]
+score: [1, 6, 7, 3, 8, 6]
+DE:47 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.216s
+cr f 1.7679580380302872e-06 1.1518697208911979e-06
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+[tensor(1.1400), tensor(5.7200), tensor(6.4900), tensor(3.4200), tensor(7.4700), tensor(6.1400)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1500)]
+score: [1, 6, 7, 3, 8, 6]
+DE:49 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.211s
+cr f 1.2639106578978883e-06 1.1198895184392988e-06
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.2300), tensor(5.6500), tensor(6.5600), tensor(3.4300), tensor(7.4900), tensor(6.0900)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1500)]
+score: [1, 6, 7, 3, 8, 6]
+DE:50 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.178s
+cr f 1.7247618755805503e-06 9.987110977536609e-07
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.168 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1500), tensor(5.6100), tensor(6.5300), tensor(3.4400), tensor(7.4400), tensor(6.0500)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1500)]
+score: [1, 6, 7, 3, 8, 6]
+DE:51 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.203s
+cr f 1.1129909251789285e-06 1.5096144749724376e-06
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.022 (0.020)  batch_time: 0.176 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.2200), tensor(5.7000), tensor(6.5500), tensor(3.4300), tensor(7.4600), tensor(6.1600)]
+[0, 0, 0, 0, 0, 1]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9414 (4.9414)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.2070 (5.1054)  Acc@1:  4.0000 ( 5.8824)  Acc@5:  8.0000 (14.5098)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.019)  Loss:  5.3008 (5.1074)  Acc@1:  3.0000 ( 6.1600)  Acc@5:  9.0000 (15.0500)
+metrics_top1: 6.16
+score: [1, 6, 7, 3, 8, 6]
+DE:52 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.674s
+cr f 1.3604608673741111e-06 1.3257338853507016e-06
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1500), tensor(5.7500), tensor(6.5000), tensor(3.4200), tensor(7.4800), tensor(6.1400)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+score: [1, 6, 7, 3, 8, 6]
+DE:53 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.207s
+cr f 9.203056795253314e-07 1.4394213078889965e-06
+data_time: 0.020 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.169 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.170 (0.170)  
+[tensor(1.1800), tensor(5.7400), tensor(6.5300), tensor(3.4500), tensor(7.4700), tensor(6.1600)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+score: [1, 6, 7, 3, 8, 6]
+DE:54 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.229s
+cr f 1.4268480550910865e-06 1.0238447724454725e-06
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.163 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.023 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.170 (0.170)  
+[tensor(1.1500), tensor(5.6000), tensor(6.3300), tensor(3.3800), tensor(7.3200), tensor(6.0900)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+score: [1, 6, 7, 3, 8, 6]
+DE:55 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.213s
+cr f 1.0012743255350457e-06 1.3383446427479944e-06
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.022 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.021 (0.021)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.169 (0.170)  
+[tensor(1.2200), tensor(5.7300), tensor(6.5400), tensor(3.4500), tensor(7.2000), tensor(6.1600)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+score: [1, 6, 7, 3, 8, 6]
+DE:56 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.234s
+cr f 1.4797191114201512e-06 9.125671031689853e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.021)  batch_time: 0.170 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.0800), tensor(5.7300), tensor(6.3300), tensor(3.4500), tensor(7.2700), tensor(6.1600)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5600), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+score: [1, 6, 7, 3, 8, 6]
+DE:57 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.215s
+cr f 1.3663685511792488e-06 9.863230322034479e-07
+data_time: 0.020 (0.020)  batch_time: 0.170 (0.170)  
+[tensor(1.1800), tensor(5.7400), tensor(6.5800), tensor(3.2500), tensor(7.3300), tensor(5.9000)]
+[0, 0, 1, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5800), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2148 (5.2148)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.4102 (5.3469)  Acc@1:  4.0000 ( 6.3529)  Acc@5: 12.0000 (14.7451)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.3477 (5.3396)  Acc@1:  6.0000 ( 6.5800)  Acc@5: 14.0000 (15.0100)
+metrics_top1: 6.58
+score: [1, 6, 7, 3, 8, 6]
+DE:58 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.671s
+cr f 7.192762507823093e-07 9.875265752272128e-07
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.026 (0.020)  batch_time: 0.157 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.022 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.2200), tensor(5.7200), tensor(6.5800), tensor(3.2500), tensor(7.4100), tensor(6.1500)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5800), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+score: [1, 6, 7, 3, 8, 6]
+DE:59 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.170s
+cr f 1.0295480090678838e-06 6.396129313918768e-07
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.6800), tensor(6.5500), tensor(3.4100), tensor(7.4100), tensor(6.1600)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5800), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+score: [1, 6, 7, 3, 8, 6]
+DE:60 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.192s
+cr f 1.3248668908496399e-06 1.4495617774738753e-06
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1800), tensor(5.5200), tensor(6.3900), tensor(3.4200), tensor(7.4500), tensor(6.1500)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5800), tensor(3.4500), tensor(7.5000), tensor(6.1600)]
+score: [1, 6, 7, 3, 8, 6]
+DE:61 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.205s
+cr f 1.250164792207273e-06 1.2359038909109564e-06
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1900), tensor(5.7000), tensor(6.2000), tensor(3.4100), tensor(7.4600), tensor(6.1700)]
+[0, 0, 0, 0, 0, 1]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5800), tensor(3.4500), tensor(7.5000), tensor(6.1700)]
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  4.9414 (4.9414)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.2070 (5.1055)  Acc@1:  4.0000 ( 5.9020)  Acc@5:  8.0000 (14.4706)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.3008 (5.1075)  Acc@1:  3.0000 ( 6.1700)  Acc@5:  9.0000 (15.0400)
+metrics_top1: 6.17
+score: [1, 6, 7, 3, 8, 6]
+DE:62 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.682s
+cr f 5.499927698814723e-07 6.884631255290532e-07
+data_time: 0.019 (0.020)  batch_time: 0.176 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.175 (0.170)  
+[tensor(1.2000), tensor(5.7200), tensor(6.5800), tensor(3.4500), tensor(7.5000), tensor(6.1700)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5800), tensor(3.4500), tensor(7.5000), tensor(6.1700)]
+score: [1, 6, 7, 3, 8, 6]
+DE:63 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.185s
+cr f 8.107413864146868e-07 1.2313452853780505e-06
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.168 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.170 (0.170)  
+[tensor(1.2200), tensor(5.4700), tensor(6.5900), tensor(3.4200), tensor(7.5000), tensor(6.1800)]
+[0, 0, 1, 0, 0, 1]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5900), tensor(3.4500), tensor(7.5000), tensor(6.1800)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2148 (5.2148)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.4102 (5.3467)  Acc@1:  4.0000 ( 6.3725)  Acc@5: 12.0000 (14.7255)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.3477 (5.3396)  Acc@1:  6.0000 ( 6.5900)  Acc@5: 14.0000 (15.0000)
+metrics_top1: 6.59
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9453 (4.9453)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.106 (0.105)  DataTime: 0.021 (0.020)  Loss:  5.2070 (5.1056)  Acc@1:  4.0000 ( 5.9216)  Acc@5:  8.0000 (14.4706)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2969 (5.1077)  Acc@1:  3.0000 ( 6.1800)  Acc@5:  9.0000 (15.0200)
+metrics_top1: 6.18
+score: [1, 6, 7, 3, 8, 6]
+DE:64 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 125.223s
+cr f 7.769151378075136e-07 8.521915347209085e-07
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.022 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.7500), tensor(6.5500), tensor(3.4500), tensor(7.5000), tensor(6.1900)]
+[0, 0, 0, 0, 0, 1]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5900), tensor(3.4500), tensor(7.5000), tensor(6.1900)]
+Test: [   0/99]  Time: 0.110 (0.110)  DataTime: 0.024 (0.024)  Loss:  4.9453 (4.9453)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.104 (0.106)  DataTime: 0.019 (0.020)  Loss:  5.2031 (5.1054)  Acc@1:  4.0000 ( 5.9412)  Acc@5:  8.0000 (14.4902)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.2969 (5.1075)  Acc@1:  3.0000 ( 6.1900)  Acc@5:  9.0000 (15.0300)
+metrics_top1: 6.19
+score: [1, 6, 7, 3, 8, 6]
+DE:65 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.692s
+cr f 7.841432432371515e-07 9.964838399651475e-07
+data_time: 0.019 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.2000), tensor(5.7300), tensor(6.5500), tensor(3.4600), tensor(7.5000), tensor(6.1200)]
+[0, 0, 0, 1, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7500), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  5.7695 (5.7695)  Acc@1:  3.0000 ( 3.0000)  Acc@5:  8.0000 ( 8.0000)
+Test: [  50/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.9219 (5.8247)  Acc@1:  3.0000 ( 3.4902)  Acc@5:  8.0000 (10.5294)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.8711 (5.8297)  Acc@1:  2.0000 ( 3.4600)  Acc@5: 10.0000 (10.3700)
+metrics_top1: 3.46
+score: [1, 6, 7, 3, 8, 6]
+DE:67 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.572s
+cr f 1.0021590753874007e-06 5.135090852483959e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.160 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.1700), tensor(5.7800), tensor(6.5100), tensor(3.4000), tensor(7.4900), tensor(6.1900)]
+[0, 1, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.7800), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.021 (0.021)  Loss:  4.9883 (4.9883)  Acc@1:  4.0000 ( 4.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.1445 (5.0762)  Acc@1:  8.0000 ( 5.8627)  Acc@5: 13.0000 (14.6078)
+Test: [  99/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.0430 (5.0712)  Acc@1:  4.0000 ( 5.7800)  Acc@5: 17.0000 (14.5800)
+metrics_top1: 5.78
+score: [1, 6, 7, 3, 8, 6]
+DE:68 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.549s
+cr f 5.19226998814422e-07 3.6515313304915337e-07
+data_time: 0.021 (0.019)  batch_time: 0.175 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.172 (0.170)  
+[tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4500), tensor(7.5000), tensor(6.1900)]
+[0, 1, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  4.9883 (4.9883)  Acc@1:  4.0000 ( 4.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.1445 (5.0762)  Acc@1:  8.0000 ( 5.8431)  Acc@5: 13.0000 (14.6275)
+Test: [  99/99]  Time: 0.105 (0.104)  DataTime: 0.020 (0.019)  Loss:  5.0391 (5.0709)  Acc@1:  4.0000 ( 5.8000)  Acc@5: 17.0000 (14.5600)
+metrics_top1: 5.8
+score: [1, 6, 7, 3, 8, 6]
+DE:69 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 114.523s
+cr f 6.065844196235656e-07 2.9080439046116473e-07
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2200), tensor(5.7700), tensor(6.4100), tensor(3.3200), tensor(7.4900), tensor(6.0400)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+score: [1, 6, 7, 3, 8, 6]
+DE:70 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.080s
+cr f 5.78524519139569e-07 6.451881060820331e-07
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.023 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.175 (0.170)  
+[tensor(1.2200), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+score: [1, 6, 7, 3, 8, 6]
+DE:71 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.067s
+cr f 1.425129226485086e-07 2.3673541947391895e-07
+data_time: 0.019 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.024 (0.019)  batch_time: 0.168 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.7100), tensor(6.5900), tensor(3.4600), tensor(7.3800), tensor(6.1900)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+score: [1, 6, 7, 3, 8, 6]
+DE:72 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.075s
+cr f 1.73699009405262e-07 8.75734762044375e-07
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.8000), tensor(6.5800), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+score: [1, 6, 7, 3, 8, 6]
+DE:73 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.064s
+cr f 5.240625896431991e-07 8.347235103632718e-07
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.165 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.6900), tensor(6.5800), tensor(3.4600), tensor(7.4300), tensor(6.1700)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+score: [1, 6, 7, 3, 8, 6]
+DE:74 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.063s
+cr f 1.1327540195102878e-07 5.079041910048919e-07
+data_time: 0.019 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1500), tensor(5.6900), tensor(6.5900), tensor(3.4100), tensor(7.5000), tensor(6.1200)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5000, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5000), tensor(6.1900)]
+score: [1, 6, 7, 3, 8, 6]
+DE:76 Acc@1:  7.5000 Acc@5: 15.6300                          Epoch_time: 104.082s
+cr f 8.148849747426718e-07 6.237352466311772e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.179 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.1900), tensor(5.8000), tensor(6.5900), tensor(3.4200), tensor(7.5300), tensor(6.1400)]
+[0, 0, 0, 0, 1, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5300), tensor(6.1900)]
+Best in train_set update and train acc =  tensor(7.5300)
+Saving model to ./output/train/20250829-233621-de_run_2/train_best_sew_34.pt
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.019)  Loss:  4.9609 (4.9609)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.106 (0.105)  DataTime: 0.021 (0.020)  Loss:  5.0742 (5.0864)  Acc@1:  7.0000 ( 7.3725)  Acc@5: 14.0000 (15.1961)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.0742 (5.0832)  Acc@1:  8.0000 ( 7.5300)  Acc@5: 15.0000 (15.5700)
+metrics_top1: 7.53
+Best in train_set update and val acc =  7.53
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+score: [1, 6, 7, 3, 8, 6]
+DE:77 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 114.900s
+cr f 6.586509948593186e-07 5.741643727823328e-07
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.184 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+[tensor(1.2300), tensor(5.7700), tensor(6.5500), tensor(3.3700), tensor(7.5200), tensor(6.1900)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5300), tensor(6.1900)]
+score: [1, 6, 7, 3, 8, 6]
+DE:78 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.061s
+cr f 3.0364598342569587e-07 1.629399016441891e-07
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+[tensor(1.1200), tensor(5.8000), tensor(6.5600), tensor(3.4200), tensor(7.5300), tensor(6.1900)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5300), tensor(6.1900)]
+score: [1, 6, 7, 3, 8, 6]
+DE:79 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.061s
+cr f 7.55178565746677e-07 6.135246185039924e-07
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.028 (0.019)  batch_time: 0.159 (0.170)  
+[tensor(1.2300), tensor(5.7900), tensor(6.5900), tensor(3.4600), tensor(7.4800), tensor(6.1900)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5300), tensor(6.1900)]
+score: [1, 6, 7, 3, 8, 6]
+DE:80 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.064s
+cr f 8.02457964927396e-07 8.180743483416589e-07
+data_time: 0.020 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.018 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.7800), tensor(6.2300), tensor(3.4500), tensor(7.2800), tensor(6.2000)]
+[0, 0, 0, 0, 0, 1]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5300), tensor(6.2000)]
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  4.9453 (4.9453)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 22.0000 (22.0000)
+Test: [  50/99]  Time: 0.105 (0.104)  DataTime: 0.020 (0.019)  Loss:  5.2070 (5.1056)  Acc@1:  4.0000 ( 5.9412)  Acc@5:  8.0000 (14.4902)
+Test: [  99/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.2969 (5.1076)  Acc@1:  3.0000 ( 6.2000)  Acc@5:  9.0000 (15.0300)
+metrics_top1: 6.2
+score: [1, 6, 7, 3, 8, 6]
+DE:81 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 114.506s
+cr f 9.330812469994511e-07 8.872849357445919e-07
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.168 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.021 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+[tensor(1.2100), tensor(5.8000), tensor(6.5300), tensor(3.4500), tensor(7.4800), tensor(6.1800)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:82 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.058s
+cr f 4.801321519875118e-07 9.246284493138672e-07
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.8000), tensor(6.4900), tensor(3.4600), tensor(7.5300), tensor(6.2000)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:83 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.108s
+cr f 8.089064342921593e-07 4.352069429710503e-07
+data_time: 0.020 (0.020)  batch_time: 0.164 (0.170)  
+data_time: 0.018 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.7300), tensor(6.5600), tensor(3.4300), tensor(7.5000), tensor(6.1700)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:84 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.111s
+cr f 1.1197561114284527e-07 6.901542005508378e-07
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2100), tensor(5.8000), tensor(6.5700), tensor(3.4600), tensor(7.5300), tensor(6.2000)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4600), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:86 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.080s
+cr f 8.46760345183725e-07 2.578316430117744e-07
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.175 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+[tensor(1.2300), tensor(5.6800), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.1800)]
+[0, 0, 0, 1, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8000), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.2000)]
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.7656 (5.7656)  Acc@1:  3.0000 ( 3.0000)  Acc@5:  8.0000 ( 8.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.019)  Loss:  5.9219 (5.8248)  Acc@1:  3.0000 ( 3.4902)  Acc@5:  8.0000 (10.4706)
+Test: [  99/99]  Time: 0.105 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.8750 (5.8296)  Acc@1:  2.0000 ( 3.4700)  Acc@5: 10.0000 (10.3400)
+metrics_top1: 3.47
+score: [1, 6, 7, 3, 8, 6]
+DE:87 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 114.569s
+cr f 8.181706357192322e-07 9.642032684003997e-07
+data_time: 0.019 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+[tensor(1.1100), tensor(5.8200), tensor(6.2100), tensor(3.3400), tensor(7.5200), tensor(6.0500)]
+[0, 1, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.2000)]
+Test: [   0/99]  Time: 0.106 (0.106)  DataTime: 0.020 (0.020)  Loss:  4.9883 (4.9883)  Acc@1:  4.0000 ( 4.0000)  Acc@5: 15.0000 (15.0000)
+Test: [  50/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.1484 (5.0771)  Acc@1:  8.0000 ( 5.8431)  Acc@5: 13.0000 (14.5686)
+Test: [  99/99]  Time: 0.105 (0.104)  DataTime: 0.020 (0.019)  Loss:  5.0391 (5.0713)  Acc@1:  4.0000 ( 5.8200)  Acc@5: 17.0000 (14.5700)
+metrics_top1: 5.82
+score: [1, 6, 7, 3, 8, 6]
+DE:88 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 114.551s
+cr f 7.576543135463919e-07 1.7738485347363369e-07
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2200), tensor(5.8200), tensor(6.5800), tensor(3.4600), tensor(7.5200), tensor(6.1600)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:89 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.103s
+cr f 4.84625039703116e-07 7.585522455281996e-07
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.8200), tensor(6.5900), tensor(3.4600), tensor(7.2000), tensor(6.2000)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:90 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.071s
+cr f 9.106215501241003e-07 5.199415278895325e-07
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.172 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.8100), tensor(6.5800), tensor(3.4300), tensor(7.5300), tensor(6.1800)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:91 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.086s
+cr f 3.91456554857369e-07 8.804344732546919e-07
+data_time: 0.019 (0.019)  batch_time: 0.169 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2300), tensor(5.8200), tensor(6.5700), tensor(3.4500), tensor(7.5200), tensor(6.2000)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:92 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.070s
+cr f 9.189985613831149e-07 1.058411955182282e-06
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.018 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.023 (0.019)  batch_time: 0.178 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2100), tensor(5.8100), tensor(6.4500), tensor(3.3900), tensor(7.5200), tensor(6.2000)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:93 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.063s
+cr f 3.0619432408648194e-07 1.1238741673121684e-06
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.020)  batch_time: 0.173 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.170 (0.170)  
+[tensor(1.1300), tensor(5.8100), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.1900)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5300, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.5900), tensor(3.4700), tensor(7.5300), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:94 Acc@1:  7.5300 Acc@5: 15.5700                          Epoch_time: 104.061s
+Saving model to ./output/train/20250829-233621-de_run_2/de_run_2_94.pt
+cr f 1.1845333040560371e-06 7.069174135755895e-07
+data_time: 0.019 (0.019)  batch_time: 0.176 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.173 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+[tensor(1.2100), tensor(5.7800), tensor(6.6000), tensor(3.4600), tensor(7.5500), tensor(6.2000)]
+[0, 0, 1, 0, 1, 0]
+epoch:0, best_score: 7.5500, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.6000), tensor(3.4700), tensor(7.5500), tensor(6.2000)]
+Best in train_set update and train acc =  tensor(7.5500)
+Saving model to ./output/train/20250829-233621-de_run_2/train_best_sew_34.pt
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.2148 (5.2148)  Acc@1:  8.0000 ( 8.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.019)  Loss:  5.4062 (5.3468)  Acc@1:  4.0000 ( 6.3922)  Acc@5: 13.0000 (14.7451)
+Test: [  99/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.3477 (5.3396)  Acc@1:  6.0000 ( 6.6000)  Acc@5: 14.0000 (15.0200)
+metrics_top1: 6.6
+Test: [   0/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  4.9648 (4.9648)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.0781 (5.0865)  Acc@1:  7.0000 ( 7.3922)  Acc@5: 13.0000 (15.1961)
+Test: [  99/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.0703 (5.0831)  Acc@1:  8.0000 ( 7.5500)  Acc@5: 15.0000 (15.5700)
+metrics_top1: 7.55
+Best in train_set update and val acc =  7.55
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+score: [1, 6, 7, 3, 8, 6]
+DE:96 Acc@1:  7.5500 Acc@5: 15.5700                          Epoch_time: 125.289s
+Saving model to ./output/train/20250829-233621-de_run_2/de_run_2_96.pt
+cr f 8.446860333856936e-07 9.854982123263751e-07
+data_time: 0.019 (0.019)  batch_time: 0.170 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.020)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.169 (0.170)  
+[tensor(1.2300), tensor(5.7600), tensor(6.6000), tensor(3.4700), tensor(7.4400), tensor(6.1500)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5500, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.6000), tensor(3.4700), tensor(7.5500), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:97 Acc@1:  7.5500 Acc@5: 15.5700                          Epoch_time: 104.063s
+Saving model to ./output/train/20250829-233621-de_run_2/de_run_2_97.pt
+cr f 6.97163957501661e-07 9.909476433117905e-07
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.018 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.020 (0.019)  batch_time: 0.181 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+[tensor(1.2200), tensor(5.6000), tensor(6.6000), tensor(3.3300), tensor(7.5600), tensor(6.2000)]
+[0, 0, 0, 0, 1, 0]
+epoch:0, best_score: 7.5600, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.6000), tensor(3.4700), tensor(7.5600), tensor(6.2000)]
+Best in train_set update and train acc =  tensor(7.5600)
+Saving model to ./output/train/20250829-233621-de_run_2/train_best_sew_34.pt
+Test: [   0/99]  Time: 0.105 (0.105)  DataTime: 0.020 (0.020)  Loss:  4.9648 (4.9648)  Acc@1:  7.0000 ( 7.0000)  Acc@5: 16.0000 (16.0000)
+Test: [  50/99]  Time: 0.104 (0.104)  DataTime: 0.019 (0.019)  Loss:  5.0781 (5.0862)  Acc@1:  7.0000 ( 7.4118)  Acc@5: 13.0000 (15.2157)
+Test: [  99/99]  Time: 0.104 (0.105)  DataTime: 0.019 (0.020)  Loss:  5.0703 (5.0830)  Acc@1:  8.0000 ( 7.5600)  Acc@5: 15.0000 (15.5800)
+metrics_top1: 7.56
+Best in train_set update and val acc =  7.56
+Saving best val model to ./output/train/20250829-233621-de_run_2/val_best_sew_34.pt
+score: [1, 6, 7, 3, 8, 6]
+DE:98 Acc@1:  7.5600 Acc@5: 15.5800                          Epoch_time: 114.872s
+Saving model to ./output/train/20250829-233621-de_run_2/de_run_2_98.pt
+cr f 8.071266683805086e-07 7.132827776773357e-07
+data_time: 0.019 (0.019)  batch_time: 0.172 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.169 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.019 (0.019)  batch_time: 0.171 (0.170)  
+data_time: 0.021 (0.020)  batch_time: 0.174 (0.170)  
+[tensor(1.2300), tensor(5.8200), tensor(6.5900), tensor(3.4600), tensor(7.5600), tensor(6.2000)]
+[0, 0, 0, 0, 0, 0]
+epoch:0, best_score: 7.5600, best_idx:4,                      score: [tensor(1.2300), tensor(5.8200), tensor(6.6000), tensor(3.4700), tensor(7.5600), tensor(6.2000)]
+score: [1, 6, 7, 3, 8, 6]
+DE:99 Acc@1:  7.5600 Acc@5: 15.5800                          Epoch_time: 104.068s
+Saving model to ./output/train/20250829-233621-de_run_2/de_run_2_99.pt

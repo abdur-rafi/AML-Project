@@ -1,0 +1,202 @@
+\documentclass{article}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\begin{algorithm}
+\caption{Multi-Objective Differential Evolution for Spiking Neural Network Optimization (CADE4SNN)}
+\label{alg:mo-de-snn}
+\begin{algorithmic}[1]
+
+\REQUIRE Neural network model $M$, training dataset $D_{train}$, validation dataset $D_{val}$
+\REQUIRE Population size $N$, maximum generations $G_{max}$, mutation factor $F$, crossover rate $CR$
+\REQUIRE Objectives: accuracy $f_1$ and F1-score $f_2$ (both to be maximized)
+
+\STATE \textbf{Initialize:}
+\STATE $P_0 \leftarrow \{x_1^{(0)}, x_2^{(0)}, \ldots, x_N^{(0)}\}$ \COMMENT{Initial population from pre-trained models}
+\STATE $\mathcal{O}_0 \leftarrow \{(f_1(x_i), f_2(x_i)) : i = 1, \ldots, N\}$ \COMMENT{Evaluate initial objectives}
+
+\FOR{$g = 1$ to $G_{max}$}
+    \STATE \textbf{// Multi-Objective Differential Evolution Step}
+    \STATE $Q_g \leftarrow \emptyset$ \COMMENT{Initialize trial population}
+    \STATE $\mathcal{O}_{Q_g} \leftarrow \emptyset$ \COMMENT{Initialize trial objectives}
+    
+    \FOR{$i = 1$ to $N$}
+        \STATE \textbf{// Mutation: DE/rand/1/bin strategy}
+        \STATE Select three distinct random indices $r_1, r_2, r_3 \in \{1, \ldots, N\} \setminus \{i\}$
+        \STATE $v_i^{(g)} \leftarrow x_{r_3}^{(g-1)} + F \cdot (x_{r_1}^{(g-1)} - x_{r_2}^{(g-1)})$ \COMMENT{Mutant vector}
+        
+        \STATE \textbf{// Crossover: Binomial crossover}
+        \STATE $j_{rand} \leftarrow \text{random}(1, D)$ \COMMENT{Ensure at least one parameter is mutated}
+        \FOR{$j = 1$ to $D$} \COMMENT{$D$ = dimension of parameter vector}
+            \IF{$\text{rand}(0,1) < CR$ \OR $j = j_{rand}$}
+                \STATE $u_{i,j}^{(g)} \leftarrow v_{i,j}^{(g)}$
+            \ELSE
+                \STATE $u_{i,j}^{(g)} \leftarrow x_{i,j}^{(g-1)}$
+            \ENDIF
+        \ENDFOR
+        
+        \STATE \textbf{// Evaluate trial vector objectives}
+        \STATE Load weights $u_i^{(g)}$ into model $M$
+        \STATE Evaluate on training batch subset: $(acc_{trial}, f1_{trial}) \leftarrow \text{evaluate}(M, D_{train})$
+        \STATE $Q_g \leftarrow Q_g \cup \{u_i^{(g)}\}$
+        \STATE $\mathcal{O}_{Q_g} \leftarrow \mathcal{O}_{Q_g} \cup \{(acc_{trial}, f1_{trial})\}$
+    \ENDFOR
+    
+    \STATE \textbf{// Environmental Selection using NSGA-II}
+    \STATE $R_g \leftarrow P_{g-1} \cup Q_g$ \COMMENT{Combine parent and offspring populations}
+    \STATE $\mathcal{O}_{R_g} \leftarrow \mathcal{O}_{g-1} \cup \mathcal{O}_{Q_g}$ \COMMENT{Combine objectives}
+    
+    \STATE \textbf{// Fast Non-Dominated Sorting}
+    \STATE $\mathcal{F} \leftarrow \text{FastNonDominatedSort}(\mathcal{O}_{R_g})$ \COMMENT{Algorithm \ref{alg:fast-nondom-sort}}
+    
+    \STATE \textbf{// Selection for next generation}
+    \STATE $P_g \leftarrow \emptyset$, $\mathcal{O}_g \leftarrow \emptyset$
+    \STATE $i \leftarrow 0$ \COMMENT{Front index}
+    
+    \WHILE{$|P_g| + |\mathcal{F}_i| \leq N$}
+        \FOR{$j \in \mathcal{F}_i$}
+            \STATE $P_g \leftarrow P_g \cup \{R_g[j]\}$
+            \STATE $\mathcal{O}_g \leftarrow \mathcal{O}_g \cup \{\mathcal{O}_{R_g}[j]\}$
+        \ENDFOR
+        \STATE $i \leftarrow i + 1$
+    \ENDWHILE
+    
+    \IF{$|P_g| < N$}
+        \STATE \textbf{// Crowding distance selection for last front}
+        \STATE $\text{remaining} \leftarrow N - |P_g|$
+        \STATE $\text{crowdDist} \leftarrow \text{CrowdingDistance}(\mathcal{O}_{R_g}, \mathcal{F}_i)$ \COMMENT{Algorithm \ref{alg:crowding-dist}}
+        \STATE Sort $\mathcal{F}_i$ by $\text{crowdDist}$ in descending order
+        \FOR{$k = 1$ to $\text{remaining}$}
+            \STATE $j \leftarrow \mathcal{F}_i[k]$ \COMMENT{Select individual with highest crowding distance}
+            \STATE $P_g \leftarrow P_g \cup \{R_g[j]\}$
+            \STATE $\mathcal{O}_g \leftarrow \mathcal{O}_g \cup \{\mathcal{O}_{R_g}[j]\}$
+        \ENDFOR
+    \ENDIF
+    
+    \STATE \textbf{// Multi-Objective Progress Tracking}
+    \STATE $\text{ParetoFront} \leftarrow \{P_g[j] : j \in \mathcal{F}_0\}$
+    \STATE $\text{ParetoObj} \leftarrow \{\mathcal{O}_g[j] : j \in \mathcal{F}_0\}$
+    \STATE $HV_g \leftarrow \text{Hypervolume}(\text{ParetoObj}, (0,0))$ \COMMENT{Hypervolume indicator}
+    \STATE $SP_g \leftarrow \text{SpacingMetric}(\text{ParetoObj})$ \COMMENT{Distribution uniformity}
+    
+    \IF{$g \bmod 10 = 0$} \COMMENT{Periodic validation}
+        \STATE $\mathcal{O}_{val} \leftarrow \text{EvaluateValidation}(P_g, M, D_{val})$
+        \STATE Print validation Pareto front summary
+    \ENDIF
+    
+    \STATE Print generation $g$ progress: $|$ParetoFront$|$, $HV_g$, best objectives
+    
+\ENDFOR
+
+\STATE \textbf{// Final Solution Selection}
+\STATE $\text{FinalParetoFront} \leftarrow \{P_{G_{max}}[j] : j \in \mathcal{F}_0\}$
+\STATE $\text{FinalParetoObj} \leftarrow \{\mathcal{O}_{G_{max}}[j] : j \in \mathcal{F}_0\}$
+\STATE $\text{DiverseSolutions} \leftarrow \text{SelectDiverseSolutions}(\text{FinalParetoFront}, \text{FinalParetoObj}, 5)$
+
+\RETURN $\text{FinalParetoFront}$, $\text{FinalParetoObj}$, $\text{DiverseSolutions}$
+
+\end{algorithmic}
+\end{algorithm}
+
+\vspace{1em}
+
+\begin{algorithm}
+\caption{Fast Non-Dominated Sorting}
+\label{alg:fast-nondom-sort}
+\begin{algorithmic}[1]
+\REQUIRE Objectives $\mathcal{O} = \{(f_1^i, f_2^i) : i = 1, \ldots, |R|\}$
+\ENSURE Fronts $\mathcal{F} = \{\mathcal{F}_0, \mathcal{F}_1, \ldots, \mathcal{F}_k\}$
+
+\STATE Initialize $n_i = 0$, $S_i = \emptyset$ for all $i$ \COMMENT{Domination count and dominated set}
+\STATE $\mathcal{F}_0 = \emptyset$ \COMMENT{First front}
+
+\FOR{$i = 1$ to $|R|$}
+    \FOR{$j = 1$ to $|R|$, $j \neq i$}
+        \IF{$\text{Dominates}((f_1^i, f_2^i), (f_1^j, f_2^j))$} \COMMENT{$i$ dominates $j$}
+            \STATE $S_i \leftarrow S_i \cup \{j\}$
+        \ELSIF{$\text{Dominates}((f_1^j, f_2^j), (f_1^i, f_2^i))$} \COMMENT{$j$ dominates $i$}
+            \STATE $n_i \leftarrow n_i + 1$
+        \ENDIF
+    \ENDFOR
+    \IF{$n_i = 0$} \COMMENT{Non-dominated individual}
+        \STATE $\mathcal{F}_0 \leftarrow \mathcal{F}_0 \cup \{i\}$
+    \ENDIF
+\ENDFOR
+
+\STATE $k \leftarrow 0$
+\WHILE{$\mathcal{F}_k \neq \emptyset$}
+    \STATE $H \leftarrow \emptyset$ \COMMENT{Next front}
+    \FOR{$i \in \mathcal{F}_k$}
+        \FOR{$j \in S_i$}
+            \STATE $n_j \leftarrow n_j - 1$
+            \IF{$n_j = 0$}
+                \STATE $H \leftarrow H \cup \{j\}$
+            \ENDIF
+        \ENDFOR
+    \ENDFOR
+    \STATE $k \leftarrow k + 1$
+    \STATE $\mathcal{F}_k \leftarrow H$
+\ENDWHILE
+
+\RETURN $\mathcal{F} = \{\mathcal{F}_0, \mathcal{F}_1, \ldots, \mathcal{F}_{k-1}\}$
+
+\end{algorithmic}
+\end{algorithm}
+
+\vspace{1em}
+
+\begin{algorithm}
+\caption{Crowding Distance Calculation}
+\label{alg:crowding-dist}
+\begin{algorithmic}[1]
+\REQUIRE Objectives $\mathcal{O}$, Front $\mathcal{F}_i$
+\ENSURE Crowding distances $\{d_j : j \in \mathcal{F}_i\}$
+
+\STATE Initialize $d_j = 0$ for all $j \in \mathcal{F}_i$
+
+\IF{$|\mathcal{F}_i| \leq 2$}
+    \STATE Set $d_j = \infty$ for all $j \in \mathcal{F}_i$
+    \RETURN $\{d_j\}$
+\ENDIF
+
+\FOR{$m = 1$ to $2$} \COMMENT{For each objective}
+    \STATE Sort $\mathcal{F}_i$ by objective $f_m$ in ascending order
+    \STATE $d_{\mathcal{F}_i[1]} = d_{\mathcal{F}_i[|\mathcal{F}_i|]} = \infty$ \COMMENT{Boundary points}
+    
+    \STATE $\text{range}_m = f_m^{\mathcal{F}_i[|\mathcal{F}_i|]} - f_m^{\mathcal{F}_i[1]}$ \COMMENT{Objective range}
+    
+    \IF{$\text{range}_m > 0$}
+        \FOR{$k = 2$ to $|\mathcal{F}_i| - 1$}
+            \STATE $\text{distance} = \frac{f_m^{\mathcal{F}_i[k+1]} - f_m^{\mathcal{F}_i[k-1]}}{\text{range}_m}$
+            \STATE $d_{\mathcal{F}_i[k]} \leftarrow d_{\mathcal{F}_i[k]} + \text{distance}$
+        \ENDFOR
+    \ENDIF
+\ENDFOR
+
+\RETURN $\{d_j : j \in \mathcal{F}_i\}$
+
+\end{algorithmic}
+\end{algorithm}
+
+\vspace{1em}
+
+\begin{algorithm}
+\caption{Pareto Dominance Check}
+\label{alg:dominance}
+\begin{algorithmic}[1]
+\REQUIRE Objectives $obj_1 = (f_1^1, f_2^1)$, $obj_2 = (f_1^2, f_2^2)$
+\ENSURE Boolean: True if $obj_1$ dominates $obj_2$
+
+\STATE $\text{betterInAll} \leftarrow (f_1^1 \geq f_1^2) \land (f_2^1 \geq f_2^2)$ \COMMENT{At least as good in all}
+\STATE $\text{betterInOne} \leftarrow (f_1^1 > f_1^2) \lor (f_2^1 > f_2^2)$ \COMMENT{Strictly better in at least one}
+
+\RETURN $\text{betterInAll} \land \text{betterInOne}$
+
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}

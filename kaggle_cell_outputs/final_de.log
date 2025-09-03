@@ -1,0 +1,714 @@
+2025-09-01 16:35:26.028866: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1756744526.052868     117 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1756744526.059945     117 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/convmixer.py:88: UserWarning: Overwriting convmixer_1536_20 in registry with utils.models.convmixer.convmixer_1536_20. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/convmixer.py:94: UserWarning: Overwriting convmixer_768_32 in registry with utils.models.convmixer.convmixer_768_32. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/convmixer.py:100: UserWarning: Overwriting convmixer_1024_20_ks9_p14 in registry with utils.models.convmixer.convmixer_1024_20_ks9_p14. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/usr/local/lib/python3.11/dist-packages/timm/models/helpers.py:7: FutureWarning: Importing from timm.models.helpers is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+/usr/local/lib/python3.11/dist-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/tnt.py:258: UserWarning: Overwriting tnt_s_patch16_224 in registry with utils.models.tnt.tnt_s_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/models/tnt.py:267: UserWarning: Overwriting tnt_b_patch16_224 in registry with utils.models.tnt.tnt_b_patch16_224. This is because the name being registered conflicts with an existing name. Please check if this is not expected.
+  @register_model
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/utility.py:102: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self._scaler = torch.cuda.amp.GradScaler()
+create dataset: cifar100
+100%|████████████████████████████████████████| 169M/169M [00:04<00:00, 37.9MB/s]
+/usr/local/lib/python3.11/dist-packages/torch/utils/data/dataloader.py:624: UserWarning: This DataLoader will create 20 worker processes in total. Our suggested max number of worker in current system is 4, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+Creating model...sew_34,
+ number of params: 27599012
+/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_20.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_20.pt'
+/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_2_40.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_2_40.pt'
+/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_3_30.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_3_30.pt'
+/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_40.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_40.pt'
+/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_4_30.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_4_30.pt'
+/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-3_30.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-3_30.pt'
+/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-4_30.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_using_resuming_cifar_10_lr_1-4_30.pt'
+/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_resuming_cifar_10_lr-3_29_40.pt
+Loaded  from checkpoint '/kaggle/working/AML-Project/checkpoints/pretrain_cifar_100_resuming_cifar_10_lr-3_29_40.pt'
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/main_cosde.py:307: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+data_time: 0.000 (0.004)  batch_time: 1.737 (1.576)  
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/val.py:29: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+Test: [   0/78]  Time: 1.267 (1.267)  DataTime: 0.836 (0.836)  Loss:  1.5781 (1.5781)  F1: 35.3143 (35.3143)  Acc@1: 56.2500 (56.2500)  Acc@5: 85.1562 (85.1562)
+Test: [  50/78]  Time: 0.196 (0.217)  DataTime: 0.000 (0.017)  Loss:  1.8857 (1.7470)  F1: 38.2835 (35.5024)  Acc@1: 53.9062 (52.8646)  Acc@5: 75.0000 (82.2304)
+Test: [  78/78]  Time: 0.293 (0.210)  DataTime: 0.000 (0.011)  Loss:  2.3145 (1.7465)  F1:  5.6667 (35.6622)  Acc@1: 37.5000 (52.8000)  Acc@5: 68.7500 (82.1800)
+metrics: OrderedDict([('loss', 1.7465), ('top1', 52.8), ('top5', 82.18), ('f1', 35.662)])
+metrics_f1: 35.662
+Test: [   0/78]  Time: 1.155 (1.155)  DataTime: 0.907 (0.907)  Loss:  1.1367 (1.1367)  F1: 46.7429 (46.7429)  Acc@1: 71.8750 (71.8750)  Acc@5: 90.6250 (90.6250)
+Test: [  50/78]  Time: 0.195 (0.214)  DataTime: 0.000 (0.018)  Loss:  1.3887 (1.2173)  F1: 47.4119 (47.8551)  Acc@1: 66.4062 (68.7806)  Acc@5: 89.8438 (91.3603)
+Test: [  78/78]  Time: 0.028 (0.206)  DataTime: 0.000 (0.012)  Loss:  0.9121 (1.2142)  F1: 10.0000 (48.4951)  Acc@1: 68.7500 (69.1500)  Acc@5: 100.0000 (91.4200)
+metrics: OrderedDict([('loss', 1.2142), ('top1', 69.15), ('top5', 91.42), ('f1', 48.495)])
+metrics_f1: 48.495
+Test: [   0/78]  Time: 0.867 (0.867)  DataTime: 0.598 (0.598)  Loss:  1.1758 (1.1758)  F1: 44.6452 (44.6452)  Acc@1: 67.1875 (67.1875)  Acc@5: 89.8438 (89.8438)
+Test: [  50/78]  Time: 0.195 (0.211)  DataTime: 0.000 (0.014)  Loss:  1.3496 (1.2403)  F1: 44.7746 (45.9127)  Acc@1: 62.5000 (65.9007)  Acc@5: 91.4062 (90.6250)
+Test: [  78/78]  Time: 0.028 (0.203)  DataTime: 0.000 (0.009)  Loss:  0.8613 (1.2318)  F1: 11.6667 (46.5573)  Acc@1: 75.0000 (66.5500)  Acc@5: 93.7500 (90.8400)
+metrics: OrderedDict([('loss', 1.2318), ('top1', 66.55), ('top5', 90.84), ('f1', 46.557)])
+metrics_f1: 46.557
+Test: [   0/78]  Time: 0.772 (0.772)  DataTime: 0.564 (0.564)  Loss:  1.1016 (1.1016)  F1: 43.9667 (43.9667)  Acc@1: 67.1875 (67.1875)  Acc@5: 90.6250 (90.6250)
+Test: [  50/78]  Time: 0.195 (0.210)  DataTime: 0.000 (0.011)  Loss:  1.2695 (1.1817)  F1: 48.2333 (46.2972)  Acc@1: 67.1875 (66.5748)  Acc@5: 87.5000 (90.5944)
+Test: [  78/78]  Time: 0.028 (0.203)  DataTime: 0.000 (0.007)  Loss:  1.0137 (1.1900)  F1: 12.0000 (46.1194)  Acc@1: 81.2500 (66.2900)  Acc@5: 87.5000 (90.5300)
+metrics: OrderedDict([('loss', 1.19), ('top1', 66.29), ('top5', 90.53), ('f1', 46.119)])
+metrics_f1: 46.119
+Test: [   0/78]  Time: 0.705 (0.705)  DataTime: 0.502 (0.502)  Loss:  1.1230 (1.1230)  F1: 45.6476 (45.6476)  Acc@1: 71.0938 (71.0938)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.195 (0.207)  DataTime: 0.000 (0.010)  Loss:  1.4375 (1.3409)  F1: 47.0429 (46.6297)  Acc@1: 64.8438 (66.8045)  Acc@5: 92.1875 (90.3339)
+Test: [  78/78]  Time: 0.028 (0.201)  DataTime: 0.000 (0.007)  Loss:  1.5723 (1.3364)  F1:  9.6667 (46.7877)  Acc@1: 62.5000 (66.9300)  Acc@5: 81.2500 (90.6400)
+metrics: OrderedDict([('loss', 1.3364), ('top1', 66.93), ('top5', 90.64), ('f1', 46.788)])
+metrics_f1: 46.788
+Test: [   0/78]  Time: 0.979 (0.979)  DataTime: 0.717 (0.717)  Loss:  2.5430 (2.5430)  F1: 17.8095 (17.8095)  Acc@1: 32.0312 (32.0312)  Acc@5: 66.4062 (66.4062)
+Test: [  50/78]  Time: 0.195 (0.211)  DataTime: 0.000 (0.014)  Loss:  2.7461 (2.6626)  F1: 18.5476 (18.1193)  Acc@1: 34.3750 (29.8866)  Acc@5: 66.4062 (66.7586)
+Test: [  78/78]  Time: 0.028 (0.203)  DataTime: 0.000 (0.009)  Loss:  2.6270 (2.6705)  F1:  6.0000 (18.0933)  Acc@1: 43.7500 (29.6200)  Acc@5: 62.5000 (66.7200)
+metrics: OrderedDict([('loss', 2.6705), ('top1', 29.62), ('top5', 66.72), ('f1', 18.093)])
+metrics_f1: 18.093
+Test: [   0/78]  Time: 0.867 (0.867)  DataTime: 0.666 (0.666)  Loss:  4.3711 (4.3711)  F1:  2.8389 ( 2.8389)  Acc@1: 10.9375 (10.9375)  Acc@5: 28.1250 (28.1250)
+Test: [  50/78]  Time: 0.195 (0.209)  DataTime: 0.000 (0.013)  Loss:  4.3906 (4.3887)  F1:  3.8088 ( 3.0342)  Acc@1:  9.3750 ( 7.9350)  Acc@5: 28.9062 (28.2322)
+Test: [  78/78]  Time: 0.028 (0.202)  DataTime: 0.000 (0.009)  Loss:  4.4180 (4.3930)  F1:  0.0000 ( 2.9464)  Acc@1:  0.0000 ( 7.6200)  Acc@5: 12.5000 (27.6300)
+metrics: OrderedDict([('loss', 4.393), ('top1', 7.62), ('top5', 27.63), ('f1', 2.946)])
+metrics_f1: 2.946
+Test: [   0/78]  Time: 1.018 (1.018)  DataTime: 0.813 (0.813)  Loss:  1.4209 (1.4209)  F1: 43.5810 (43.5810)  Acc@1: 67.1875 (67.1875)  Acc@5: 87.5000 (87.5000)
+Test: [  50/78]  Time: 0.195 (0.212)  DataTime: 0.000 (0.016)  Loss:  1.8184 (1.6238)  F1: 40.2333 (40.1054)  Acc@1: 54.6875 (58.2721)  Acc@5: 84.3750 (86.0754)
+Test: [  78/78]  Time: 0.032 (0.204)  DataTime: 0.000 (0.011)  Loss:  1.6143 (1.6247)  F1:  7.6667 (39.9968)  Acc@1: 56.2500 (58.0900)  Acc@5: 81.2500 (86.0500)
+metrics: OrderedDict([('loss', 1.6247), ('top1', 58.09), ('top5', 86.05), ('f1', 39.997)])
+metrics_f1: 39.997
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/val.py:112: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/val.py:143: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+Test: [   0/78]  Time: 2.753 (2.753)  DataTime: 0.871 (0.871)  Loss:  4.2109 (2.6987)  Acc@1: 75.0000 (75.0000)  Acc@5: 92.9688 (92.9688)
+Test: [  50/78]  Time: 1.772 (1.793)  DataTime: 0.000 (0.017)  Loss:  4.2539 (2.7814)  Acc@1: 69.5312 (72.7175)  Acc@5: 92.9688 (93.6734)
+Test: [  78/78]  Time: 0.310 (1.767)  DataTime: 0.000 (0.011)  Loss:  4.2500 (2.7810)  Acc@1: 75.0000 (72.7800)  Acc@5: 93.7500 (93.7200)
+ensemble_metrics_top1: 72.78
+epoch:0, best_score:78.2621, best_idx:1,                      score: [tensor(53.1146), tensor(78.2621), tensor(73.1694), tensor(71.8003), tensor(72.6830), tensor(28.1374), tensor(7.1407), tensor(59.2112)]
+score [tensor(53.1146), tensor(78.2621), tensor(73.1694), tensor(71.8003), tensor(72.6830), tensor(28.1374), tensor(7.1407), tensor(59.2112)]
+cr f 1e-05 1e-05
+/kaggle/working/AML-Project/Evolution_Algorithm_Code/utils/tools/de.py:31: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp_autocast():
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+[tensor(52.8904), tensor(78.3864), tensor(73.3268), tensor(71.7243), tensor(72.7382), tensor(28.1422), tensor(7.1883), tensor(59.2243)]
+[0, 1, 1, 0, 1, 1, 1, 0]
+epoch:0, best_score:78.3864, best_idx:1,                      score: [tensor(53.0746), tensor(78.3864), tensor(73.3268), tensor(71.8039), tensor(72.7382), tensor(28.1422), tensor(7.1883), tensor(59.4162)]
+Best in train_set update and train acc =  tensor(78.3864)
+Saving model to ./output/train/20250901-163543-run_10/train_best_sew_34.pt
+Test: [   0/78]  Time: 0.769 (0.769)  DataTime: 0.564 (0.564)  Loss:  1.1230 (1.1230)  F1: 44.6143 (44.6143)  Acc@1: 68.7500 (68.7500)  Acc@5: 89.8438 (89.8438)
+Test: [  50/78]  Time: 0.195 (0.207)  DataTime: 0.000 (0.011)  Loss:  1.4346 (1.2210)  F1: 49.0905 (47.5717)  Acc@1: 67.1875 (68.3824)  Acc@5: 88.2812 (91.4522)
+Test: [  78/78]  Time: 0.028 (0.201)  DataTime: 0.000 (0.007)  Loss:  1.0723 (1.2182)  F1: 10.0000 (47.9092)  Acc@1: 68.7500 (68.5100)  Acc@5: 93.7500 (91.3700)
+metrics: OrderedDict([('loss', 1.2182), ('top1', 68.51), ('top5', 91.37), ('f1', 47.909)])
+metrics_f1: 47.909
+Best in train_set update and val acc =  68.51
+Saving best val model to ./output/train/20250901-163543-run_10/val_best_sew_34.pt
+Saving best val solution to ./output/train/20250901-163543-run_10/val_best_sew_34_solution.pt
+Test: [   0/78]  Time: 1.111 (1.111)  DataTime: 0.893 (0.893)  Loss:  1.1104 (1.1104)  F1: 46.4524 (46.4524)  Acc@1: 69.5312 (69.5312)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.195 (0.214)  DataTime: 0.000 (0.018)  Loss:  1.3584 (1.2358)  F1: 45.7019 (45.7540)  Acc@1: 62.5000 (66.0386)  Acc@5: 91.4062 (90.6403)
+Test: [  78/78]  Time: 0.029 (0.205)  DataTime: 0.000 (0.012)  Loss:  0.9834 (1.2333)  F1: 11.6667 (46.3213)  Acc@1: 75.0000 (66.3200)  Acc@5: 93.7500 (90.5300)
+metrics: OrderedDict([('loss', 1.2333), ('top1', 66.32), ('top5', 90.53), ('f1', 46.321)])
+metrics_f1: 46.321
+Test: [   0/78]  Time: 1.199 (1.199)  DataTime: 0.995 (0.995)  Loss:  1.1533 (1.1533)  F1: 42.8071 (42.8071)  Acc@1: 67.1875 (67.1875)  Acc@5: 93.7500 (93.7500)
+Test: [  50/78]  Time: 0.195 (0.215)  DataTime: 0.000 (0.020)  Loss:  1.4551 (1.3319)  F1: 47.7905 (46.8544)  Acc@1: 66.4062 (67.2794)  Acc@5: 91.4062 (90.5484)
+Test: [  78/78]  Time: 0.028 (0.206)  DataTime: 0.000 (0.013)  Loss:  1.5332 (1.3296)  F1:  9.6667 (47.1466)  Acc@1: 62.5000 (67.4100)  Acc@5: 87.5000 (90.7600)
+metrics: OrderedDict([('loss', 1.3296), ('top1', 67.41), ('top5', 90.76), ('f1', 47.147)])
+metrics_f1: 47.147
+Test: [   0/78]  Time: 1.144 (1.144)  DataTime: 0.938 (0.938)  Loss:  2.5410 (2.5410)  F1: 18.0762 (18.0762)  Acc@1: 32.8125 (32.8125)  Acc@5: 66.4062 (66.4062)
+Test: [  50/78]  Time: 0.196 (0.214)  DataTime: 0.000 (0.019)  Loss:  2.7461 (2.6625)  F1: 18.8143 (18.0325)  Acc@1: 34.3750 (29.7335)  Acc@5: 65.6250 (66.7586)
+Test: [  78/78]  Time: 0.028 (0.205)  DataTime: 0.000 (0.012)  Loss:  2.6406 (2.6703)  F1:  6.0000 (18.0171)  Acc@1: 43.7500 (29.4700)  Acc@5: 62.5000 (66.7200)
+metrics: OrderedDict([('loss', 2.6703), ('top1', 29.47), ('top5', 66.72), ('f1', 18.017)])
+metrics_f1: 18.017
+Test: [   0/78]  Time: 1.176 (1.176)  DataTime: 0.976 (0.976)  Loss:  4.3672 (4.3672)  F1:  2.7158 ( 2.7158)  Acc@1: 10.9375 (10.9375)  Acc@5: 28.9062 (28.9062)
+Test: [  50/78]  Time: 0.195 (0.215)  DataTime: 0.000 (0.019)  Loss:  4.3945 (4.3887)  F1:  4.0190 ( 3.1545)  Acc@1: 10.1562 ( 8.0729)  Acc@5: 27.3438 (27.9412)
+Test: [  78/78]  Time: 0.028 (0.206)  DataTime: 0.000 (0.013)  Loss:  4.4141 (4.3929)  F1:  0.0000 ( 3.0096)  Acc@1:  0.0000 ( 7.7400)  Acc@5: 12.5000 (27.4100)
+metrics: OrderedDict([('loss', 4.3929), ('top1', 7.74), ('top5', 27.41), ('f1', 3.01)])
+metrics_f1: 3.01
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:1 Acc@1: 68.5100 Acc@5: 91.3700                          Epoch_time: 1322.476s
+cr f 1.4137168061783369e-05 1.819658914561924e-05
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+[tensor(52.9955), tensor(78.2713), tensor(72.9424), tensor(71.6316), tensor(72.8636), tensor(28.2265), tensor(7.0836), tensor(59.4697)]
+[0, 0, 0, 1, 0, 1, 0, 1]
+epoch:0, best_score:78.3240, best_idx:1,                      score: [tensor(53.1222), tensor(78.3240), tensor(72.9704), tensor(71.6316), tensor(72.9636), tensor(28.2265), tensor(7.1304), tensor(59.4697)]
+Test: [   0/78]  Time: 0.939 (0.939)  DataTime: 0.646 (0.646)  Loss:  1.1338 (1.1338)  F1: 42.6024 (42.6024)  Acc@1: 65.6250 (65.6250)  Acc@5: 90.6250 (90.6250)
+Test: [  50/78]  Time: 0.195 (0.211)  DataTime: 0.000 (0.013)  Loss:  1.3057 (1.1865)  F1: 46.3190 (46.2011)  Acc@1: 64.0625 (66.3756)  Acc@5: 87.5000 (90.6403)
+Test: [  78/78]  Time: 0.029 (0.204)  DataTime: 0.000 (0.009)  Loss:  1.1113 (1.1927)  F1: 11.6667 (46.1600)  Acc@1: 81.2500 (66.1800)  Acc@5: 87.5000 (90.4900)
+metrics: OrderedDict([('loss', 1.1927), ('top1', 66.18), ('top5', 90.49), ('f1', 46.16)])
+metrics_f1: 46.16
+Test: [   0/78]  Time: 0.852 (0.852)  DataTime: 0.647 (0.647)  Loss:  2.5352 (2.5352)  F1: 19.6643 (19.6643)  Acc@1: 35.9375 (35.9375)  Acc@5: 65.6250 (65.6250)
+Test: [  50/78]  Time: 0.195 (0.210)  DataTime: 0.000 (0.013)  Loss:  2.7578 (2.6641)  F1: 19.0190 (18.1410)  Acc@1: 32.8125 (29.9020)  Acc@5: 67.1875 (66.4828)
+Test: [  78/78]  Time: 0.028 (0.203)  DataTime: 0.000 (0.009)  Loss:  2.6328 (2.6721)  F1:  4.3333 (18.1948)  Acc@1: 31.2500 (29.7300)  Acc@5: 62.5000 (66.6000)
+metrics: OrderedDict([('loss', 2.6721), ('top1', 29.73), ('top5', 66.6), ('f1', 18.195)])
+metrics_f1: 18.195
+Test: [   0/78]  Time: 1.067 (1.067)  DataTime: 0.830 (0.830)  Loss:  1.4219 (1.4219)  F1: 43.2032 (43.2032)  Acc@1: 65.6250 (65.6250)  Acc@5: 87.5000 (87.5000)
+Test: [  50/78]  Time: 0.195 (0.213)  DataTime: 0.000 (0.017)  Loss:  1.7773 (1.6228)  F1: 40.3683 (39.8395)  Acc@1: 55.4688 (57.9350)  Acc@5: 85.9375 (86.0600)
+Test: [  78/78]  Time: 0.028 (0.205)  DataTime: 0.000 (0.011)  Loss:  1.6699 (1.6216)  F1:  7.6667 (40.1456)  Acc@1: 56.2500 (58.2300)  Acc@5: 75.0000 (86.0700)
+metrics: OrderedDict([('loss', 1.6216), ('top1', 58.23), ('top5', 86.07), ('f1', 40.146)])
+metrics_f1: 40.146
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:2 Acc@1: 68.5100 Acc@5: 91.3700                          Epoch_time: 1286.282s
+cr f 1.9553543546370247e-05 1.7563909727680002e-05
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+[tensor(53.0343), tensor(78.3488), tensor(73.2669), tensor(71.8239), tensor(72.9396), tensor(28.0087), tensor(7.0648), tensor(59.1744)]
+[0, 0, 1, 1, 0, 1, 0, 1]
+epoch:0, best_score:78.3568, best_idx:1,                      score: [tensor(53.0990), tensor(78.3568), tensor(73.2669), tensor(71.8239), tensor(72.9971), tensor(28.0087), tensor(7.0900), tensor(59.1744)]
+Test: [   0/78]  Time: 1.094 (1.094)  DataTime: 0.770 (0.770)  Loss:  1.1406 (1.1406)  F1: 44.3381 (44.3381)  Acc@1: 67.1875 (67.1875)  Acc@5: 91.4062 (91.4062)
+Test: [  50/78]  Time: 0.195 (0.213)  DataTime: 0.000 (0.015)  Loss:  1.3477 (1.2367)  F1: 47.7797 (46.4570)  Acc@1: 65.6250 (66.7739)  Acc@5: 90.6250 (90.6250)
+Test: [  78/78]  Time: 0.029 (0.205)  DataTime: 0.000 (0.010)  Loss:  0.8975 (1.2321)  F1: 10.0000 (46.8275)  Acc@1: 68.7500 (66.9400)  Acc@5: 93.7500 (90.6800)
+metrics: OrderedDict([('loss', 1.2321), ('top1', 66.94), ('top5', 90.68), ('f1', 46.828)])
+metrics_f1: 46.828
+Test: [   0/78]  Time: 0.993 (0.993)  DataTime: 0.715 (0.715)  Loss:  1.1064 (1.1064)  F1: 42.5690 (42.5690)  Acc@1: 65.6250 (65.6250)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.195 (0.212)  DataTime: 0.000 (0.014)  Loss:  1.3174 (1.1822)  F1: 47.4143 (46.7366)  Acc@1: 65.6250 (66.7739)  Acc@5: 88.2812 (90.7629)
+Test: [  78/78]  Time: 0.028 (0.204)  DataTime: 0.000 (0.009)  Loss:  1.1582 (1.1913)  F1: 11.6667 (46.4875)  Acc@1: 75.0000 (66.4200)  Acc@5: 87.5000 (90.6300)
+metrics: OrderedDict([('loss', 1.1913), ('top1', 66.42), ('top5', 90.63), ('f1', 46.487)])
+metrics_f1: 46.487
+Test: [   0/78]  Time: 1.144 (1.144)  DataTime: 0.867 (0.867)  Loss:  2.5391 (2.5391)  F1: 19.6429 (19.6429)  Acc@1: 35.1562 (35.1562)  Acc@5: 64.8438 (64.8438)
+Test: [  50/78]  Time: 0.196 (0.214)  DataTime: 0.000 (0.017)  Loss:  2.7500 (2.6634)  F1: 19.7524 (18.1587)  Acc@1: 32.8125 (29.8254)  Acc@5: 66.4062 (66.2377)
+Test: [  78/78]  Time: 0.029 (0.206)  DataTime: 0.000 (0.011)  Loss:  2.6367 (2.6718)  F1:  4.3333 (18.0741)  Acc@1: 31.2500 (29.5600)  Acc@5: 62.5000 (66.4400)
+metrics: OrderedDict([('loss', 2.6718), ('top1', 29.56), ('top5', 66.44), ('f1', 18.074)])
+metrics_f1: 18.074
+Test: [   0/78]  Time: 1.155 (1.155)  DataTime: 0.941 (0.941)  Loss:  1.4307 (1.4307)  F1: 42.5381 (42.5381)  Acc@1: 64.0625 (64.0625)  Acc@5: 86.7188 (86.7188)
+Test: [  50/78]  Time: 0.195 (0.215)  DataTime: 0.000 (0.019)  Loss:  1.7949 (1.6221)  F1: 38.8381 (40.0757)  Acc@1: 53.9062 (58.2414)  Acc@5: 84.3750 (86.1213)
+Test: [  78/78]  Time: 0.028 (0.206)  DataTime: 0.000 (0.012)  Loss:  1.5098 (1.6224)  F1:  7.6667 (40.2271)  Acc@1: 56.2500 (58.3200)  Acc@5: 93.7500 (86.2200)
+metrics: OrderedDict([('loss', 1.6224), ('top1', 58.32), ('top5', 86.22), ('f1', 40.227)])
+metrics_f1: 40.227
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:3 Acc@1: 68.5100 Acc@5: 91.3700                          Epoch_time: 1303.428s
+cr f 1.5794971920473625e-05 1.645452861643705e-05
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.004)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.394)  
+[tensor(53.0631), tensor(78.3859), tensor(73.1318), tensor(71.7503), tensor(72.9935), tensor(28.1154), tensor(7.0884), tensor(59.2607)]
+[0, 0, 0, 0, 1, 0, 0, 0]
+epoch:0, best_score:78.4071, best_idx:1,                      score: [tensor(53.2265), tensor(78.4071), tensor(73.4970), tensor(71.9134), tensor(72.9935), tensor(28.1562), tensor(7.1911), tensor(59.2715)]
+Best in train_set update and train acc =  tensor(78.4071)
+Saving model to ./output/train/20250901-163543-run_10/train_best_sew_34.pt
+Test: [   0/78]  Time: 0.997 (0.997)  DataTime: 0.786 (0.786)  Loss:  1.1367 (1.1367)  F1: 45.3222 (45.3222)  Acc@1: 69.5312 (69.5312)  Acc@5: 94.5312 (94.5312)
+Test: [  50/78]  Time: 0.195 (0.212)  DataTime: 0.000 (0.017)  Loss:  1.4424 (1.3361)  F1: 48.5333 (46.5650)  Acc@1: 65.6250 (66.9577)  Acc@5: 89.8438 (90.7016)
+Test: [  78/78]  Time: 0.029 (0.204)  DataTime: 0.000 (0.011)  Loss:  1.5283 (1.3313)  F1:  8.6667 (47.0150)  Acc@1: 56.2500 (67.0300)  Acc@5: 81.2500 (90.8600)
+metrics: OrderedDict([('loss', 1.3313), ('top1', 67.03), ('top5', 90.86), ('f1', 47.015)])
+metrics_f1: 47.015
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:4 Acc@1: 68.5100 Acc@5: 91.3700                          Epoch_time: 1254.983s
+cr f 1.2795755119411988e-05 1.2194087041619906e-05
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+[tensor(53.1418), tensor(78.2029), tensor(73.5126), tensor(71.8015), tensor(72.3170), tensor(27.9224), tensor(7.1527), tensor(59.0757)]
+[1, 0, 1, 1, 0, 1, 0, 1]
+epoch:0, best_score:78.3468, best_idx:1,                      score: [tensor(53.1418), tensor(78.3468), tensor(73.5126), tensor(71.8015), tensor(72.9228), tensor(27.9224), tensor(7.1979), tensor(59.0757)]
+Test: [   0/78]  Time: 1.189 (1.189)  DataTime: 0.987 (0.987)  Loss:  1.5801 (1.5801)  F1: 37.0976 (37.0976)  Acc@1: 59.3750 (59.3750)  Acc@5: 85.1562 (85.1562)
+Test: [  50/78]  Time: 0.195 (0.215)  DataTime: 0.000 (0.020)  Loss:  1.8770 (1.7475)  F1: 34.9095 (35.5024)  Acc@1: 50.0000 (52.8799)  Acc@5: 76.5625 (82.2763)
+Test: [  78/78]  Time: 0.028 (0.206)  DataTime: 0.000 (0.013)  Loss:  2.2012 (1.7491)  F1:  6.3333 (35.8214)  Acc@1: 43.7500 (53.0400)  Acc@5: 75.0000 (82.0800)
+metrics: OrderedDict([('loss', 1.7491), ('top1', 53.04), ('top5', 82.08), ('f1', 35.821)])
+metrics_f1: 35.821
+Test: [   0/78]  Time: 1.095 (1.095)  DataTime: 0.891 (0.891)  Loss:  1.1855 (1.1855)  F1: 43.5191 (43.5191)  Acc@1: 67.1875 (67.1875)  Acc@5: 89.8438 (89.8438)
+Test: [  50/78]  Time: 0.195 (0.213)  DataTime: 0.000 (0.018)  Loss:  1.3516 (1.2406)  F1: 46.0535 (45.6423)  Acc@1: 64.0625 (65.8088)  Acc@5: 89.8438 (90.3033)
+Test: [  78/78]  Time: 0.028 (0.205)  DataTime: 0.000 (0.011)  Loss:  0.7979 (1.2357)  F1: 11.0000 (46.1933)  Acc@1: 75.0000 (66.2200)  Acc@5: 100.0000 (90.5300)
+metrics: OrderedDict([('loss', 1.2357), ('top1', 66.22), ('top5', 90.53), ('f1', 46.193)])
+metrics_f1: 46.193
+Test: [   0/78]  Time: 1.089 (1.089)  DataTime: 0.823 (0.823)  Loss:  1.0938 (1.0938)  F1: 43.3548 (43.3548)  Acc@1: 66.4062 (66.4062)  Acc@5: 91.4062 (91.4062)
+Test: [  50/78]  Time: 0.195 (0.213)  DataTime: 0.000 (0.017)  Loss:  1.2695 (1.1768)  F1: 47.4286 (46.1581)  Acc@1: 64.8438 (66.2990)  Acc@5: 89.0625 (90.7322)
+Test: [  78/78]  Time: 0.028 (0.205)  DataTime: 0.000 (0.011)  Loss:  1.1826 (1.1862)  F1:  9.3333 (46.1475)  Acc@1: 62.5000 (66.1500)  Acc@5: 87.5000 (90.5000)
+metrics: OrderedDict([('loss', 1.1862), ('top1', 66.15), ('top5', 90.5), ('f1', 46.148)])
+metrics_f1: 46.148
+Test: [   0/78]  Time: 0.751 (0.751)  DataTime: 0.546 (0.546)  Loss:  2.5293 (2.5293)  F1: 17.3095 (17.3095)  Acc@1: 32.0312 (32.0312)  Acc@5: 64.8438 (64.8438)
+Test: [  50/78]  Time: 0.195 (0.207)  DataTime: 0.000 (0.011)  Loss:  2.7500 (2.6644)  F1: 20.3524 (17.9787)  Acc@1: 33.5938 (29.3811)  Acc@5: 67.1875 (66.4982)
+Test: [  78/78]  Time: 0.029 (0.201)  DataTime: 0.000 (0.007)  Loss:  2.6152 (2.6724)  F1:  6.0000 (18.1592)  Acc@1: 43.7500 (29.5300)  Acc@5: 68.7500 (66.5700)
+metrics: OrderedDict([('loss', 2.6724), ('top1', 29.53), ('top5', 66.57), ('f1', 18.159)])
+metrics_f1: 18.159
+Test: [   0/78]  Time: 0.967 (0.967)  DataTime: 0.705 (0.705)  Loss:  1.4424 (1.4424)  F1: 44.4603 (44.4603)  Acc@1: 66.4062 (66.4062)  Acc@5: 86.7188 (86.7188)
+Test: [  50/78]  Time: 0.195 (0.211)  DataTime: 0.000 (0.014)  Loss:  1.8486 (1.6301)  F1: 41.6762 (39.9016)  Acc@1: 55.4688 (58.0576)  Acc@5: 81.2500 (86.0600)
+Test: [  78/78]  Time: 0.028 (0.203)  DataTime: 0.000 (0.009)  Loss:  1.5166 (1.6281)  F1:  7.0000 (40.0648)  Acc@1: 50.0000 (58.1700)  Acc@5: 93.7500 (86.2200)
+metrics: OrderedDict([('loss', 1.6281), ('top1', 58.17), ('top5', 86.22), ('f1', 40.065)])
+metrics_f1: 40.065
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:5 Acc@1: 68.5100 Acc@5: 91.3700                          Epoch_time: 1319.595s
+cr f 1.4405661571789886e-05 1.5801553450649574e-05
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.004)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+[tensor(53.1122), tensor(78.2533), tensor(73.5498), tensor(71.7803), tensor(72.7933), tensor(28.0619), tensor(7.0920), tensor(59.3171)]
+[0, 0, 1, 1, 0, 0, 1, 0]
+epoch:0, best_score:78.4387, best_idx:1,                      score: [tensor(53.1558), tensor(78.4387), tensor(73.5498), tensor(71.7803), tensor(72.8553), tensor(28.1849), tensor(7.0920), tensor(59.3710)]
+Best in train_set update and train acc =  tensor(78.4387)
+Saving model to ./output/train/20250901-163543-run_10/train_best_sew_34.pt
+Test: [   0/78]  Time: 1.209 (1.209)  DataTime: 1.004 (1.004)  Loss:  1.1475 (1.1475)  F1: 44.7619 (44.7619)  Acc@1: 67.9688 (67.9688)  Acc@5: 90.6250 (90.6250)
+Test: [  50/78]  Time: 0.196 (0.216)  DataTime: 0.000 (0.020)  Loss:  1.3770 (1.2404)  F1: 46.8368 (45.8012)  Acc@1: 63.2812 (65.8088)  Acc@5: 90.6250 (90.4718)
+Test: [  78/78]  Time: 0.029 (0.206)  DataTime: 0.000 (0.013)  Loss:  0.8428 (1.2338)  F1: 12.0000 (46.3808)  Acc@1: 81.2500 (66.3500)  Acc@5: 93.7500 (90.5700)
+metrics: OrderedDict([('loss', 1.2338), ('top1', 66.35), ('top5', 90.57), ('f1', 46.381)])
+metrics_f1: 46.381
+Test: [   0/78]  Time: 1.155 (1.155)  DataTime: 0.951 (0.951)  Loss:  1.0869 (1.0869)  F1: 42.2976 (42.2976)  Acc@1: 66.4062 (66.4062)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.195 (0.215)  DataTime: 0.000 (0.019)  Loss:  1.2861 (1.1854)  F1: 46.6952 (45.9459)  Acc@1: 64.8438 (66.2837)  Acc@5: 86.7188 (90.6710)
+Test: [  78/78]  Time: 0.029 (0.206)  DataTime: 0.000 (0.012)  Loss:  1.3457 (1.1924)  F1:  9.3333 (46.0520)  Acc@1: 62.5000 (66.1100)  Acc@5: 87.5000 (90.4800)
+metrics: OrderedDict([('loss', 1.1924), ('top1', 66.11), ('top5', 90.48), ('f1', 46.052)])
+metrics_f1: 46.052
+Test: [   0/78]  Time: 1.083 (1.083)  DataTime: 0.878 (0.878)  Loss:  4.3672 (4.3672)  F1:  3.1485 ( 3.1485)  Acc@1: 11.7188 (11.7188)  Acc@5: 31.2500 (31.2500)
+Test: [  50/78]  Time: 0.196 (0.213)  DataTime: 0.000 (0.018)  Loss:  4.3945 (4.3886)  F1:  2.5238 ( 2.9707)  Acc@1:  8.5938 ( 8.0116)  Acc@5: 27.3438 (27.9412)
+Test: [  78/78]  Time: 0.029 (0.205)  DataTime: 0.000 (0.011)  Loss:  4.4180 (4.3927)  F1:  0.0000 ( 2.9887)  Acc@1:  0.0000 ( 7.8500)  Acc@5: 12.5000 (27.3600)
+metrics: OrderedDict([('loss', 4.3927), ('top1', 7.85), ('top5', 27.36), ('f1', 2.989)])
+metrics_f1: 2.989
+score: [53, 78, 74, 72, 73, 28, 7, 59]
+DE:6 Acc@1: 68.5100 Acc@5: 91.3700                          Epoch_time: 1287.769s
+cr f 1.940620016136228e-05 1.1762512038737174e-05
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.004)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+[tensor(53.0934), tensor(78.3500), tensor(73.1526), tensor(71.6596), tensor(72.8772), tensor(28.0643), tensor(7.0668), tensor(59.3806)]
+[1, 0, 1, 1, 0, 0, 0, 0]
+epoch:0, best_score:78.4043, best_idx:1,                      score: [tensor(53.0934), tensor(78.4043), tensor(73.1526), tensor(71.6596), tensor(72.9132), tensor(28.1849), tensor(7.0700), tensor(59.4985)]
+Test: [   0/78]  Time: 1.240 (1.240)  DataTime: 1.038 (1.038)  Loss:  1.5957 (1.5957)  F1: 35.1032 (35.1032)  Acc@1: 57.0312 (57.0312)  Acc@5: 82.8125 (82.8125)
+Test: [  50/78]  Time: 0.196 (0.216)  DataTime: 0.000 (0.021)  Loss:  1.8662 (1.7441)  F1: 35.8143 (35.3141)  Acc@1: 50.7812 (52.4816)  Acc@5: 75.7812 (82.6900)
+Test: [  78/78]  Time: 0.028 (0.207)  DataTime: 0.000 (0.013)  Loss:  2.3125 (1.7465)  F1:  6.3333 (35.6776)  Acc@1: 43.7500 (52.7500)  Acc@5: 75.0000 (82.4500)
+metrics: OrderedDict([('loss', 1.7465), ('top1', 52.75), ('top5', 82.45), ('f1', 35.678)])
+metrics_f1: 35.678
+Test: [   0/78]  Time: 1.173 (1.173)  DataTime: 0.939 (0.939)  Loss:  1.1641 (1.1641)  F1: 43.2524 (43.2524)  Acc@1: 66.4062 (66.4062)  Acc@5: 91.4062 (91.4062)
+Test: [  50/78]  Time: 0.196 (0.215)  DataTime: 0.000 (0.019)  Loss:  1.4072 (1.2379)  F1: 47.2405 (46.0643)  Acc@1: 64.0625 (66.1612)  Acc@5: 90.6250 (90.4565)
+Test: [  78/78]  Time: 0.029 (0.206)  DataTime: 0.000 (0.012)  Loss:  0.8931 (1.2345)  F1: 10.6667 (46.4869)  Acc@1: 68.7500 (66.4300)  Acc@5: 100.0000 (90.6300)
+metrics: OrderedDict([('loss', 1.2345), ('top1', 66.43), ('top5', 90.63), ('f1', 46.487)])
+metrics_f1: 46.487
+Test: [   0/78]  Time: 0.861 (0.861)  DataTime: 0.654 (0.654)  Loss:  1.0469 (1.0469)  F1: 42.9476 (42.9476)  Acc@1: 65.6250 (65.6250)  Acc@5: 91.4062 (91.4062)
+Test: [  50/78]  Time: 0.196 (0.210)  DataTime: 0.000 (0.014)  Loss:  1.3291 (1.1778)  F1: 45.5929 (45.7551)  Acc@1: 63.2812 (66.2071)  Acc@5: 88.2812 (90.9926)
+Test: [  78/78]  Time: 0.029 (0.203)  DataTime: 0.000 (0.009)  Loss:  1.2588 (1.1878)  F1: 11.6667 (45.9879)  Acc@1: 75.0000 (66.2300)  Acc@5: 87.5000 (90.5400)
+metrics: OrderedDict([('loss', 1.1878), ('top1', 66.23), ('top5', 90.54), ('f1', 45.988)])
+metrics_f1: 45.988
+score: [53, 78, 74, 72, 73, 28, 7, 59]
+DE:7 Acc@1: 68.5100 Acc@5: 91.3700                          Epoch_time: 1288.011s
+cr f 1.7961327322646702e-05 1.3856148836649864e-05
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+[tensor(52.6039), tensor(78.3935), tensor(73.0439), tensor(71.7935), tensor(72.9076), tensor(28.2101), tensor(7.1607), tensor(59.0717)]
+[0, 0, 0, 0, 0, 1, 1, 1]
+epoch:0, best_score:78.4579, best_idx:1,                      score: [tensor(52.7142), tensor(78.4579), tensor(73.2293), tensor(71.8147), tensor(73.1262), tensor(28.2101), tensor(7.1607), tensor(59.0717)]
+Best in train_set update and train acc =  tensor(78.4579)
+Saving model to ./output/train/20250901-163543-run_10/train_best_sew_34.pt
+Test: [   0/78]  Time: 1.279 (1.279)  DataTime: 1.076 (1.076)  Loss:  2.5312 (2.5312)  F1: 18.3190 (18.3190)  Acc@1: 32.8125 (32.8125)  Acc@5: 66.4062 (66.4062)
+Test: [  50/78]  Time: 0.196 (0.217)  DataTime: 0.000 (0.021)  Loss:  2.7559 (2.6617)  F1: 19.1524 (18.5171)  Acc@1: 32.8125 (30.0858)  Acc@5: 67.9688 (66.8811)
+Test: [  78/78]  Time: 0.028 (0.207)  DataTime: 0.000 (0.014)  Loss:  2.6055 (2.6696)  F1:  5.3333 (18.4349)  Acc@1: 37.5000 (29.8100)  Acc@5: 68.7500 (66.8900)
+metrics: OrderedDict([('loss', 2.6696), ('top1', 29.81), ('top5', 66.89), ('f1', 18.435)])
+metrics_f1: 18.435
+Test: [   0/78]  Time: 1.021 (1.021)  DataTime: 0.741 (0.741)  Loss:  4.3711 (4.3711)  F1:  3.8397 ( 3.8397)  Acc@1: 13.2812 (13.2812)  Acc@5: 28.9062 (28.9062)
+Test: [  50/78]  Time: 0.196 (0.212)  DataTime: 0.000 (0.015)  Loss:  4.3945 (4.3885)  F1:  2.5556 ( 3.0811)  Acc@1:  8.5938 ( 8.0423)  Acc@5: 26.5625 (27.7727)
+Test: [  78/78]  Time: 0.029 (0.204)  DataTime: 0.000 (0.010)  Loss:  4.4180 (4.3928)  F1:  0.0000 ( 2.9949)  Acc@1:  0.0000 ( 7.7600)  Acc@5: 12.5000 (27.2400)
+metrics: OrderedDict([('loss', 4.3928), ('top1', 7.76), ('top5', 27.24), ('f1', 2.995)])
+metrics_f1: 2.995
+Test: [   0/78]  Time: 1.245 (1.245)  DataTime: 1.024 (1.024)  Loss:  1.3994 (1.3994)  F1: 44.8476 (44.8476)  Acc@1: 66.4062 (66.4062)  Acc@5: 89.0625 (89.0625)
+Test: [  50/78]  Time: 0.196 (0.216)  DataTime: 0.000 (0.020)  Loss:  1.8066 (1.6247)  F1: 41.3714 (40.0350)  Acc@1: 54.6875 (58.2567)  Acc@5: 85.9375 (86.2592)
+Test: [  78/78]  Time: 0.028 (0.207)  DataTime: 0.000 (0.013)  Loss:  1.5986 (1.6249)  F1:  7.6667 (40.1459)  Acc@1: 56.2500 (58.2800)  Acc@5: 93.7500 (86.3300)
+metrics: OrderedDict([('loss', 1.6249), ('top1', 58.28), ('top5', 86.33), ('f1', 40.146)])
+metrics_f1: 40.146
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:8 Acc@1: 68.5100 Acc@5: 91.3700                          Epoch_time: 1288.731s
+cr f 1.79850532941894e-05 1.2248066610924376e-05
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+[tensor(52.9819), tensor(78.1218), tensor(73.0623), tensor(71.7215), tensor(72.8864), tensor(28.2741), tensor(7.1407), tensor(59.3131)]
+[0, 0, 0, 1, 0, 0, 0, 0]
+epoch:0, best_score:78.2717, best_idx:1,                      score: [tensor(52.9863), tensor(78.2717), tensor(73.0726), tensor(71.7215), tensor(73.0091), tensor(28.3408), tensor(7.1519), tensor(59.5436)]
+Test: [   0/78]  Time: 1.145 (1.145)  DataTime: 0.930 (0.930)  Loss:  1.0986 (1.0986)  F1: 41.0167 (41.0167)  Acc@1: 64.8438 (64.8438)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.196 (0.215)  DataTime: 0.000 (0.019)  Loss:  1.2266 (1.1791)  F1: 47.8714 (45.8100)  Acc@1: 64.8438 (66.0233)  Acc@5: 88.2812 (90.8241)
+Test: [  78/78]  Time: 0.029 (0.206)  DataTime: 0.000 (0.012)  Loss:  1.2461 (1.1867)  F1: 10.6667 (45.8749)  Acc@1: 68.7500 (65.8200)  Acc@5: 87.5000 (90.7300)
+metrics: OrderedDict([('loss', 1.1867), ('top1', 65.82), ('top5', 90.73), ('f1', 45.875)])
+metrics_f1: 45.875
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:9 Acc@1: 68.5100 Acc@5: 91.3700                          Epoch_time: 1255.573s
+cr f 1.873251850513661e-05 1.8345593778263037e-05
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+[tensor(52.8097), tensor(78.3504), tensor(73.4679), tensor(71.6396), tensor(72.6407), tensor(28.2916), tensor(7.0952), tensor(59.3942)]
+[1, 1, 1, 0, 0, 1, 0, 1]
+epoch:0, best_score:78.3504, best_idx:1,                      score: [tensor(52.8097), tensor(78.3504), tensor(73.4679), tensor(71.8127), tensor(72.8549), tensor(28.2916), tensor(7.2111), tensor(59.3942)]
+Test: [   0/78]  Time: 1.192 (1.192)  DataTime: 0.985 (0.985)  Loss:  1.5879 (1.5879)  F1: 35.8270 (35.8270)  Acc@1: 57.8125 (57.8125)  Acc@5: 84.3750 (84.3750)
+Test: [  50/78]  Time: 0.195 (0.215)  DataTime: 0.000 (0.020)  Loss:  1.8799 (1.7411)  F1: 34.7693 (35.5401)  Acc@1: 50.0000 (52.8186)  Acc@5: 76.5625 (82.8431)
+Test: [  78/78]  Time: 0.029 (0.206)  DataTime: 0.000 (0.013)  Loss:  2.3184 (1.7434)  F1:  6.3333 (35.6782)  Acc@1: 43.7500 (52.8700)  Acc@5: 75.0000 (82.5500)
+metrics: OrderedDict([('loss', 1.7434), ('top1', 52.87), ('top5', 82.55), ('f1', 35.678)])
+metrics_f1: 35.678
+Test: [   0/78]  Time: 1.151 (1.151)  DataTime: 0.928 (0.928)  Loss:  1.1494 (1.1494)  F1: 44.5952 (44.5952)  Acc@1: 69.5312 (69.5312)  Acc@5: 91.4062 (91.4062)
+Test: [  50/78]  Time: 0.195 (0.214)  DataTime: 0.000 (0.018)  Loss:  1.3896 (1.2175)  F1: 49.4762 (47.5721)  Acc@1: 69.5312 (68.5355)  Acc@5: 88.2812 (91.0999)
+Test: [  78/78]  Time: 0.028 (0.206)  DataTime: 0.000 (0.012)  Loss:  1.0166 (1.2149)  F1: 10.0000 (48.1131)  Acc@1: 68.7500 (68.8000)  Acc@5: 93.7500 (91.1500)
+metrics: OrderedDict([('loss', 1.2149), ('top1', 68.8), ('top5', 91.15), ('f1', 48.113)])
+metrics_f1: 48.113
+Best in train_set update and val acc =  68.8
+Saving best val model to ./output/train/20250901-163543-run_10/val_best_sew_34.pt
+Saving best val solution to ./output/train/20250901-163543-run_10/val_best_sew_34_solution.pt
+Test: [   0/78]  Time: 1.110 (1.110)  DataTime: 0.898 (0.898)  Loss:  1.1318 (1.1318)  F1: 43.9548 (43.9548)  Acc@1: 67.1875 (67.1875)  Acc@5: 90.6250 (90.6250)
+Test: [  50/78]  Time: 0.196 (0.214)  DataTime: 0.000 (0.018)  Loss:  1.3145 (1.2380)  F1: 45.5177 (46.0259)  Acc@1: 63.2812 (66.0999)  Acc@5: 91.4062 (90.3493)
+Test: [  78/78]  Time: 0.028 (0.205)  DataTime: 0.000 (0.012)  Loss:  0.9106 (1.2350)  F1:  9.6667 (46.5662)  Acc@1: 62.5000 (66.5400)  Acc@5: 93.7500 (90.4200)
+metrics: OrderedDict([('loss', 1.235), ('top1', 66.54), ('top5', 90.42), ('f1', 46.566)])
+metrics_f1: 46.566
+Test: [   0/78]  Time: 1.009 (1.009)  DataTime: 0.786 (0.786)  Loss:  2.5391 (2.5391)  F1: 17.9857 (17.9857)  Acc@1: 32.8125 (32.8125)  Acc@5: 66.4062 (66.4062)
+Test: [  50/78]  Time: 0.195 (0.212)  DataTime: 0.000 (0.016)  Loss:  2.7656 (2.6643)  F1: 18.2524 (18.2360)  Acc@1: 32.8125 (30.1011)  Acc@5: 64.0625 (66.6667)
+Test: [  78/78]  Time: 0.028 (0.204)  DataTime: 0.000 (0.010)  Loss:  2.6445 (2.6734)  F1:  4.3333 (18.1986)  Acc@1: 31.2500 (29.7400)  Acc@5: 68.7500 (66.5900)
+metrics: OrderedDict([('loss', 2.6734), ('top1', 29.74), ('top5', 66.59), ('f1', 18.199)])
+metrics_f1: 18.199
+Test: [   0/78]  Time: 1.101 (1.101)  DataTime: 0.884 (0.884)  Loss:  1.4170 (1.4170)  F1: 44.9365 (44.9365)  Acc@1: 67.9688 (67.9688)  Acc@5: 88.2812 (88.2812)
+Test: [  50/78]  Time: 0.196 (0.213)  DataTime: 0.000 (0.018)  Loss:  1.8242 (1.6211)  F1: 40.5873 (39.7037)  Acc@1: 53.9062 (57.9810)  Acc@5: 84.3750 (86.3051)
+Test: [  78/78]  Time: 0.028 (0.205)  DataTime: 0.000 (0.011)  Loss:  1.4932 (1.6211)  F1:  7.6667 (39.9478)  Acc@1: 56.2500 (58.2300)  Acc@5: 87.5000 (86.1800)
+metrics: OrderedDict([('loss', 1.6211), ('top1', 58.23), ('top5', 86.18), ('f1', 39.948)])
+metrics_f1: 39.948
+score: [53, 78, 73, 72, 73, 28, 7, 60]
+DE:10 Acc@1: 68.8000 Acc@5: 91.1500                          Epoch_time: 1322.554s
+cr f 1.6495005333777945e-05 1.3496075667851367e-05
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.004)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.004)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.004)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+[tensor(53.3184), tensor(78.1282), tensor(72.9847), tensor(71.8055), tensor(73.2141), tensor(27.9787), tensor(7.1791), tensor(58.9922)]
+[1, 1, 1, 1, 1, 1, 1, 0]
+epoch:0, best_score:78.1282, best_idx:1,                      score: [tensor(53.3184), tensor(78.1282), tensor(72.9847), tensor(71.8055), tensor(73.2141), tensor(27.9787), tensor(7.1791), tensor(59.0881)]
+Test: [   0/78]  Time: 1.003 (1.003)  DataTime: 0.763 (0.763)  Loss:  1.5732 (1.5732)  F1: 36.4603 (36.4603)  Acc@1: 58.5938 (58.5938)  Acc@5: 84.3750 (84.3750)
+Test: [  50/78]  Time: 0.195 (0.212)  DataTime: 0.000 (0.015)  Loss:  1.8721 (1.7407)  F1: 35.3264 (35.5072)  Acc@1: 50.7812 (52.8033)  Acc@5: 77.3438 (82.7512)
+Test: [  78/78]  Time: 0.028 (0.204)  DataTime: 0.000 (0.010)  Loss:  2.2285 (1.7432)  F1:  6.3333 (35.7878)  Acc@1: 43.7500 (52.9700)  Acc@5: 75.0000 (82.6000)
+metrics: OrderedDict([('loss', 1.7432), ('top1', 52.97), ('top5', 82.6), ('f1', 35.788)])
+metrics_f1: 35.788
+Test: [   0/78]  Time: 0.848 (0.848)  DataTime: 0.626 (0.626)  Loss:  1.1465 (1.1465)  F1: 44.7214 (44.7214)  Acc@1: 68.7500 (68.7500)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.196 (0.209)  DataTime: 0.000 (0.013)  Loss:  1.3721 (1.2164)  F1: 47.2484 (47.6581)  Acc@1: 67.1875 (68.4589)  Acc@5: 87.5000 (91.2377)
+Test: [  78/78]  Time: 0.029 (0.202)  DataTime: 0.000 (0.008)  Loss:  1.0391 (1.2155)  F1: 11.0000 (47.9440)  Acc@1: 75.0000 (68.6400)  Acc@5: 93.7500 (91.3200)
+metrics: OrderedDict([('loss', 1.2155), ('top1', 68.64), ('top5', 91.32), ('f1', 47.944)])
+metrics_f1: 47.944
+Test: [   0/78]  Time: 0.984 (0.984)  DataTime: 0.638 (0.638)  Loss:  1.1621 (1.1621)  F1: 43.4548 (43.4548)  Acc@1: 67.1875 (67.1875)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.196 (0.211)  DataTime: 0.000 (0.013)  Loss:  1.3613 (1.2419)  F1: 47.9889 (45.9766)  Acc@1: 65.6250 (66.1765)  Acc@5: 89.8438 (90.6097)
+Test: [  78/78]  Time: 0.028 (0.204)  DataTime: 0.000 (0.008)  Loss:  0.9380 (1.2361)  F1: 11.6667 (46.4815)  Acc@1: 75.0000 (66.5800)  Acc@5: 87.5000 (90.6200)
+metrics: OrderedDict([('loss', 1.2361), ('top1', 66.58), ('top5', 90.62), ('f1', 46.481)])
+metrics_f1: 46.481
+Test: [   0/78]  Time: 0.799 (0.799)  DataTime: 0.583 (0.583)  Loss:  1.0537 (1.0537)  F1: 46.3857 (46.3857)  Acc@1: 70.3125 (70.3125)  Acc@5: 92.9688 (92.9688)
+Test: [  50/78]  Time: 0.195 (0.212)  DataTime: 0.000 (0.016)  Loss:  1.2383 (1.1837)  F1: 47.8619 (46.2437)  Acc@1: 65.6250 (66.4369)  Acc@5: 89.0625 (90.8241)
+Test: [  78/78]  Time: 0.029 (0.204)  DataTime: 0.000 (0.010)  Loss:  1.2188 (1.1932)  F1: 10.6667 (46.1212)  Acc@1: 68.7500 (66.1300)  Acc@5: 87.5000 (90.6400)
+metrics: OrderedDict([('loss', 1.1932), ('top1', 66.13), ('top5', 90.64), ('f1', 46.121)])
+metrics_f1: 46.121
+Test: [   0/78]  Time: 0.976 (0.976)  DataTime: 0.728 (0.728)  Loss:  1.1367 (1.1367)  F1: 43.8643 (43.8643)  Acc@1: 67.9688 (67.9688)  Acc@5: 92.9688 (92.9688)
+Test: [  50/78]  Time: 0.195 (0.211)  DataTime: 0.000 (0.015)  Loss:  1.4453 (1.3396)  F1: 46.5143 (46.7540)  Acc@1: 63.2812 (66.8811)  Acc@5: 91.4062 (90.5637)
+Test: [  78/78]  Time: 0.029 (0.204)  DataTime: 0.000 (0.010)  Loss:  1.4629 (1.3335)  F1:  9.6667 (47.1249)  Acc@1: 62.5000 (67.1000)  Acc@5: 81.2500 (90.8800)
+metrics: OrderedDict([('loss', 1.3335), ('top1', 67.1), ('top5', 90.88), ('f1', 47.125)])
+metrics_f1: 47.125
+Test: [   0/78]  Time: 0.967 (0.967)  DataTime: 0.746 (0.746)  Loss:  2.5449 (2.5449)  F1: 17.0810 (17.0810)  Acc@1: 31.2500 (31.2500)  Acc@5: 67.9688 (67.9688)
+Test: [  50/78]  Time: 0.196 (0.212)  DataTime: 0.000 (0.015)  Loss:  2.7695 (2.6627)  F1: 20.3381 (18.3106)  Acc@1: 33.5938 (30.0858)  Acc@5: 67.1875 (66.9424)
+Test: [  78/78]  Time: 0.028 (0.204)  DataTime: 0.000 (0.010)  Loss:  2.6504 (2.6715)  F1:  5.6667 (18.1798)  Acc@1: 37.5000 (29.6900)  Acc@5: 62.5000 (66.7500)
+metrics: OrderedDict([('loss', 2.6715), ('top1', 29.69), ('top5', 66.75), ('f1', 18.18)])
+metrics_f1: 18.18
+Test: [   0/78]  Time: 0.860 (0.860)  DataTime: 0.650 (0.650)  Loss:  4.3711 (4.3711)  F1:  3.3267 ( 3.3267)  Acc@1: 11.7188 (11.7188)  Acc@5: 26.5625 (26.5625)
+Test: [  50/78]  Time: 0.196 (0.209)  DataTime: 0.000 (0.013)  Loss:  4.3945 (4.3886)  F1:  3.3586 ( 2.9257)  Acc@1:  9.3750 ( 7.7359)  Acc@5: 26.5625 (27.7114)
+Test: [  78/78]  Time: 0.029 (0.202)  DataTime: 0.000 (0.008)  Loss:  4.4141 (4.3928)  F1:  0.0000 ( 2.9080)  Acc@1:  0.0000 ( 7.5800)  Acc@5: 12.5000 (27.2900)
+metrics: OrderedDict([('loss', 4.3928), ('top1', 7.58), ('top5', 27.29), ('f1', 2.908)])
+metrics_f1: 2.908
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:11 Acc@1: 68.6400 Acc@5: 91.3200                          Epoch_time: 1352.689s
+cr f 1.462558145897619e-05 1.4384994286987641e-05
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.393)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+[tensor(53.0746), tensor(78.1690), tensor(73.0279), tensor(71.5869), tensor(71.8207), tensor(28.0659), tensor(7.1551), tensor(59.3007)]
+[1, 0, 0, 0, 0, 0, 0, 1]
+epoch:0, best_score:78.3140, best_idx:1,                      score: [tensor(53.0746), tensor(78.3140), tensor(73.0371), tensor(71.6053), tensor(73.0575), tensor(28.0723), tensor(7.1891), tensor(59.3007)]
+Test: [   0/78]  Time: 1.022 (1.022)  DataTime: 0.816 (0.816)  Loss:  1.5605 (1.5605)  F1: 37.2270 (37.2270)  Acc@1: 60.1562 (60.1562)  Acc@5: 83.5938 (83.5938)
+Test: [  50/78]  Time: 0.195 (0.212)  DataTime: 0.000 (0.016)  Loss:  1.8623 (1.7382)  F1: 35.0693 (35.8741)  Acc@1: 50.0000 (53.2169)  Acc@5: 78.1250 (82.7665)
+Test: [  78/78]  Time: 0.028 (0.204)  DataTime: 0.000 (0.011)  Loss:  2.2793 (1.7406)  F1:  5.3333 (36.0235)  Acc@1: 37.5000 (53.2400)  Acc@5: 68.7500 (82.4700)
+metrics: OrderedDict([('loss', 1.7406), ('top1', 53.24), ('top5', 82.47), ('f1', 36.024)])
+metrics_f1: 36.024
+Test: [   0/78]  Time: 0.909 (0.909)  DataTime: 0.641 (0.641)  Loss:  1.4180 (1.4180)  F1: 41.7357 (41.7357)  Acc@1: 63.2812 (63.2812)  Acc@5: 87.5000 (87.5000)
+Test: [  50/78]  Time: 0.196 (0.212)  DataTime: 0.000 (0.015)  Loss:  1.8301 (1.6247)  F1: 37.6952 (39.7682)  Acc@1: 51.5625 (57.8891)  Acc@5: 82.8125 (86.4124)
+Test: [  78/78]  Time: 0.029 (0.204)  DataTime: 0.000 (0.010)  Loss:  1.5459 (1.6241)  F1:  7.3333 (39.9051)  Acc@1: 56.2500 (57.9300)  Acc@5: 93.7500 (86.4400)
+metrics: OrderedDict([('loss', 1.6241), ('top1', 57.93), ('top5', 86.44), ('f1', 39.905)])
+metrics_f1: 39.905
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:12 Acc@1: 68.6400 Acc@5: 91.3200                          Epoch_time: 1270.785s
+Saving model to ./output/train/20250901-163543-run_10/run_10_12.pt
+cr f 1.8125635230153292e-05 1.666329954270239e-05
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+[tensor(53.1394), tensor(78.2245), tensor(72.8113), tensor(71.9261), tensor(73.0363), tensor(27.8880), tensor(7.1008), tensor(59.2839)]
+[0, 0, 0, 0, 1, 0, 1, 1]
+epoch:0, best_score:78.2733, best_idx:1,                      score: [tensor(53.1454), tensor(78.2733), tensor(72.9991), tensor(71.9389), tensor(73.0363), tensor(28.0095), tensor(7.1008), tensor(59.2839)]
+Test: [   0/78]  Time: 1.133 (1.133)  DataTime: 0.917 (0.917)  Loss:  1.1279 (1.1279)  F1: 45.0333 (45.0333)  Acc@1: 71.0938 (71.0938)  Acc@5: 94.5312 (94.5312)
+Test: [  50/78]  Time: 0.196 (0.214)  DataTime: 0.000 (0.018)  Loss:  1.4365 (1.3369)  F1: 48.1905 (46.7047)  Acc@1: 66.4062 (66.9424)  Acc@5: 91.4062 (90.4718)
+Test: [  78/78]  Time: 0.028 (0.206)  DataTime: 0.000 (0.012)  Loss:  1.5059 (1.3316)  F1:  8.6667 (47.0315)  Acc@1: 56.2500 (67.0800)  Acc@5: 87.5000 (90.7600)
+metrics: OrderedDict([('loss', 1.3316), ('top1', 67.08), ('top5', 90.76), ('f1', 47.032)])
+metrics_f1: 47.032
+Test: [   0/78]  Time: 0.849 (0.849)  DataTime: 0.622 (0.622)  Loss:  4.3672 (4.3672)  F1:  3.8985 ( 3.8985)  Acc@1: 13.2812 (13.2812)  Acc@5: 28.9062 (28.9062)
+Test: [  50/78]  Time: 0.196 (0.211)  DataTime: 0.000 (0.014)  Loss:  4.3945 (4.3887)  F1:  4.3644 ( 2.9710)  Acc@1: 10.1562 ( 7.9044)  Acc@5: 25.0000 (27.7727)
+Test: [  78/78]  Time: 0.030 (0.203)  DataTime: 0.000 (0.009)  Loss:  4.4141 (4.3930)  F1:  0.0000 ( 2.8853)  Acc@1:  0.0000 ( 7.6100)  Acc@5: 12.5000 (27.2000)
+metrics: OrderedDict([('loss', 4.393), ('top1', 7.61), ('top5', 27.2), ('f1', 2.885)])
+metrics_f1: 2.885
+Test: [   0/78]  Time: 1.099 (1.099)  DataTime: 0.832 (0.832)  Loss:  1.4238 (1.4238)  F1: 40.7810 (40.7810)  Acc@1: 62.5000 (62.5000)  Acc@5: 87.5000 (87.5000)
+Test: [  50/78]  Time: 0.195 (0.214)  DataTime: 0.000 (0.017)  Loss:  1.8330 (1.6248)  F1: 38.8333 (39.5647)  Acc@1: 53.1250 (57.7053)  Acc@5: 82.8125 (86.1060)
+Test: [  78/78]  Time: 0.028 (0.205)  DataTime: 0.000 (0.011)  Loss:  1.6602 (1.6244)  F1:  7.3333 (39.7494)  Acc@1: 56.2500 (57.8500)  Acc@5: 87.5000 (86.3100)
+metrics: OrderedDict([('loss', 1.6244), ('top1', 57.85), ('top5', 86.31), ('f1', 39.749)])
+metrics_f1: 39.749
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:13 Acc@1: 68.6400 Acc@5: 91.3200                          Epoch_time: 1287.409s
+Saving model to ./output/train/20250901-163543-run_10/run_10_13.pt
+cr f 1.0176764512787202e-05 1.3325590094946148e-05
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+[tensor(52.9783), tensor(78.1941), tensor(73.3064), tensor(71.6724), tensor(72.8876), tensor(28.2928), tensor(6.9789), tensor(59.2475)]
+[0, 1, 1, 1, 0, 1, 0, 0]
+epoch:0, best_score:78.1941, best_idx:1,                      score: [tensor(53.1122), tensor(78.1941), tensor(73.3064), tensor(71.6724), tensor(73.0874), tensor(28.2928), tensor(7.0029), tensor(59.3107)]
+Test: [   0/78]  Time: 0.787 (0.787)  DataTime: 0.588 (0.588)  Loss:  1.1357 (1.1357)  F1: 45.4048 (45.4048)  Acc@1: 70.3125 (70.3125)  Acc@5: 91.4062 (91.4062)
+Test: [  50/78]  Time: 0.195 (0.211)  DataTime: 0.000 (0.013)  Loss:  1.4307 (1.2138)  F1: 48.6167 (47.9874)  Acc@1: 68.7500 (68.8113)  Acc@5: 89.0625 (91.3603)
+Test: [  78/78]  Time: 0.028 (0.203)  DataTime: 0.000 (0.008)  Loss:  0.9790 (1.2102)  F1: 11.0000 (48.5624)  Acc@1: 75.0000 (69.2000)  Acc@5: 93.7500 (91.4600)
+metrics: OrderedDict([('loss', 1.2102), ('top1', 69.2), ('top5', 91.46), ('f1', 48.562)])
+metrics_f1: 48.562
+Best in train_set update and val acc =  69.2
+Saving best val model to ./output/train/20250901-163543-run_10/val_best_sew_34.pt
+Saving best val solution to ./output/train/20250901-163543-run_10/val_best_sew_34_solution.pt
+Test: [   0/78]  Time: 1.140 (1.140)  DataTime: 0.924 (0.924)  Loss:  1.1309 (1.1309)  F1: 47.8381 (47.8381)  Acc@1: 71.0938 (71.0938)  Acc@5: 91.4062 (91.4062)
+Test: [  50/78]  Time: 0.196 (0.215)  DataTime: 0.000 (0.019)  Loss:  1.3496 (1.2497)  F1: 46.2833 (45.4405)  Acc@1: 63.2812 (65.5025)  Acc@5: 89.8438 (90.3952)
+Test: [  78/78]  Time: 0.028 (0.206)  DataTime: 0.000 (0.012)  Loss:  1.0137 (1.2429)  F1:  9.6667 (45.9188)  Acc@1: 62.5000 (65.8600)  Acc@5: 93.7500 (90.5000)
+metrics: OrderedDict([('loss', 1.2429), ('top1', 65.86), ('top5', 90.5), ('f1', 45.919)])
+metrics_f1: 45.919
+Test: [   0/78]  Time: 0.812 (0.812)  DataTime: 0.613 (0.613)  Loss:  1.0586 (1.0586)  F1: 45.9214 (45.9214)  Acc@1: 68.7500 (68.7500)  Acc@5: 92.9688 (92.9688)
+Test: [  50/78]  Time: 0.196 (0.208)  DataTime: 0.000 (0.012)  Loss:  1.2383 (1.1809)  F1: 46.7000 (45.7932)  Acc@1: 64.0625 (65.9926)  Acc@5: 89.0625 (90.5944)
+Test: [  78/78]  Time: 0.028 (0.202)  DataTime: 0.000 (0.008)  Loss:  1.1924 (1.1934)  F1: 10.3333 (45.8256)  Acc@1: 68.7500 (65.8200)  Acc@5: 87.5000 (90.3800)
+metrics: OrderedDict([('loss', 1.1934), ('top1', 65.82), ('top5', 90.38), ('f1', 45.826)])
+metrics_f1: 45.826
+Test: [   0/78]  Time: 0.782 (0.782)  DataTime: 0.565 (0.565)  Loss:  2.5586 (2.5586)  F1: 15.9571 (15.9571)  Acc@1: 30.4688 (30.4688)  Acc@5: 65.6250 (65.6250)
+Test: [  50/78]  Time: 0.195 (0.209)  DataTime: 0.000 (0.013)  Loss:  2.7480 (2.6625)  F1: 19.8952 (18.1299)  Acc@1: 32.8125 (29.7335)  Acc@5: 67.9688 (66.7279)
+Test: [  78/78]  Time: 0.029 (0.202)  DataTime: 0.000 (0.009)  Loss:  2.6250 (2.6711)  F1:  5.3333 (18.0000)  Acc@1: 37.5000 (29.4000)  Acc@5: 62.5000 (66.8100)
+metrics: OrderedDict([('loss', 2.6711), ('top1', 29.4), ('top5', 66.81), ('f1', 18.0)])
+metrics_f1: 18.0
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:14 Acc@1: 69.2000 Acc@5: 91.4600                          Epoch_time: 1306.447s
+Saving model to ./output/train/20250901-163543-run_10/run_10_14.pt
+cr f 1.5704624454016135e-05 9.130600929200116e-06
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+[tensor(53.2081), tensor(78.1486), tensor(73.0679), tensor(71.6800), tensor(72.8589), tensor(28.2457), tensor(7.0309), tensor(59.1228)]
+[1, 1, 1, 1, 1, 1, 0, 1]
+epoch:0, best_score:78.1486, best_idx:1,                      score: [tensor(53.2081), tensor(78.1486), tensor(73.0679), tensor(71.6800), tensor(72.8589), tensor(28.2457), tensor(7.1224), tensor(59.1228)]
+Test: [   0/78]  Time: 1.183 (1.183)  DataTime: 0.978 (0.978)  Loss:  1.5742 (1.5742)  F1: 37.1175 (37.1175)  Acc@1: 60.1562 (60.1562)  Acc@5: 83.5938 (83.5938)
+Test: [  50/78]  Time: 0.195 (0.215)  DataTime: 0.000 (0.019)  Loss:  1.8584 (1.7449)  F1: 35.2597 (35.2185)  Acc@1: 51.5625 (52.4816)  Acc@5: 76.5625 (82.2457)
+Test: [  78/78]  Time: 0.029 (0.206)  DataTime: 0.000 (0.013)  Loss:  2.3379 (1.7465)  F1:  6.3333 (35.5974)  Acc@1: 43.7500 (52.7900)  Acc@5: 75.0000 (82.0600)
+metrics: OrderedDict([('loss', 1.7465), ('top1', 52.79), ('top5', 82.06), ('f1', 35.597)])
+metrics_f1: 35.597
+Test: [   0/78]  Time: 1.129 (1.129)  DataTime: 0.904 (0.904)  Loss:  1.0938 (1.0938)  F1: 48.9905 (48.9905)  Acc@1: 72.6562 (72.6562)  Acc@5: 93.7500 (93.7500)
+Test: [  50/78]  Time: 0.196 (0.214)  DataTime: 0.000 (0.018)  Loss:  1.4014 (1.2138)  F1: 45.1286 (48.0573)  Acc@1: 62.5000 (68.8113)  Acc@5: 89.0625 (91.5288)
+Test: [  78/78]  Time: 0.031 (0.206)  DataTime: 0.000 (0.012)  Loss:  1.0850 (1.2108)  F1:  9.6667 (48.3158)  Acc@1: 62.5000 (68.9300)  Acc@5: 93.7500 (91.6900)
+metrics: OrderedDict([('loss', 1.2108), ('top1', 68.93), ('top5', 91.69), ('f1', 48.316)])
+metrics_f1: 48.316
+Test: [   0/78]  Time: 1.024 (1.024)  DataTime: 0.749 (0.749)  Loss:  1.1045 (1.1045)  F1: 43.0524 (43.0524)  Acc@1: 67.1875 (67.1875)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.196 (0.212)  DataTime: 0.000 (0.015)  Loss:  1.3691 (1.2432)  F1: 45.4257 (45.6873)  Acc@1: 61.7188 (65.6403)  Acc@5: 89.0625 (90.7016)
+Test: [  78/78]  Time: 0.030 (0.204)  DataTime: 0.000 (0.010)  Loss:  1.0117 (1.2350)  F1:  9.6667 (46.3253)  Acc@1: 62.5000 (66.3000)  Acc@5: 93.7500 (90.7400)
+metrics: OrderedDict([('loss', 1.235), ('top1', 66.3), ('top5', 90.74), ('f1', 46.325)])
+metrics_f1: 46.325
+Test: [   0/78]  Time: 1.167 (1.167)  DataTime: 0.941 (0.941)  Loss:  1.0674 (1.0674)  F1: 46.9548 (46.9548)  Acc@1: 71.0938 (71.0938)  Acc@5: 89.8438 (89.8438)
+Test: [  50/78]  Time: 0.196 (0.215)  DataTime: 0.000 (0.019)  Loss:  1.2607 (1.1823)  F1: 46.1667 (45.9493)  Acc@1: 63.2812 (65.9467)  Acc@5: 88.2812 (90.6097)
+Test: [  78/78]  Time: 0.029 (0.206)  DataTime: 0.000 (0.012)  Loss:  1.2695 (1.1927)  F1: 10.6667 (45.8075)  Acc@1: 68.7500 (65.7400)  Acc@5: 87.5000 (90.4900)
+metrics: OrderedDict([('loss', 1.1927), ('top1', 65.74), ('top5', 90.49), ('f1', 45.807)])
+metrics_f1: 45.807
+Test: [   0/78]  Time: 1.018 (1.018)  DataTime: 0.680 (0.680)  Loss:  1.1318 (1.1318)  F1: 45.2556 (45.2556)  Acc@1: 70.3125 (70.3125)  Acc@5: 94.5312 (94.5312)
+Test: [  50/78]  Time: 0.196 (0.212)  DataTime: 0.000 (0.014)  Loss:  1.4717 (1.3367)  F1: 45.5667 (46.4493)  Acc@1: 63.2812 (66.7739)  Acc@5: 90.6250 (90.4718)
+Test: [  78/78]  Time: 0.029 (0.204)  DataTime: 0.000 (0.009)  Loss:  1.4590 (1.3292)  F1:  9.6667 (47.0826)  Acc@1: 62.5000 (67.2000)  Acc@5: 81.2500 (90.7500)
+metrics: OrderedDict([('loss', 1.3292), ('top1', 67.2), ('top5', 90.75), ('f1', 47.083)])
+metrics_f1: 47.083
+Test: [   0/78]  Time: 1.024 (1.024)  DataTime: 0.811 (0.811)  Loss:  2.5469 (2.5469)  F1: 16.8095 (16.8095)  Acc@1: 32.0312 (32.0312)  Acc@5: 68.7500 (68.7500)
+Test: [  50/78]  Time: 0.196 (0.212)  DataTime: 0.000 (0.016)  Loss:  2.7559 (2.6618)  F1: 19.5524 (18.2271)  Acc@1: 32.0312 (29.8560)  Acc@5: 67.9688 (66.7892)
+Test: [  78/78]  Time: 0.029 (0.204)  DataTime: 0.000 (0.011)  Loss:  2.6387 (2.6702)  F1:  5.3333 (18.0756)  Acc@1: 37.5000 (29.4600)  Acc@5: 62.5000 (66.6100)
+metrics: OrderedDict([('loss', 2.6702), ('top1', 29.46), ('top5', 66.61), ('f1', 18.076)])
+metrics_f1: 18.076
+Test: [   0/78]  Time: 1.069 (1.069)  DataTime: 0.756 (0.756)  Loss:  1.4316 (1.4316)  F1: 40.7976 (40.7976)  Acc@1: 64.8438 (64.8438)  Acc@5: 84.3750 (84.3750)
+Test: [  50/78]  Time: 0.196 (0.213)  DataTime: 0.000 (0.015)  Loss:  1.7764 (1.6306)  F1: 40.4095 (39.4762)  Acc@1: 53.9062 (57.7512)  Acc@5: 85.1562 (85.7843)
+Test: [  78/78]  Time: 0.029 (0.205)  DataTime: 0.000 (0.010)  Loss:  1.6416 (1.6283)  F1:  7.3333 (39.7568)  Acc@1: 56.2500 (57.9900)  Acc@5: 87.5000 (85.9900)
+metrics: OrderedDict([('loss', 1.6283), ('top1', 57.99), ('top5', 85.99), ('f1', 39.757)])
+metrics_f1: 39.757
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:15 Acc@1: 68.9300 Acc@5: 91.6900                          Epoch_time: 1352.393s
+Saving model to ./output/train/20250901-163543-run_10/run_10_15.pt
+cr f 9.30864326328202e-06 9.29429788246495e-06
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+Test: [   0/78]  Time: 0.790 (0.790)  DataTime: 0.591 (0.591)  Loss:  4.3672 (4.3672)  F1:  3.4357 ( 3.4357)  Acc@1: 12.5000 (12.5000)  Acc@5: 28.9062 (28.9062)
+Test: [  50/78]  Time: 0.196 (0.208)  DataTime: 0.000 (0.012)  Loss:  4.3945 (4.3884)  F1:  4.2992 ( 2.9852)  Acc@1: 10.9375 ( 7.7665)  Acc@5: 25.0000 (27.7420)
+Test: [  78/78]  Time: 0.028 (0.202)  DataTime: 0.000 (0.008)  Loss:  4.4141 (4.3927)  F1:  0.0000 ( 2.8496)  Acc@1:  0.0000 ( 7.4700)  Acc@5: 12.5000 (27.2700)
+metrics: OrderedDict([('loss', 4.3927), ('top1', 7.47), ('top5', 27.27), ('f1', 2.85)])
+metrics_f1: 2.85
+Test: [   0/78]  Time: 1.255 (1.255)  DataTime: 1.040 (1.040)  Loss:  1.4072 (1.4072)  F1: 42.9916 (42.9916)  Acc@1: 67.1875 (67.1875)  Acc@5: 88.2812 (88.2812)
+Test: [  50/78]  Time: 0.196 (0.217)  DataTime: 0.000 (0.021)  Loss:  1.7842 (1.6257)  F1: 41.1190 (39.7611)  Acc@1: 54.6875 (58.0729)  Acc@5: 85.9375 (86.1979)
+Test: [  78/78]  Time: 0.029 (0.207)  DataTime: 0.000 (0.013)  Loss:  1.6729 (1.6265)  F1:  7.3333 (39.9974)  Acc@1: 56.2500 (58.2900)  Acc@5: 87.5000 (86.1600)
+metrics: OrderedDict([('loss', 1.6265), ('top1', 58.29), ('top5', 86.16), ('f1', 39.997)])
+metrics_f1: 39.997
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:16 Acc@1: 68.9300 Acc@5: 91.6900                          Epoch_time: 1304.186s
+Saving model to ./output/train/20250901-163543-run_10/run_10_16.pt
+cr f 1.0432066790438083e-05 1.1447108031415249e-05
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+Test: [  50/78]  Time: 0.195 (0.210)  DataTime: 0.000 (0.014)  Loss:  1.2471 (1.1812)  F1: 50.1810 (45.9788)  Acc@1: 66.4062 (65.9773)  Acc@5: 89.8438 (90.6403)
+Test: [  78/78]  Time: 0.028 (0.203)  DataTime: 0.000 (0.009)  Loss:  1.2646 (1.1939)  F1: 10.6667 (45.9236)  Acc@1: 68.7500 (65.8200)  Acc@5: 87.5000 (90.4400)
+metrics: OrderedDict([('loss', 1.1939), ('top1', 65.82), ('top5', 90.44), ('f1', 45.924)])
+metrics_f1: 45.924
+Test: [   0/78]  Time: 0.975 (0.975)  DataTime: 0.667 (0.667)  Loss:  1.1729 (1.1729)  F1: 41.4500 (41.4500)  Acc@1: 65.6250 (65.6250)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.195 (0.211)  DataTime: 0.000 (0.014)  Loss:  1.4502 (1.3372)  F1: 43.7270 (46.6175)  Acc@1: 62.5000 (66.8658)  Acc@5: 89.8438 (90.3799)
+Test: [  78/78]  Time: 0.028 (0.204)  DataTime: 0.000 (0.009)  Loss:  1.5137 (1.3306)  F1:  9.6667 (47.1159)  Acc@1: 62.5000 (67.2400)  Acc@5: 87.5000 (90.7000)
+metrics: OrderedDict([('loss', 1.3306), ('top1', 67.24), ('top5', 90.7), ('f1', 47.116)])
+metrics_f1: 47.116
+Test: [   0/78]  Time: 1.015 (1.015)  DataTime: 0.763 (0.763)  Loss:  4.3672 (4.3672)  F1:  3.5125 ( 3.5125)  Acc@1: 11.7188 (11.7188)  Acc@5: 30.4688 (30.4688)
+Test: [  50/78]  Time: 0.195 (0.212)  DataTime: 0.000 (0.015)  Loss:  4.3945 (4.3890)  F1:  4.1048 ( 2.9469)  Acc@1: 10.9375 ( 7.7665)  Acc@5: 26.5625 (28.2169)
+Test: [  78/78]  Time: 0.029 (0.204)  DataTime: 0.000 (0.010)  Loss:  4.4180 (4.3931)  F1:  0.0000 ( 2.8460)  Acc@1:  0.0000 ( 7.5200)  Acc@5:  6.2500 (27.6700)
+metrics: OrderedDict([('loss', 4.3931), ('top1', 7.52), ('top5', 27.67), ('f1', 2.846)])
+metrics_f1: 2.846
+Test: [   0/78]  Time: 1.179 (1.179)  DataTime: 0.972 (0.972)  Loss:  1.4365 (1.4365)  F1: 40.1190 (40.1190)  Acc@1: 63.2812 (63.2812)  Acc@5: 86.7188 (86.7188)
+Test: [  50/78]  Time: 0.195 (0.215)  DataTime: 0.000 (0.019)  Loss:  1.8535 (1.6218)  F1: 39.6992 (39.9800)  Acc@1: 53.1250 (58.1955)  Acc@5: 84.3750 (85.9681)
+Test: [  78/78]  Time: 0.029 (0.206)  DataTime: 0.000 (0.013)  Loss:  1.6719 (1.6213)  F1:  7.3333 (40.0424)  Acc@1: 56.2500 (58.2000)  Acc@5: 81.2500 (86.1300)
+metrics: OrderedDict([('loss', 1.6213), ('top1', 58.2), ('top5', 86.13), ('f1', 40.042)])
+metrics_f1: 40.042
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:17 Acc@1: 68.9300 Acc@5: 91.6900                          Epoch_time: 1336.959s
+Saving model to ./output/train/20250901-163543-run_10/run_10_17.pt
+cr f 1.554363921204756e-05 1.1502342354378858e-05
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.014)  batch_time: 0.321 (0.406)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.002)  batch_time: 0.322 (0.394)  
+[tensor(52.8776), tensor(78.2765), tensor(72.9216), tensor(71.9142), tensor(72.8237), tensor(28.0850), tensor(7.1927), tensor(59.1712)]
+[1, 1, 1, 1, 0, 0, 0, 0]
+epoch:0, best_score:78.2765, best_idx:1,                      score: [tensor(52.8776), tensor(78.2765), tensor(72.9216), tensor(71.9142), tensor(72.8796), tensor(28.0982), tensor(7.2714), tensor(59.2759)]
+Test: [   0/78]  Time: 1.072 (1.072)  DataTime: 0.845 (0.845)  Loss:  1.5967 (1.5967)  F1: 36.7381 (36.7381)  Acc@1: 58.5938 (58.5938)  Acc@5: 82.8125 (82.8125)
+Test: [  50/78]  Time: 0.195 (0.213)  DataTime: 0.000 (0.017)  Loss:  1.8516 (1.7412)  F1: 35.6190 (35.5357)  Acc@1: 51.5625 (52.7880)  Acc@5: 75.0000 (82.3836)
+Test: [  78/78]  Time: 0.028 (0.205)  DataTime: 0.000 (0.011)  Loss:  2.2266 (1.7438)  F1:  5.3333 (35.7855)  Acc@1: 37.5000 (52.9200)  Acc@5: 68.7500 (82.2100)
+metrics: OrderedDict([('loss', 1.7438), ('top1', 52.92), ('top5', 82.21), ('f1', 35.785)])
+metrics_f1: 35.785
+Test: [   0/78]  Time: 1.084 (1.084)  DataTime: 0.874 (0.874)  Loss:  1.1045 (1.1045)  F1: 44.8238 (44.8238)  Acc@1: 70.3125 (70.3125)  Acc@5: 93.7500 (93.7500)
+Test: [  50/78]  Time: 0.195 (0.213)  DataTime: 0.000 (0.017)  Loss:  1.3818 (1.2120)  F1: 46.9270 (47.9836)  Acc@1: 65.6250 (68.9645)  Acc@5: 87.5000 (91.3603)
+Test: [  78/78]  Time: 0.029 (0.205)  DataTime: 0.000 (0.011)  Loss:  1.1104 (1.2122)  F1: 10.0000 (48.2375)  Acc@1: 68.7500 (68.8800)  Acc@5: 93.7500 (91.5200)
+metrics: OrderedDict([('loss', 1.2122), ('top1', 68.88), ('top5', 91.52), ('f1', 48.238)])
+metrics_f1: 48.238
+Test: [   0/78]  Time: 0.904 (0.904)  DataTime: 0.667 (0.667)  Loss:  1.1748 (1.1748)  F1: 42.7810 (42.7810)  Acc@1: 66.4062 (66.4062)  Acc@5: 92.1875 (92.1875)
+Test: [  50/78]  Time: 0.196 (0.211)  DataTime: 0.000 (0.014)  Loss:  1.3730 (1.2489)  F1: 45.7167 (45.7983)  Acc@1: 63.2812 (65.8854)  Acc@5: 88.2812 (90.2420)
+Test: [  78/78]  Time: 0.028 (0.203)  DataTime: 0.000 (0.009)  Loss:  0.9741 (1.2436)  F1: 10.6667 (46.2046)  Acc@1: 68.7500 (66.1700)  Acc@5: 87.5000 (90.4000)
+metrics: OrderedDict([('loss', 1.2436), ('top1', 66.17), ('top5', 90.4), ('f1', 46.205)])
+metrics_f1: 46.205
+Test: [   0/78]  Time: 1.109 (1.109)  DataTime: 0.881 (0.881)  Loss:  1.0723 (1.0723)  F1: 42.6929 (42.6929)  Acc@1: 66.4062 (66.4062)  Acc@5: 90.6250 (90.6250)
+Test: [  50/78]  Time: 0.196 (0.214)  DataTime: 0.000 (0.018)  Loss:  1.2686 (1.1844)  F1: 43.9952 (45.7357)  Acc@1: 62.5000 (65.9161)  Acc@5: 89.0625 (90.4871)
+Test: [  78/78]  Time: 0.029 (0.205)  DataTime: 0.000 (0.011)  Loss:  1.1660 (1.1934)  F1:  9.6667 (45.6865)  Acc@1: 62.5000 (65.6700)  Acc@5: 93.7500 (90.4200)
+metrics: OrderedDict([('loss', 1.1934), ('top1', 65.67), ('top5', 90.42), ('f1', 45.687)])
+metrics_f1: 45.687
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:18 Acc@1: 68.8800 Acc@5: 91.5200                          Epoch_time: 1308.880s
+Saving model to ./output/train/20250901-163543-run_10/run_10_18.pt
+cr f 9.458656592389186e-06 7.43942188894544e-06
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.002)  batch_time: 0.321 (0.394)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.322 (0.395)  
+data_time: 0.000 (0.003)  batch_time: 0.321 (0.394)  
+[tensor(53.2397), tensor(78.4111), tensor(72.7558), tensor(71.7112), tensor(72.8812), tensor(27.9628), tensor(7.1020), tensor(59.2927)]
+[1, 1, 0, 0, 0, 0, 0, 0]
+epoch:0, best_score:78.4111, best_idx:1,                      score: [tensor(53.2397), tensor(78.4111), tensor(72.9771), tensor(71.8554), tensor(72.8968), tensor(28.0651), tensor(7.1899), tensor(59.3686)]
+Test: [   0/78]  Time: 1.089 (1.089)  DataTime: 0.806 (0.806)  Loss:  1.5859 (1.5859)  F1: 36.5508 (36.5508)  Acc@1: 58.5938 (58.5938)  Acc@5: 82.8125 (82.8125)
+Test: [  50/78]  Time: 0.196 (0.213)  DataTime: 0.000 (0.016)  Loss:  1.8486 (1.7407)  F1: 37.5026 (35.5362)  Acc@1: 53.1250 (52.8952)  Acc@5: 75.7812 (82.3223)
+Test: [  78/78]  Time: 0.029 (0.205)  DataTime: 0.000 (0.011)  Loss:  2.3008 (1.7435)  F1:  5.3333 (35.7613)  Acc@1: 37.5000 (52.9600)  Acc@5: 75.0000 (82.1600)
+metrics: OrderedDict([('loss', 1.7435), ('top1', 52.96), ('top5', 82.16), ('f1', 35.761)])
+metrics_f1: 35.761
+Test: [   0/78]  Time: 0.968 (0.968)  DataTime: 0.721 (0.721)  Loss:  1.1689 (1.1689)  F1: 45.1810 (45.1810)  Acc@1: 70.3125 (70.3125)  Acc@5: 91.4062 (91.4062)
+Test: [  50/78]  Time: 0.195 (0.211)  DataTime: 0.000 (0.015)  Loss:  1.3955 (1.2160)  F1: 47.0191 (48.0160)  Acc@1: 65.6250 (68.9185)  Acc@5: 87.5000 (91.2990)
+Test: [  78/78]  Time: 0.028 (0.203)  DataTime: 0.000 (0.009)  Loss:  1.0635 (1.2147)  F1: 10.6667 (48.4625)  Acc@1: 68.7500 (69.1600)  Acc@5: 93.7500 (91.4600)
+metrics: OrderedDict([('loss', 1.2147), ('top1', 69.16), ('top5', 91.46), ('f1', 48.462)])
+metrics_f1: 48.462
+score: [53, 78, 73, 72, 73, 28, 7, 59]
+DE:19 Acc@1: 69.1600 Acc@5: 91.4600                          Epoch_time: 1271.210s
+Saving model to ./output/train/20250901-163543-run_10/run_10_19.pt

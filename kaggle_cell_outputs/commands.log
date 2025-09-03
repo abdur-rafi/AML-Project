@@ -1,0 +1,181 @@
+cifar_10_pretrain
+
+
+    # python finetune.py --batch_size 128 \
+    #         --val_batch_size 128 \
+    #         --slice_len 0 \
+    #         --warmup 0 \
+    #         --opt 'sgd' \
+    #         --means 1.0 \
+    #         --lamb 0.05 \
+    #         --sched 'cosine' \
+    #         --epochs 200 \
+    #         --model 'sew_34' \
+    #         --connect_f 'ADD' \
+    #         --zero_init_residual \
+    #         --lr 1e-1 \
+    #         --lr_min 0 \
+    #         --smoothing 0 \
+    #         --mixup 0 \
+    #         --aa None \
+    #         --re_prob 0 \
+    #         --amp \
+    #         --T 4 \
+    #         --data './data' \
+    #         --dataset_name 'cifar10' \
+    #         --num_classes 10 \
+    #         --output /home/guodong/runhua/cifar_finetune/spe_snn_finetune_cifar/output \
+    #         --exp_name "pretrain_cifar_10" \
+    #         --log_dir "./log/pretrain_cifar_10.log" \
+    #         --weight_decay 5e-4 \
+            # --time_ratio 1 1 1 1\
+            # --cal_ratio_loss True \
+            # >& log_out/sew34_from_cifar10_train_cifar100_sgd_lr_1e-1_wd5e-4_300epoch_smoothing_0_mixup_0.1_1_1_1_1_epoch_200_aa_rand-m11-n3.txt &
+            # --only_test \
+            # --TET True \
+
+
+cifar_100_finetune_lr1-1 to 1-4
+
+
+# python finetune.py --batch_size 128 \
+#             --val_batch_size 128 \
+#             --slice_len 0 \
+#             --warmup 0 \
+#             --opt 'sgd' \
+#             --means 1.0 \
+#             --lamb 0.05 \
+#             --sched 'cosine' \
+#             --epochs 200 \
+#             --model 'sew_34' \
+#             --resume "/kaggle/working/AML-Project/pretrain_cifar_10_50.pt" \
+#             --connect_f 'ADD' \
+#             --zero_init_residual \
+#             --lr 1e-2 \
+#             --lr_min 0 \
+#             --smoothing 0 \
+#             --mixup 0.1 \
+#             --aa 'rand-m11-n3' \
+#             --re_prob 0 \
+#             --amp \
+#             --T 4 \
+#             --data './data' \
+#             --dataset_name 'cifar100' \
+#             --num_classes 100 \
+#             --output ./output \
+#             --exp_name "pretrain_cifar_100_using_resuming_cifar_10_lr_1-2" \
+#             --log_dir "./log/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2.log" \
+#             --weight_decay 5e-4 \
+#             --time_ratio 1 1 1 1\
+#             --cal_ratio_loss True \
+#             # >& log_out/sew34_from_cifar10_train_cifar100_sgd_lr_1e-1_wd5e-4_300epoch_smoothing_0_mixup_0.1_1_1_1_1_epoch_200_aa_rand-m11-n3.txt &
+#             # --only_test \
+#             # --TET True \
+
+
+cifar_100_finetune_lr_1-2_2
+
+python finetune.py --batch_size 128 \
+            --val_batch_size 128 \
+            --slice_len 0 \
+            --warmup 0 \
+            --opt 'sgd' \
+            --means 1.0 \
+            --lamb 0.05 \
+            --sched 'cosine' \
+            --epochs 200 \
+            --model 'sew_34' \
+            --resume "/kaggle/working/AML-Project/pretrain_cifar_10_50.pt" \
+            --connect_f 'ADD' \
+            --zero_init_residual \
+            --lr 1e-2 \
+            --lr_min 0 \
+            --smoothing 0.1 \
+            --mixup 0.1 \
+            --aa 'rand-m41-n1' \
+            --re_prob 0 \
+            --amp \
+            --T 4 \
+            --data './data' \
+            --dataset_name 'cifar100' \
+            --num_classes 100 \
+            --output ./output \
+            --exp_name "pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_2" \
+            --log_dir "./log/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_2.log" \
+            --weight_decay 5e-3 \
+            --time_ratio 1 1 1 1\
+            --cal_ratio_loss True \
+            # >& log_out/sew34_from_cifar10_train_cifar100_sgd_lr_1e-1_wd5e-4_300epoch_smoothing_0_mixup_0.1_1_1_1_1_epoch_200_aa_rand-m11-n3.txt &
+            # --only_test \
+            # --TET True \
+
+
+cifar_100_finetune_lr_1-2_3
+
+python finetune.py --batch_size 128 \
+            --val_batch_size 128 \
+            --slice_len 0 \
+            --warmup 0 \
+            --opt 'sgd' \
+            --means 1.0 \
+            --lamb 0.05 \
+            --sched 'cosine' \
+            --epochs 200 \
+            --model 'sew_34' \
+            --resume "/kaggle/working/AML-Project/pretrain_cifar_10_50.pt" \
+            --connect_f 'ADD' \
+            --zero_init_residual \
+            --lr 1e-2 \
+            --lr_min 0 \
+            --smoothing 0.05 \
+            --mixup 0.05 \
+            --aa 'rand-m41-n1' \
+            --re_prob 0 \
+            --amp \
+            --T 4 \
+            --data './data' \
+            --dataset_name 'cifar100' \
+            --num_classes 100 \
+            --output ./output \
+            --exp_name "pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_3" \
+            --log_dir "./log/pretrain_cifar_100_using_resuming_cifar_10_lr_1-2_3.log" \
+            --weight_decay 5e-5 \
+            --time_ratio 1 1 1 1\
+            --cal_ratio_loss True \
+            # >& log_out/sew34_from_cifar10_train_cifar100_sgd_lr_1e-1_wd5e-4_300epoch_smoothing_0_mixup_0.1_1_1_1_1_epoch_200_aa_rand-m11-n3.txt &
+            # --only_test \
+            # --TET True \
+
+
+
+
+
+cifar 10 pretrain 2
+
+python finetune.py --batch_size 128 \
+    #         --val_batch_size 128 \
+    #         --slice_len 0 \
+    #         --warmup 0 \
+    #         --opt 'sgd' \
+    #         --means 1.0 \
+    #         --lamb 0.05 \
+    #         --sched 'cosine' \
+    #         --epochs 30 \
+    #         --model 'sew_34' \
+    #         --connect_f 'ADD' \
+    #         --zero_init_residual \
+    #         --lr 1e-3 \
+    #         --lr_min 0 \
+    #         --smoothing 0.05 \
+    #         --mixup 0.05 \
+    #         --aa None \
+    #         --re_prob 0 \
+    #         --amp \
+    #         --T 4 \
+    #         --data './data' \
+    #         --dataset_name 'cifar10' \
+    #         --num_classes 10 \
+    #         --output /home/guodong/runhua/cifar_finetune/spe_snn_finetune_cifar/output \
+    #         --exp_name "pretrain_cifar_10_lr_1-3" \
+    #         --log_dir "./log/pretrain_cifar_10_lr_1-3.log" \
+    #         --weight_decay 5e-4 \
